@@ -1,0 +1,132 @@
+C:\Users\Usuario\Desktop\hola 2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\hola 2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\hola 2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\hola 2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\hola 2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.deps.json
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.dll
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.pdb
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.dll
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\refint\CineBack.dll
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.pdb
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\ref\CineBack.dll
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.dll
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\refint\CineBack.dll
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.pdb
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.deps.json
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.dll
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.pdb
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\ref\CineBack.dll
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.Properties.Resources.resources
+C:\Users\CESAR\Desktop\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.GenerateResource.cache
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.deps.json
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.dll
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.pdb
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.Properties.Resources.resources
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.GenerateResource.cache
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.dll
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\refint\CineBack.dll
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.pdb
+C:\Users\Sarie\Desktop\cm\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\ref\CineBack.dll
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.Properties.Resources.resources
+D:\rodri-tp-prog2\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.deps.json
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.dll
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.pdb
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.Properties.Resources.resources
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.dll
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\refint\CineBack.dll
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.pdb
+C:\Users\Usuario\Desktop\Cine\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\ref\CineBack.dll
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.deps.json
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.dll
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.pdb
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.Properties.Resources.resources
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.dll
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\refint\CineBack.dll
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.pdb
+C:\Users\Usuario\Desktop\cine bro\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\ref\CineBack.dll
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.deps.json
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.dll
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.pdb
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.Properties.Resources.resources
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.GenerateResource.cache
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.dll
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\refint\CineBack.dll
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.pdb
+C:\Users\Usuario\Desktop\dato\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\ref\CineBack.dll
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.deps.json
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.dll
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\bin\Debug\net6.0\CineBack.pdb
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.Properties.Resources.resources
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.GenerateResource.cache
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.sourcelink.json
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.dll
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\refint\CineBack.dll
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\CineBack.pdb
+C:\Users\CESAR\Desktop\TP\Api-Cine\CineApp\CineBack\obj\Debug\net6.0\ref\CineBack.dll
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\bin\Debug\net6.0\CineBack.deps.json
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\bin\Debug\net6.0\CineBack.dll
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\bin\Debug\net6.0\CineBack.pdb
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.Properties.Resources.resources
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.GenerateResource.cache
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.dll
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\refint\CineBack.dll
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.pdb
+C:\Users\CESAR\Desktop\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\ref\CineBack.dll
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\bin\Debug\net6.0\CineBack.deps.json
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\bin\Debug\net6.0\CineBack.dll
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\bin\Debug\net6.0\CineBack.pdb
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.AssemblyReference.cache
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.Properties.Resources.resources
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.GenerateResource.cache
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfoInputs.cache
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.AssemblyInfo.cs
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.csproj.CoreCompileInputs.cache
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.dll
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\refint\CineBack.dll
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\CineBack.pdb
+C:\Users\CESAR\Desktop\peurba\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\CineApp\CineBack\obj\Debug\net6.0\ref\CineBack.dll
