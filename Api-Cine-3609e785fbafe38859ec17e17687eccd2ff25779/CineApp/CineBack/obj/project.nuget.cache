@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "onHZf/RkeG6QMUE9eLkRUuxAMhavzavR8ApdpniPceHgXgkkw2fSRIr+iXp5R3pZZI9QPNo3HUqKScWYjERO9Q==",
+  "dgSpecHash": "TjZTBsoWKgXPXer5pM5TN1A8xasHAiwdKawk2sL8P/niRJpm7pqAvCuOXKdpgPGiLnQVNXHClbCpmPQ6OjLQsA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CESAR\\Desktop\\peurba\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj",
+  "projectFilePath": "C:\\Users\\CESAR\\Desktop\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CESAR\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\CESAR\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

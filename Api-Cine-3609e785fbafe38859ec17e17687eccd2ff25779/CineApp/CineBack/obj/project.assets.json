@@ -2339,11 +2339,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CESAR\\Desktop\\peurba\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj",
+      "projectUniqueName": "C:\\Users\\CESAR\\Desktop\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj",
       "projectName": "CineBack",
-      "projectPath": "C:\\Users\\CESAR\\Desktop\\peurba\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj",
+      "projectPath": "C:\\Users\\CESAR\\Desktop\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj",
       "packagesPath": "C:\\Users\\CESAR\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CESAR\\Desktop\\peurba\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\obj\\",
+      "outputPath": "C:\\Users\\CESAR\\Desktop\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\CESAR\\AppData\\Roaming\\NuGet\\NuGet.Config",
