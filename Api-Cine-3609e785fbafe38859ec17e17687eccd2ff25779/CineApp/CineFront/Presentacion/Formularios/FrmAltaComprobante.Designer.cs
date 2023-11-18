@@ -54,6 +54,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.ColFila = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColColumna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPreUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +83,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(38, 511);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(127, 26);
+            this.btnAceptar.Size = new System.Drawing.Size(127, 35);
             this.btnAceptar.TabIndex = 25;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -163,7 +169,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(197, 511);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(127, 26);
+            this.btnCancelar.Size = new System.Drawing.Size(127, 35);
             this.btnCancelar.TabIndex = 36;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -182,6 +188,13 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColFila,
+            this.ColColumna,
+            this.ColPreUnitario,
+            this.ColPelicula,
+            this.ColFecha,
+            this.ColHora});
             this.dataGridView1.Location = new System.Drawing.Point(38, 291);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -295,13 +308,55 @@
             this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(856, 247);
+            this.btnAgregar.Location = new System.Drawing.Point(873, 247);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(127, 37);
             this.btnAgregar.TabIndex = 52;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
+            // 
+            // ColFila
+            // 
+            this.ColFila.HeaderText = "Fila";
+            this.ColFila.MinimumWidth = 6;
+            this.ColFila.Name = "ColFila";
+            this.ColFila.Width = 125;
+            // 
+            // ColColumna
+            // 
+            this.ColColumna.HeaderText = "Columna";
+            this.ColColumna.MinimumWidth = 6;
+            this.ColColumna.Name = "ColColumna";
+            this.ColColumna.Width = 125;
+            // 
+            // ColPreUnitario
+            // 
+            this.ColPreUnitario.HeaderText = "Precio";
+            this.ColPreUnitario.MinimumWidth = 6;
+            this.ColPreUnitario.Name = "ColPreUnitario";
+            this.ColPreUnitario.Width = 125;
+            // 
+            // ColPelicula
+            // 
+            this.ColPelicula.HeaderText = "Película";
+            this.ColPelicula.MinimumWidth = 6;
+            this.ColPelicula.Name = "ColPelicula";
+            this.ColPelicula.Width = 125;
+            // 
+            // ColFecha
+            // 
+            this.ColFecha.HeaderText = "Fecha";
+            this.ColFecha.MinimumWidth = 6;
+            this.ColFecha.Name = "ColFecha";
+            this.ColFecha.Width = 125;
+            // 
+            // ColHora
+            // 
+            this.ColHora.HeaderText = "Hora";
+            this.ColHora.MinimumWidth = 6;
+            this.ColHora.Name = "ColHora";
+            this.ColHora.Width = 125;
             // 
             // FrmAltaComprobante
             // 
@@ -370,5 +425,11 @@
         private TextBox textBox1;
         private Label label12;
         private Button btnAgregar;
+        private DataGridViewTextBoxColumn ColFila;
+        private DataGridViewTextBoxColumn ColColumna;
+        private DataGridViewTextBoxColumn ColPreUnitario;
+        private DataGridViewTextBoxColumn ColPelicula;
+        private DataGridViewTextBoxColumn ColFecha;
+        private DataGridViewTextBoxColumn ColHora;
     }
 }
