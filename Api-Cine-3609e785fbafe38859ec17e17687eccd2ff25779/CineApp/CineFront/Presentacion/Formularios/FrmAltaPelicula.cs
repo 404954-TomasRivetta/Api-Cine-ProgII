@@ -74,6 +74,7 @@ namespace CineFront.Presentacion.Formularios
         {
             GrabarPelicula();
         }
+        
         private async void GrabarPelicula()
         {
             nueva.Descripcion = txtDescripcion.Text;

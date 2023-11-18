@@ -85,7 +85,7 @@
             button2.Location = new Point(0, 538);
             button2.Name = "button2";
             button2.Size = new Size(220, 53);
-            button2.TabIndex = 9;
+            button2.TabIndex = 6;
             button2.Text = "Reporte Peliculas";
             button2.TextAlign = ContentAlignment.MiddleLeft;
             button2.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -104,7 +104,7 @@
             button1.Location = new Point(0, 591);
             button1.Name = "button1";
             button1.Size = new Size(220, 43);
-            button1.TabIndex = 8;
+            button1.TabIndex = 7;
             button1.Text = "Reporte Generos";
             button1.TextAlign = ContentAlignment.MiddleLeft;
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -123,7 +123,7 @@
             btnIntegrantes.Location = new Point(0, 634);
             btnIntegrantes.Name = "btnIntegrantes";
             btnIntegrantes.Size = new Size(220, 50);
-            btnIntegrantes.TabIndex = 7;
+            btnIntegrantes.TabIndex = 8;
             btnIntegrantes.Text = "Integrantes";
             btnIntegrantes.TextAlign = ContentAlignment.MiddleLeft;
             btnIntegrantes.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -142,7 +142,7 @@
             BtnRutaDiaria.Location = new Point(0, 474);
             BtnRutaDiaria.Name = "BtnRutaDiaria";
             BtnRutaDiaria.Size = new Size(220, 76);
-            BtnRutaDiaria.TabIndex = 6;
+            BtnRutaDiaria.TabIndex = 5;
             BtnRutaDiaria.Text = "Crear Comprobante";
             BtnRutaDiaria.TextAlign = ContentAlignment.MiddleLeft;
             BtnRutaDiaria.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -261,7 +261,7 @@
             panelTitleBar.Location = new Point(220, 0);
             panelTitleBar.Name = "panelTitleBar";
             panelTitleBar.Size = new Size(881, 80);
-            panelTitleBar.TabIndex = 1;
+            panelTitleBar.TabIndex = 10;
             panelTitleBar.Paint += panelTitleBar_Paint;
             panelTitleBar.MouseDown += panelTitleBar_MouseDown_1;
             // 
@@ -273,7 +273,7 @@
             Btnsalir.Location = new Point(806, 0);
             Btnsalir.Name = "Btnsalir";
             Btnsalir.Size = new Size(75, 80);
-            Btnsalir.TabIndex = 2;
+            Btnsalir.TabIndex = 11;
             Btnsalir.UseVisualStyleBackColor = true;
             Btnsalir.Click += Btnsalir_Click;
             // 
@@ -285,7 +285,7 @@
             btnCloseChildForm.Location = new Point(0, 0);
             btnCloseChildForm.Name = "btnCloseChildForm";
             btnCloseChildForm.Size = new Size(75, 80);
-            btnCloseChildForm.TabIndex = 1;
+            btnCloseChildForm.TabIndex = 9;
             btnCloseChildForm.UseVisualStyleBackColor = true;
             btnCloseChildForm.Click += btnCloseChildForm_Click_1;
             // 

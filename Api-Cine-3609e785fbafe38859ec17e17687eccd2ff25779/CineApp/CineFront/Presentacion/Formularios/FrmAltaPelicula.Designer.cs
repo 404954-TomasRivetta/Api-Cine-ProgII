@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaPelicula));
             cboDirectores = new ComboBox();
             cboIdioma = new ComboBox();
             cboTipoPublico = new ComboBox();
@@ -44,63 +45,76 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // cboDirectores
             // 
+            cboDirectores.BackColor = Color.Gray;
+            cboDirectores.ForeColor = SystemColors.ButtonFace;
             cboDirectores.FormattingEnabled = true;
-            cboDirectores.Location = new Point(452, 184);
+            cboDirectores.Location = new Point(222, 173);
             cboDirectores.Name = "cboDirectores";
-            cboDirectores.Size = new Size(121, 23);
+            cboDirectores.Size = new Size(167, 23);
             cboDirectores.TabIndex = 2;
             // 
             // cboIdioma
             // 
+            cboIdioma.BackColor = Color.Gray;
+            cboIdioma.ForeColor = SystemColors.ButtonFace;
             cboIdioma.FormattingEnabled = true;
-            cboIdioma.Location = new Point(452, 248);
+            cboIdioma.Location = new Point(222, 237);
             cboIdioma.Name = "cboIdioma";
-            cboIdioma.Size = new Size(121, 23);
+            cboIdioma.Size = new Size(146, 23);
             cboIdioma.TabIndex = 3;
             // 
             // cboTipoPublico
             // 
+            cboTipoPublico.BackColor = Color.Gray;
+            cboTipoPublico.ForeColor = SystemColors.ButtonFace;
             cboTipoPublico.FormattingEnabled = true;
-            cboTipoPublico.Location = new Point(452, 376);
+            cboTipoPublico.Location = new Point(222, 365);
             cboTipoPublico.Name = "cboTipoPublico";
-            cboTipoPublico.Size = new Size(121, 23);
-            cboTipoPublico.TabIndex = 4;
+            cboTipoPublico.Size = new Size(146, 23);
+            cboTipoPublico.TabIndex = 5;
             // 
             // cboTipoPelicula
             // 
+            cboTipoPelicula.BackColor = Color.Gray;
+            cboTipoPelicula.ForeColor = SystemColors.ButtonFace;
             cboTipoPelicula.FormattingEnabled = true;
-            cboTipoPelicula.Location = new Point(452, 313);
+            cboTipoPelicula.Location = new Point(222, 302);
             cboTipoPelicula.Name = "cboTipoPelicula";
-            cboTipoPelicula.Size = new Size(121, 23);
-            cboTipoPelicula.TabIndex = 5;
+            cboTipoPelicula.Size = new Size(146, 23);
+            cboTipoPelicula.TabIndex = 4;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(452, 114);
+            txtDescripcion.BackColor = Color.Gray;
+            txtDescripcion.ForeColor = SystemColors.ButtonFace;
+            txtDescripcion.Location = new Point(222, 103);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(121, 23);
-            txtDescripcion.TabIndex = 8;
+            txtDescripcion.Size = new Size(167, 23);
+            txtDescripcion.TabIndex = 1;
             // 
             // btnAceptar
             // 
-            btnAceptar.Location = new Point(297, 481);
+            btnAceptar.ForeColor = SystemColors.ActiveCaptionText;
+            btnAceptar.Location = new Point(77, 470);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(121, 36);
-            btnAceptar.TabIndex = 9;
+            btnAceptar.TabIndex = 8;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(504, 481);
+            btnCancelar.Location = new Point(239, 470);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(121, 36);
-            btnCancelar.TabIndex = 10;
+            btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
@@ -108,43 +122,51 @@
             // rbtSi
             // 
             rbtSi.AutoSize = true;
-            rbtSi.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtSi.Location = new Point(450, 431);
+            rbtSi.BackColor = Color.Gray;
+            rbtSi.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtSi.ForeColor = SystemColors.ButtonFace;
+            rbtSi.Location = new Point(220, 420);
             rbtSi.Name = "rbtSi";
-            rbtSi.Size = new Size(45, 29);
-            rbtSi.TabIndex = 11;
+            rbtSi.Size = new Size(41, 25);
+            rbtSi.TabIndex = 6;
             rbtSi.TabStop = true;
             rbtSi.Text = "Si";
-            rbtSi.UseVisualStyleBackColor = true;
+            rbtSi.UseVisualStyleBackColor = false;
             rbtSi.CheckedChanged += rbtSi_CheckedChanged;
             // 
             // rbtNo
             // 
             rbtNo.AutoSize = true;
-            rbtNo.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            rbtNo.Location = new Point(516, 431);
+            rbtNo.BackColor = Color.Gray;
+            rbtNo.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rbtNo.ForeColor = SystemColors.ButtonFace;
+            rbtNo.Location = new Point(286, 420);
             rbtNo.Name = "rbtNo";
-            rbtNo.Size = new Size(55, 29);
-            rbtNo.TabIndex = 12;
+            rbtNo.Size = new Size(49, 25);
+            rbtNo.TabIndex = 7;
             rbtNo.TabStop = true;
             rbtNo.Text = "No";
-            rbtNo.UseVisualStyleBackColor = true;
+            rbtNo.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(334, 32);
+            label1.BackColor = Color.Black;
+            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(41, 21);
             label1.Name = "label1";
-            label1.Size = new Size(157, 30);
+            label1.Size = new Size(170, 25);
             label1.TabIndex = 13;
             label1.Text = "Nueva Pelicula";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Black;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(322, 114);
+            label3.ForeColor = SystemColors.ButtonFace;
+            label3.Location = new Point(94, 103);
             label3.Name = "label3";
             label3.Size = new Size(85, 25);
             label3.TabIndex = 43;
@@ -153,8 +175,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Black;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(295, 435);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(67, 420);
             label2.Name = "label2";
             label2.Size = new Size(112, 25);
             label2.TabIndex = 44;
@@ -163,8 +187,10 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Black;
             label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(260, 376);
+            label4.ForeColor = SystemColors.ButtonFace;
+            label4.Location = new Point(32, 365);
             label4.Name = "label4";
             label4.Size = new Size(147, 25);
             label4.TabIndex = 45;
@@ -173,8 +199,10 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Black;
             label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(260, 311);
+            label5.ForeColor = SystemColors.ButtonFace;
+            label5.Location = new Point(30, 302);
             label5.Name = "label5";
             label5.Size = new Size(149, 25);
             label5.TabIndex = 46;
@@ -183,8 +211,10 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Black;
             label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(325, 182);
+            label6.ForeColor = SystemColors.ButtonFace;
+            label6.Location = new Point(95, 171);
             label6.Name = "label6";
             label6.Size = new Size(84, 25);
             label6.TabIndex = 47;
@@ -193,18 +223,30 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Black;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(335, 248);
+            label7.ForeColor = SystemColors.ButtonFace;
+            label7.Location = new Point(105, 237);
             label7.Name = "label7";
             label7.Size = new Size(74, 25);
             label7.TabIndex = 48;
             label7.Text = "Idioma:";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-4, -1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(889, 601);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 60;
+            pictureBox1.TabStop = false;
+            // 
             // FrmAltaPelicula
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(871, 565);
+            ClientSize = new Size(865, 562);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -221,9 +263,11 @@
             Controls.Add(cboTipoPublico);
             Controls.Add(cboIdioma);
             Controls.Add(cboDirectores);
+            Controls.Add(pictureBox1);
             Name = "FrmAltaPelicula";
             Text = "Peliculas";
             Load += FrmAltaPelicula_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -245,5 +289,6 @@
         private Label label5;
         private Label label6;
         private Label label7;
+        private PictureBox pictureBox1;
     }
 }

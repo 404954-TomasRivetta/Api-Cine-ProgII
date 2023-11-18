@@ -60,7 +60,7 @@
             btnCancelar.Margin = new Padding(3, 4, 3, 4);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(113, 31);
-            btnCancelar.TabIndex = 58;
+            btnCancelar.TabIndex = 10;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
@@ -73,7 +73,7 @@
             btnAceptar.Margin = new Padding(3, 4, 3, 4);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(113, 31);
-            btnAceptar.TabIndex = 57;
+            btnAceptar.TabIndex = 9;
             btnAceptar.Text = "Aceptar";
             btnAceptar.UseVisualStyleBackColor = true;
             btnAceptar.Click += btnAceptar_Click;
@@ -81,11 +81,11 @@
             // txtCorreo
             // 
             txtCorreo.BackColor = Color.Gray;
-            txtCorreo.Location = new Point(127, 237);
+            txtCorreo.Location = new Point(185, 244);
             txtCorreo.Margin = new Padding(3, 4, 3, 4);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(114, 23);
-            txtCorreo.TabIndex = 56;
+            txtCorreo.TabIndex = 4;
             // 
             // label9
             // 
@@ -93,7 +93,7 @@
             label9.BackColor = Color.Black;
             label9.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ButtonFace;
-            label9.Location = new Point(79, 468);
+            label9.Location = new Point(71, 465);
             label9.Name = "label9";
             label9.Size = new Size(44, 25);
             label9.TabIndex = 55;
@@ -103,11 +103,11 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Black;
-            label8.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = SystemColors.ButtonFace;
             label8.Location = new Point(62, 411);
             label8.Name = "label8";
-            label8.Size = new Size(42, 17);
+            label8.Size = new Size(63, 25);
             label8.TabIndex = 54;
             label8.Text = "Altura";
             // 
@@ -115,11 +115,11 @@
             // 
             label7.AutoSize = true;
             label7.BackColor = Color.Black;
-            label7.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = SystemColors.ButtonFace;
             label7.Location = new Point(55, 239);
             label7.Name = "label7";
-            label7.Size = new Size(49, 17);
+            label7.Size = new Size(70, 25);
             label7.TabIndex = 53;
             label7.Text = "Correo";
             // 
@@ -127,76 +127,76 @@
             // 
             cboBarrios.BackColor = Color.Gray;
             cboBarrios.FormattingEnabled = true;
-            cboBarrios.Location = new Point(127, 295);
+            cboBarrios.Location = new Point(185, 301);
             cboBarrios.Margin = new Padding(3, 4, 3, 4);
             cboBarrios.Name = "cboBarrios";
             cboBarrios.Size = new Size(325, 23);
-            cboBarrios.TabIndex = 52;
+            cboBarrios.TabIndex = 5;
             // 
             // txtNroTel
             // 
             txtNroTel.BackColor = Color.Gray;
-            txtNroTel.Location = new Point(127, 183);
+            txtNroTel.Location = new Point(185, 191);
             txtNroTel.Margin = new Padding(3, 4, 3, 4);
             txtNroTel.Name = "txtNroTel";
             txtNroTel.Size = new Size(127, 23);
-            txtNroTel.TabIndex = 51;
+            txtNroTel.TabIndex = 3;
             // 
             // txtAltura
             // 
             txtAltura.BackColor = Color.Gray;
-            txtAltura.Location = new Point(127, 409);
+            txtAltura.Location = new Point(185, 416);
             txtAltura.Margin = new Padding(3, 4, 3, 4);
             txtAltura.Name = "txtAltura";
             txtAltura.Size = new Size(106, 23);
-            txtAltura.TabIndex = 50;
+            txtAltura.TabIndex = 7;
             // 
             // txtDni
             // 
             txtDni.BackColor = Color.Gray;
-            txtDni.Location = new Point(127, 464);
+            txtDni.Location = new Point(185, 470);
             txtDni.Margin = new Padding(3, 4, 3, 4);
             txtDni.Name = "txtDni";
             txtDni.Size = new Size(140, 23);
-            txtDni.TabIndex = 49;
+            txtDni.TabIndex = 8;
             // 
             // txtCalle
             // 
             txtCalle.BackColor = Color.Gray;
-            txtCalle.Location = new Point(127, 351);
+            txtCalle.Location = new Point(185, 357);
             txtCalle.Margin = new Padding(3, 4, 3, 4);
             txtCalle.Name = "txtCalle";
             txtCalle.Size = new Size(325, 23);
-            txtCalle.TabIndex = 48;
+            txtCalle.TabIndex = 6;
             // 
             // txtApellido
             // 
             txtApellido.BackColor = Color.Gray;
-            txtApellido.Location = new Point(127, 129);
+            txtApellido.Location = new Point(185, 136);
             txtApellido.Margin = new Padding(3, 4, 3, 4);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(236, 23);
-            txtApellido.TabIndex = 47;
+            txtApellido.TabIndex = 2;
             // 
             // txtNombre
             // 
             txtNombre.BackColor = Color.Gray;
             txtNombre.ForeColor = SystemColors.ButtonFace;
-            txtNombre.Location = new Point(127, 76);
+            txtNombre.Location = new Point(185, 82);
             txtNombre.Margin = new Padding(3, 4, 3, 4);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(236, 23);
-            txtNombre.TabIndex = 46;
+            txtNombre.TabIndex = 1;
             // 
             // label6
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.Black;
-            label6.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = SystemColors.ButtonFace;
             label6.Location = new Point(69, 352);
             label6.Name = "label6";
-            label6.Size = new Size(36, 17);
+            label6.Size = new Size(54, 25);
             label6.TabIndex = 45;
             label6.Text = "Calle";
             // 
@@ -204,11 +204,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.Black;
-            label5.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = SystemColors.ButtonFace;
             label5.Location = new Point(43, 191);
             label5.Name = "label5";
-            label5.Size = new Size(58, 17);
+            label5.Size = new Size(84, 25);
             label5.TabIndex = 44;
             label5.Text = "Telefono";
             // 
@@ -216,11 +216,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Black;
-            label4.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ButtonFace;
             label4.Location = new Point(61, 296);
             label4.Name = "label4";
-            label4.Size = new Size(43, 17);
+            label4.Size = new Size(63, 25);
             label4.TabIndex = 43;
             label4.Text = "Barrio";
             // 
@@ -228,11 +228,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Black;
-            label3.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = SystemColors.ButtonFace;
             label3.Location = new Point(45, 77);
             label3.Name = "label3";
-            label3.Size = new Size(57, 17);
+            label3.Size = new Size(81, 25);
             label3.TabIndex = 42;
             label3.Text = "Nombre";
             // 
@@ -240,11 +240,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Black;
-            label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ButtonFace;
             label2.Location = new Point(46, 131);
             label2.Name = "label2";
-            label2.Size = new Size(56, 17);
+            label2.Size = new Size(82, 25);
             label2.TabIndex = 41;
             label2.Text = "Apellido";
             // 
@@ -252,11 +252,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Black;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ButtonFace;
             label1.Location = new Point(14, 12);
             label1.Name = "label1";
-            label1.Size = new Size(134, 21);
+            label1.Size = new Size(193, 25);
             label1.TabIndex = 40;
             label1.Text = "NUEVO CLIENTE";
             // 
@@ -297,7 +297,7 @@
             Controls.Add(label2);
             Controls.Add(pictureBox1);
             Name = "FrmAltaCliente";
-            Text = "Alta Cliente";
+            Text = " ";
             Load += FrmAltaCliente_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

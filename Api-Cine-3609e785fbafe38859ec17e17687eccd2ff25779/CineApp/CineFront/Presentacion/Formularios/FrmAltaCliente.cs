@@ -37,16 +37,31 @@ namespace CineFront.Presentacion.Formularios
             cboBarrios.DisplayMember = "Descripcion";
             cboBarrios.ValueMember = "BarrioNro";
         }
+        private bool ValidarDatos()
+        {
+            if(!int.TryParse(txtDni.Text,out _))
+            {
+                MessageBox.Show("Ingrese un DNI valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (!int.TryParse(txtAltura.Text, out _))
+            {
+                MessageBox.Show("Ingrese una altura valida!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            return true;
+        }
         private async Task GuardarClienteAsync()
         {
+            ValidarDatos();
             nuevo.Nombre = txtNombre.Text;
             nuevo.Apellido = txtApellido.Text;
-            nuevo.NroTel = Convert.ToInt32(txtNroTel.Text);
+            nuevo.NroTel = (int)Convert.ToInt64(txtNroTel.Text);
             nuevo.Correo = txtCorreo.Text;
-            nuevo.CodBarrio = Convert.ToInt32(cboBarrios.SelectedValue);
+            nuevo.CodBarrio = (int)Convert.ToInt64(cboBarrios.SelectedValue);
             nuevo.Calle = txtCalle.Text;
             nuevo.CalleNro = Convert.ToInt32(txtAltura.Text);
-            nuevo.Dni = Convert.ToInt32(txtDni.Text);
+            nuevo.Dni = (int)Convert.ToInt64(txtDni.Text);
 
             nuevo.NombreBarrio = " ";
             nuevo.NombrePelicula = " ";

@@ -94,6 +94,11 @@ namespace CineFront.Presentacion.Formularios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            if (dgvClientes.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un cliente!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             int nro = int.Parse(dgvClientes.CurrentRow.Cells["Column1"].Value.ToString());
             new FrmModificacionCliente(nro).ShowDialog();
         }
@@ -111,7 +116,7 @@ namespace CineFront.Presentacion.Formularios
             {
                 if (dgvClientes.CurrentRow != null)
                 {
-                    string url = "https://localhost:7149/DeleteCliente?idCliente="+nro;
+                    string url = "https://localhost:7149/DeleteCliente?idCliente=" + nro;
 
                     var result = await ClienteSingleton.GetInstance().DeleteAsync(url);
 

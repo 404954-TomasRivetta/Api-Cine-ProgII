@@ -99,7 +99,7 @@
             btnEditar.Margin = new Padding(4, 3, 4, 3);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(136, 35);
-            btnEditar.TabIndex = 18;
+            btnEditar.TabIndex = 6;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
@@ -110,7 +110,7 @@
             btnEliminar.Margin = new Padding(4, 3, 4, 3);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(136, 35);
-            btnEliminar.TabIndex = 19;
+            btnEliminar.TabIndex = 7;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
@@ -121,7 +121,7 @@
             btnSalir.Margin = new Padding(4, 3, 4, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(136, 35);
-            btnSalir.TabIndex = 20;
+            btnSalir.TabIndex = 8;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
@@ -131,7 +131,7 @@
             txtApellido.Location = new Point(89, 80);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(121, 23);
-            txtApellido.TabIndex = 25;
+            txtApellido.TabIndex = 4;
             // 
             // label4
             // 
@@ -147,14 +147,14 @@
             dtpFechaHasta.Location = new Point(619, 35);
             dtpFechaHasta.Name = "dtpFechaHasta";
             dtpFechaHasta.Size = new Size(200, 23);
-            dtpFechaHasta.TabIndex = 23;
+            dtpFechaHasta.TabIndex = 3;
             // 
             // dtpFechaDesde
             // 
             dtpFechaDesde.Location = new Point(320, 35);
             dtpFechaDesde.Name = "dtpFechaDesde";
             dtpFechaDesde.Size = new Size(200, 23);
-            dtpFechaDesde.TabIndex = 22;
+            dtpFechaDesde.TabIndex = 2;
             // 
             // label3
             // 
@@ -181,7 +181,7 @@
             cboBarrio.Location = new Point(89, 35);
             cboBarrio.Name = "cboBarrio";
             cboBarrio.Size = new Size(121, 23);
-            cboBarrio.TabIndex = 18;
+            cboBarrio.TabIndex = 1;
             // 
             // label1
             // 
@@ -198,7 +198,7 @@
             btnConsultar.Margin = new Padding(4, 3, 4, 3);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(136, 35);
-            btnConsultar.TabIndex = 1;
+            btnConsultar.TabIndex = 5;
             btnConsultar.Text = "Consultar";
             btnConsultar.UseVisualStyleBackColor = true;
             btnConsultar.Click += btnConsultar_Click;
