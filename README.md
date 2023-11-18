@@ -8,7 +8,6 @@ Desarrollo de una aplicacion para un Cine, tal aplicacion nos permite gestionar 
 - Sql Server
 - GIT y GITHUB
 
-
 ## Autores
 
 - [@Santiago Artaza](https://github.com/114384-Santiago-Artaza)
@@ -19,6 +18,7 @@ Desarrollo de una aplicacion para un Cine, tal aplicacion nos permite gestionar 
 - [@Tomas Rivetta](https://github.com/404954-TomasRivetta)
 
 ## Enunciado:
+
 Tomando como dominio de problema los dominios analizados en la asignatura
 Laboratorio de Computación II o bien uno de los 6 ejercicios modelos enunciados en
 la Guía TUP_2C_PII_GUI_U1_GestionMaestroDetalle, se pide:
@@ -65,8 +65,10 @@ plataforma de versionado de código GITHUB.
 
 ## Feedback
 
-Si tiene algún comentario, comuníquese con nosotros en 
+Si tiene algún comentario, comuníquese con nosotros en
+
 - s.ariel.out@gmail.com
+- 405634@tecnicatura.frc.utn.edu.ar
 - valenbertello@gmail.com
 - rodrigomoran143@gmail.com
 - nicolasperlo29@gmail.com

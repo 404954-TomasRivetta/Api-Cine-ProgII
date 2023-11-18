@@ -57,7 +57,7 @@
             btnEditar.Margin = new Padding(4, 3, 4, 3);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(136, 35);
-            btnEditar.TabIndex = 13;
+            btnEditar.TabIndex = 5;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
             btnEditar.Click += btnEditar_Click;
@@ -68,7 +68,7 @@
             btnEliminar.Margin = new Padding(4, 3, 4, 3);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(136, 35);
-            btnEliminar.TabIndex = 14;
+            btnEliminar.TabIndex = 6;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
@@ -79,13 +79,14 @@
             btnSalir.Margin = new Padding(4, 3, 4, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(136, 35);
-            btnSalir.TabIndex = 15;
+            btnSalir.TabIndex = 7;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
             // grpFiltros
             // 
+            grpFiltros.BackColor = Color.Transparent;
             grpFiltros.Controls.Add(label3);
             grpFiltros.Controls.Add(cboIdioma);
             grpFiltros.Controls.Add(cboPublico);
@@ -93,6 +94,7 @@
             grpFiltros.Controls.Add(cboGenero);
             grpFiltros.Controls.Add(label1);
             grpFiltros.Controls.Add(btnConsultar);
+            grpFiltros.ForeColor = SystemColors.ActiveCaptionText;
             grpFiltros.Location = new Point(60, 40);
             grpFiltros.Margin = new Padding(4, 3, 4, 3);
             grpFiltros.Name = "grpFiltros";
@@ -118,7 +120,7 @@
             cboIdioma.Location = new Point(460, 27);
             cboIdioma.Name = "cboIdioma";
             cboIdioma.Size = new Size(121, 23);
-            cboIdioma.TabIndex = 20;
+            cboIdioma.TabIndex = 3;
             // 
             // cboPublico
             // 
@@ -127,7 +129,7 @@
             cboPublico.Location = new Point(260, 27);
             cboPublico.Name = "cboPublico";
             cboPublico.Size = new Size(121, 23);
-            cboPublico.TabIndex = 19;
+            cboPublico.TabIndex = 2;
             // 
             // label2
             // 
@@ -145,7 +147,7 @@
             cboGenero.Location = new Point(64, 27);
             cboGenero.Name = "cboGenero";
             cboGenero.Size = new Size(121, 23);
-            cboGenero.TabIndex = 18;
+            cboGenero.TabIndex = 1;
             // 
             // label1
             // 
@@ -158,11 +160,13 @@
             // 
             // btnConsultar
             // 
+            btnConsultar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnConsultar.ForeColor = SystemColors.ActiveCaptionText;
             btnConsultar.Location = new Point(607, 72);
             btnConsultar.Margin = new Padding(4, 3, 4, 3);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(136, 35);
-            btnConsultar.TabIndex = 1;
+            btnConsultar.TabIndex = 0;
             btnConsultar.Text = "Consultar";
             btnConsultar.UseVisualStyleBackColor = true;
             btnConsultar.Click += btnConsultar_Click;
@@ -180,7 +184,7 @@
             dgvPeliculasFiltradas.ReadOnly = true;
             dgvPeliculasFiltradas.RowTemplate.Height = 25;
             dgvPeliculasFiltradas.Size = new Size(750, 275);
-            dgvPeliculasFiltradas.TabIndex = 16;
+            dgvPeliculasFiltradas.TabIndex = 4;
             // 
             // ColId
             // 
@@ -228,14 +232,14 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(865, 562);
+            ClientSize = new Size(871, 565);
             Controls.Add(dgvPeliculasFiltradas);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
             Controls.Add(btnSalir);
             Controls.Add(grpFiltros);
-            MaximumSize = new Size(881, 601);
-            MinimumSize = new Size(881, 601);
+            MaximumSize = new Size(887, 604);
+            MinimumSize = new Size(887, 604);
             Name = "FrmConsultarPeliculas";
             Text = "Consulta de Peliculas";
             Load += FrmConsultarPeliculas_Load;
