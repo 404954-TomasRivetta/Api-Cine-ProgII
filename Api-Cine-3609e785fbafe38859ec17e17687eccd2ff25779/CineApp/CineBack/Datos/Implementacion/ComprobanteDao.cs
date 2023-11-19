@@ -103,5 +103,45 @@ namespace CineBack.Datos.Implementacion
             }
             return lForma;
         }
+
+        public int ObtenerProximoComprobante()
+        {
+            string sp = "SP_PROXIMO_ID";
+            return HelperDB.ObtenerInstancia().ProximoComprobante(sp,"@next");
+        }
+
+        public List<Funciones> TraerFunciones(int nro)
+        {
+            List<Funciones> lFunciones = new List<Funciones>();
+            string sp = "SP_FECHA_HORA_FUNCION_PELICULA";
+            List<Parametro> lst = new List<Parametro>();
+            lst.Add(new Parametro("@id_pelicula", nro));
+
+            DataTable dt = HelperDB.ObtenerInstancia().Consultar(sp, lst);
+
+            foreach (DataRow fila in dt.Rows)
+            {
+                Funciones f = new Funciones();
+                f.IdFuncion = (int)fila[0];
+                f.FechaHora = fila[1].ToString();
+                lFunciones.Add(f);
+            }
+            
+            return lFunciones;
+        }
+
+        public List<Pelicula> TraerPeliculas()
+        {
+            List<Pelicula> lPeliculas = new List<Pelicula>();
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PELICULAS_Comprobante");
+            foreach (DataRow fila in tabla.Rows)
+            {
+                int id_pelicula = Convert.ToInt32(fila["id_pelicula"].ToString());
+                string desc = fila["descripcion"].ToString();
+                Pelicula peli = new Pelicula(id_pelicula, desc);
+                lPeliculas.Add(peli);
+            }
+            return lPeliculas;
+        }
     }
 }

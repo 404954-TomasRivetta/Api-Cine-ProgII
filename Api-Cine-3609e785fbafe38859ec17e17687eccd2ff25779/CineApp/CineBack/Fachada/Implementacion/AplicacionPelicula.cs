@@ -61,5 +61,6 @@ namespace CineBack.Fachada.Implementacion
         {
             return dao.ObtenerPeliculaPorNro(idPelicula);
         }
+
     }
 }

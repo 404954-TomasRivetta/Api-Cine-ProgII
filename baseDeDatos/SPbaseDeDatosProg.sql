@@ -62,6 +62,14 @@ begin
 	where id_pelicula=@idPelicula
 end
 -----------------------------------------------------------
+create procedure SP_CONSULTAR_PELICULAS_Comprobante
+as
+begin
+	select id_pelicula,descripcion from peliculas
+end
+-----------------------------------------------------------
+
+
 --SP INSERTAR PELICULA--
 create procedure [dbo].[SP_INSERTAR_PELICULA]
 @descripcion varchar(150),
@@ -110,16 +118,6 @@ set descripcion = @nombrePelicula,id_tipo_pelicula=@tipoPelicula,
 	id_director = @idDirector
 where id_pelicula=@idPelicula
 
---SP INSERTAR COMPROBANTE--
-create procedure [dbo].[SP_INSERTAR_COMPROBANTE]
-@id_cliente int,
-@id_forma_pago int,
-@id_empleado int,
-@cant_estradas int
-as
-insert into comprobantes(id_cliente, id_forma_pago, id_empleado, cant_entradas)
-values(@id_cliente, @id_forma_pago, @id_empleado, @cant_estradas)
-
 --SP CONSULTAR PELICULA FILTRADA
 create procedure [dbo].[SP_FILTRAR_PELICULA]
 @genero int=null,
@@ -165,18 +163,14 @@ END
 
 --SP FILTRAR CLIENTE
 alter PROCEDURE SP_CONSULTAR_CLIENTES_CON_FILTROS
-@id_barrio int=null,
-@cliente varchar(50)=null
+@id_barrio int=null
 as
 select C.id_cliente,c.nombre+' '+c.apellido, c.correo, c.cod_barrio,c.nro_tel
 from clientes c
 where (@id_barrio is null or c.cod_barrio=@id_barrio)
-    and (@cliente is null OR c.apellido LIKE '%' + @cliente + '%')
 	and (c.fechaBaja is null)
 
 exec SP_CONSULTAR_CLIENTES_CON_FILTROS
-
-select * from clientes
 
 --REPORTE
 create procedure SP_REPORTE_GENEROS_MAS_TAQUILLEROS
@@ -202,3 +196,56 @@ join funciones f on f.id_funcion = b.id_funcion
 join peliculas p on p.id_pelicula = f.id_pelicula
 GROUP BY p.descripcion
 order by Facturacion  DESC
+
+
+--
+create procedure SP_FECHA_HORA_FUNCION_PELICULA
+@id_pelicula int
+as
+	select id_funcion,convert(varchar(10),fecha,1)+' '+str(hora) 
+	from funciones
+	where id_pelicula = @id_pelicula
+--
+
+create PROCEDURE SP_PROXIMO_ID
+@next int OUTPUT
+AS
+BEGIN
+	SET @next = (SELECT MAX(id_comprobante)+1  FROM comprobantes);
+END
+
+--SP INSERTAR BUTACA--
+create procedure SP_INSERTAR_BUTACA
+	@fila int,
+	@columna int,
+	@id_funcion int,
+	@id_butaca int OUTPUT
+as
+begin
+	INSERT INTO butacas(fila,columna,id_funcion,id_estado_butaca)
+    VALUES (@fila,@columna,@id_funcion,1);
+    --Asignamos el valor del último ID autogenerado (obtenido --  
+    --mediante la función SCOPE_IDENTITY() de SQLServer)	
+    SET @id_butaca = SCOPE_IDENTITY();
+end
+
+--SP INSERTAR COMPROBANTE--
+create procedure [dbo].[SP_INSERTAR_COMPROBANTE]
+@id_cliente int,
+@id_forma_pago int,
+@id_empleado int,
+@cant_estradas int,
+@id_comprobante int output
+as
+insert into comprobantes(id_cliente, id_forma_pago, id_empleado, cant_entradas)
+values(@id_cliente, @id_forma_pago, @id_empleado, @cant_estradas)
+   SET @id_comprobante = SCOPE_IDENTITY();
+
+--SP INSERTAR TICKETS--
+create procedure SP_INSERTAR_TICKET
+@id_comprobante int,
+@id_butaca int,
+@pre_unitario int
+as
+	insert into tickets(id_comprobante,id_butacas,pre_unitario)
+	values(@id_comprobante,@id_butaca,@pre_unitario)

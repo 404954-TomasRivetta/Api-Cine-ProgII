@@ -28,378 +28,387 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.cboEmpleado = new System.Windows.Forms.ComboBox();
-            this.cboFormasP = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboClientes = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtCant = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtPreUnitario = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtFila = new System.Windows.Forms.TextBox();
-            this.txtColumna = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cboPeliculas = new System.Windows.Forms.ComboBox();
-            this.txtFecha = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.ColFila = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColColumna = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPreUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPelicula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            txtProximoComprobante = new Label();
+            btnAceptar = new Button();
+            cboEmpleado = new ComboBox();
+            cboFormasP = new ComboBox();
+            label2 = new Label();
+            cboClientes = new ComboBox();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            btnCancelar = new Button();
+            label7 = new Label();
+            dgvTickets = new DataGridView();
+            ColFila = new DataGridViewTextBoxColumn();
+            ColColumna = new DataGridViewTextBoxColumn();
+            ColPreUnitario = new DataGridViewTextBoxColumn();
+            ColPelicula = new DataGridViewTextBoxColumn();
+            ColFechaHora = new DataGridViewTextBoxColumn();
+            ColQuitar = new DataGridViewButtonColumn();
+            label6 = new Label();
+            txtPreUnitario = new TextBox();
+            label8 = new Label();
+            label9 = new Label();
+            txtFila = new TextBox();
+            txtColumna = new TextBox();
+            label10 = new Label();
+            cboPeliculas = new ComboBox();
+            label11 = new Label();
+            btnAgregar = new Button();
+            cboFechaHora = new ComboBox();
+            cantEntradas = new NumericUpDown();
+            label13 = new Label();
+            label14 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dgvTickets).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)cantEntradas).BeginInit();
+            SuspendLayout();
             // 
-            // label1
+            // txtProximoComprobante
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(69, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 37);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Nuevo Comprobante";
+            txtProximoComprobante.AutoSize = true;
+            txtProximoComprobante.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            txtProximoComprobante.ForeColor = SystemColors.ControlText;
+            txtProximoComprobante.Location = new Point(12, 28);
+            txtProximoComprobante.Name = "txtProximoComprobante";
+            txtProximoComprobante.Size = new Size(264, 30);
+            txtProximoComprobante.TabIndex = 29;
+            txtProximoComprobante.Text = "Nuevo Comprobante N°: ";
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.LightSalmon;
-            this.btnAceptar.FlatAppearance.BorderSize = 0;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAceptar.Location = new System.Drawing.Point(38, 511);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(127, 35);
-            this.btnAceptar.TabIndex = 25;
-            this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
+            btnAceptar.BackColor = Color.LightSalmon;
+            btnAceptar.FlatAppearance.BorderSize = 0;
+            btnAceptar.FlatStyle = FlatStyle.Flat;
+            btnAceptar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAceptar.Location = new Point(11, 492);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(111, 26);
+            btnAceptar.TabIndex = 25;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = false;
+            btnAceptar.Click += btnAceptar_Click_1;
             // 
             // cboEmpleado
             // 
-            this.cboEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEmpleado.FormattingEnabled = true;
-            this.cboEmpleado.Location = new System.Drawing.Point(638, 71);
-            this.cboEmpleado.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboEmpleado.Name = "cboEmpleado";
-            this.cboEmpleado.Size = new System.Drawing.Size(138, 28);
-            this.cboEmpleado.TabIndex = 19;
+            cboEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEmpleado.FormattingEnabled = true;
+            cboEmpleado.Location = new Point(537, 99);
+            cboEmpleado.Name = "cboEmpleado";
+            cboEmpleado.Size = new Size(121, 23);
+            cboEmpleado.TabIndex = 19;
             // 
             // cboFormasP
             // 
-            this.cboFormasP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboFormasP.FormattingEnabled = true;
-            this.cboFormasP.Location = new System.Drawing.Point(390, 71);
-            this.cboFormasP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboFormasP.Name = "cboFormasP";
-            this.cboFormasP.Size = new System.Drawing.Size(138, 28);
-            this.cboFormasP.TabIndex = 17;
+            cboFormasP.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboFormasP.FormattingEnabled = true;
+            cboFormasP.Location = new Point(320, 99);
+            cboFormasP.Name = "cboFormasP";
+            cboFormasP.Size = new Size(121, 23);
+            cboFormasP.TabIndex = 17;
+            cboFormasP.SelectedIndexChanged += cboFormasP_SelectedIndexChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 74);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 20);
-            this.label2.TabIndex = 30;
-            this.label2.Text = "Cliente:";
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 102);
+            label2.Name = "label2";
+            label2.Size = new Size(47, 15);
+            label2.TabIndex = 30;
+            label2.Text = "Cliente:";
             // 
             // cboClientes
             // 
-            this.cboClientes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboClientes.FormattingEnabled = true;
-            this.cboClientes.Location = new System.Drawing.Point(102, 70);
-            this.cboClientes.Name = "cboClientes";
-            this.cboClientes.Size = new System.Drawing.Size(138, 28);
-            this.cboClientes.TabIndex = 31;
+            cboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboClientes.FormattingEnabled = true;
+            cboClientes.Location = new Point(68, 98);
+            cboClientes.Margin = new Padding(3, 2, 3, 2);
+            cboClientes.Name = "cboClientes";
+            cboClientes.Size = new Size(121, 23);
+            cboClientes.TabIndex = 31;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(270, 73);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 20);
-            this.label3.TabIndex = 32;
-            this.label3.Text = "Forma de pago:";
+            label3.AutoSize = true;
+            label3.Location = new Point(215, 101);
+            label3.Name = "label3";
+            label3.Size = new Size(90, 15);
+            label3.TabIndex = 32;
+            label3.Text = "Forma de pago:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(552, 74);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 20);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Empleado:";
+            label4.AutoSize = true;
+            label4.Location = new Point(462, 102);
+            label4.Name = "label4";
+            label4.Size = new Size(63, 15);
+            label4.TabIndex = 33;
+            label4.Text = "Empleado:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(797, 74);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(154, 20);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Cantidad de entradas:";
-            // 
-            // txtCant
-            // 
-            this.txtCant.Location = new System.Drawing.Point(957, 71);
-            this.txtCant.Name = "txtCant";
-            this.txtCant.Size = new System.Drawing.Size(43, 27);
-            this.txtCant.TabIndex = 35;
+            label5.AutoSize = true;
+            label5.Location = new Point(676, 102);
+            label5.Name = "label5";
+            label5.Size = new Size(122, 15);
+            label5.TabIndex = 34;
+            label5.Text = "Cantidad de entradas:";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.LightSalmon;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelar.Location = new System.Drawing.Point(197, 511);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(127, 35);
-            this.btnCancelar.TabIndex = 36;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.BackColor = Color.LightSalmon;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.Location = new Point(150, 492);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(111, 26);
+            btnCancelar.TabIndex = 36;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label7.Location = new System.Drawing.Point(69, 115);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 37);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Tickets";
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.ForeColor = SystemColors.ControlText;
+            label7.Location = new Point(12, 153);
+            label7.Name = "label7";
+            label7.Size = new Size(82, 30);
+            label7.TabIndex = 38;
+            label7.Text = "Tickets";
             // 
-            // dataGridView1
+            // dgvTickets
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColFila,
-            this.ColColumna,
-            this.ColPreUnitario,
-            this.ColPelicula,
-            this.ColFecha,
-            this.ColHora});
-            this.dataGridView1.Location = new System.Drawing.Point(38, 291);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(962, 188);
-            this.dataGridView1.TabIndex = 39;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 162);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 20);
-            this.label6.TabIndex = 40;
-            this.label6.Text = "Precio Unitario:";
-            // 
-            // txtPreUnitario
-            // 
-            this.txtPreUnitario.Location = new System.Drawing.Point(154, 159);
-            this.txtPreUnitario.Name = "txtPreUnitario";
-            this.txtPreUnitario.Size = new System.Drawing.Size(86, 27);
-            this.txtPreUnitario.TabIndex = 41;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(258, 162);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 20);
-            this.label8.TabIndex = 42;
-            this.label8.Text = "Fila:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(367, 162);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 20);
-            this.label9.TabIndex = 43;
-            this.label9.Text = "Columna:";
-            // 
-            // txtFila
-            // 
-            this.txtFila.Location = new System.Drawing.Point(299, 159);
-            this.txtFila.Name = "txtFila";
-            this.txtFila.Size = new System.Drawing.Size(38, 27);
-            this.txtFila.TabIndex = 44;
-            // 
-            // txtColumna
-            // 
-            this.txtColumna.Location = new System.Drawing.Point(444, 159);
-            this.txtColumna.Name = "txtColumna";
-            this.txtColumna.Size = new System.Drawing.Size(38, 27);
-            this.txtColumna.TabIndex = 45;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(505, 161);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 20);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "Pelicula:";
-            // 
-            // cboPeliculas
-            // 
-            this.cboPeliculas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboPeliculas.FormattingEnabled = true;
-            this.cboPeliculas.Location = new System.Drawing.Point(573, 159);
-            this.cboPeliculas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cboPeliculas.Name = "cboPeliculas";
-            this.cboPeliculas.Size = new System.Drawing.Size(138, 28);
-            this.cboPeliculas.TabIndex = 46;
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(788, 158);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(148, 27);
-            this.txtFecha.TabIndex = 49;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(732, 162);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 20);
-            this.label11.TabIndex = 48;
-            this.label11.Text = "Fecha:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(89, 207);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(76, 27);
-            this.textBox1.TabIndex = 51;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(38, 210);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(45, 20);
-            this.label12.TabIndex = 50;
-            this.label12.Text = "Hora:";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.BackColor = System.Drawing.Color.LightSalmon;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(873, 247);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(127, 37);
-            this.btnAgregar.TabIndex = 52;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = false;
+            dgvTickets.AllowUserToAddRows = false;
+            dgvTickets.AllowUserToDeleteRows = false;
+            dgvTickets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvTickets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTickets.Columns.AddRange(new DataGridViewColumn[] { ColFila, ColColumna, ColPreUnitario, ColPelicula, ColFechaHora, ColQuitar });
+            dgvTickets.Location = new Point(11, 327);
+            dgvTickets.Margin = new Padding(3, 2, 3, 2);
+            dgvTickets.Name = "dgvTickets";
+            dgvTickets.ReadOnly = true;
+            dgvTickets.RowHeadersWidth = 51;
+            dgvTickets.RowTemplate.Height = 29;
+            dgvTickets.Size = new Size(842, 141);
+            dgvTickets.TabIndex = 39;
+            dgvTickets.CellContentClick += dataGridView1_CellContentClick;
             // 
             // ColFila
             // 
-            this.ColFila.HeaderText = "Fila";
-            this.ColFila.MinimumWidth = 6;
-            this.ColFila.Name = "ColFila";
-            this.ColFila.Width = 125;
+            ColFila.HeaderText = "Fila";
+            ColFila.MinimumWidth = 6;
+            ColFila.Name = "ColFila";
+            ColFila.ReadOnly = true;
             // 
             // ColColumna
             // 
-            this.ColColumna.HeaderText = "Columna";
-            this.ColColumna.MinimumWidth = 6;
-            this.ColColumna.Name = "ColColumna";
-            this.ColColumna.Width = 125;
+            ColColumna.HeaderText = "Columna";
+            ColColumna.MinimumWidth = 6;
+            ColColumna.Name = "ColColumna";
+            ColColumna.ReadOnly = true;
             // 
             // ColPreUnitario
             // 
-            this.ColPreUnitario.HeaderText = "Precio";
-            this.ColPreUnitario.MinimumWidth = 6;
-            this.ColPreUnitario.Name = "ColPreUnitario";
-            this.ColPreUnitario.Width = 125;
+            ColPreUnitario.HeaderText = "Precio";
+            ColPreUnitario.MinimumWidth = 6;
+            ColPreUnitario.Name = "ColPreUnitario";
+            ColPreUnitario.ReadOnly = true;
             // 
             // ColPelicula
             // 
-            this.ColPelicula.HeaderText = "Película";
-            this.ColPelicula.MinimumWidth = 6;
-            this.ColPelicula.Name = "ColPelicula";
-            this.ColPelicula.Width = 125;
+            ColPelicula.HeaderText = "Película";
+            ColPelicula.MinimumWidth = 6;
+            ColPelicula.Name = "ColPelicula";
+            ColPelicula.ReadOnly = true;
             // 
-            // ColFecha
+            // ColFechaHora
             // 
-            this.ColFecha.HeaderText = "Fecha";
-            this.ColFecha.MinimumWidth = 6;
-            this.ColFecha.Name = "ColFecha";
-            this.ColFecha.Width = 125;
+            ColFechaHora.HeaderText = "Horario";
+            ColFechaHora.MinimumWidth = 6;
+            ColFechaHora.Name = "ColFechaHora";
+            ColFechaHora.ReadOnly = true;
             // 
-            // ColHora
+            // ColQuitar
             // 
-            this.ColHora.HeaderText = "Hora";
-            this.ColHora.MinimumWidth = 6;
-            this.ColHora.Name = "ColHora";
-            this.ColHora.Width = 125;
+            ColQuitar.HeaderText = "Acciones";
+            ColQuitar.Name = "ColQuitar";
+            ColQuitar.ReadOnly = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(52, 204);
+            label6.Name = "label6";
+            label6.Size = new Size(88, 15);
+            label6.TabIndex = 40;
+            label6.Text = "Precio Unitario:";
+            // 
+            // txtPreUnitario
+            // 
+            txtPreUnitario.Location = new Point(154, 201);
+            txtPreUnitario.Margin = new Padding(3, 2, 3, 2);
+            txtPreUnitario.Name = "txtPreUnitario";
+            txtPreUnitario.Size = new Size(76, 23);
+            txtPreUnitario.TabIndex = 41;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(245, 204);
+            label8.Name = "label8";
+            label8.Size = new Size(28, 15);
+            label8.TabIndex = 42;
+            label8.Text = "Fila:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(340, 204);
+            label9.Name = "label9";
+            label9.Size = new Size(59, 15);
+            label9.TabIndex = 43;
+            label9.Text = "Columna:";
+            // 
+            // txtFila
+            // 
+            txtFila.Location = new Point(281, 201);
+            txtFila.Margin = new Padding(3, 2, 3, 2);
+            txtFila.Name = "txtFila";
+            txtFila.Size = new Size(34, 23);
+            txtFila.TabIndex = 44;
+            // 
+            // txtColumna
+            // 
+            txtColumna.Location = new Point(407, 201);
+            txtColumna.Margin = new Padding(3, 2, 3, 2);
+            txtColumna.Name = "txtColumna";
+            txtColumna.Size = new Size(34, 23);
+            txtColumna.TabIndex = 45;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(461, 203);
+            label10.Name = "label10";
+            label10.Size = new Size(51, 15);
+            label10.TabIndex = 47;
+            label10.Text = "Pelicula:";
+            // 
+            // cboPeliculas
+            // 
+            cboPeliculas.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPeliculas.FormattingEnabled = true;
+            cboPeliculas.Location = new Point(520, 201);
+            cboPeliculas.Name = "cboPeliculas";
+            cboPeliculas.Size = new Size(121, 23);
+            cboPeliculas.TabIndex = 46;
+            cboPeliculas.SelectedIndexChanged += cboPeliculas_SelectedIndexChanged;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(659, 204);
+            label11.Name = "label11";
+            label11.Size = new Size(53, 15);
+            label11.TabIndex = 48;
+            label11.Text = "Funcion:";
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.BackColor = Color.LightSalmon;
+            btnAgregar.FlatAppearance.BorderSize = 0;
+            btnAgregar.FlatStyle = FlatStyle.Flat;
+            btnAgregar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.Location = new Point(743, 276);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(111, 28);
+            btnAgregar.TabIndex = 52;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // cboFechaHora
+            // 
+            cboFechaHora.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboFechaHora.FormattingEnabled = true;
+            cboFechaHora.Location = new Point(716, 200);
+            cboFechaHora.Name = "cboFechaHora";
+            cboFechaHora.Size = new Size(121, 23);
+            cboFechaHora.TabIndex = 53;
+            // 
+            // cantEntradas
+            // 
+            cantEntradas.Location = new Point(804, 100);
+            cantEntradas.Name = "cantEntradas";
+            cantEntradas.Size = new Size(50, 23);
+            cantEntradas.TabIndex = 55;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(716, 180);
+            label13.Name = "label13";
+            label13.Size = new Size(38, 15);
+            label13.TabIndex = 56;
+            label13.Text = "Fecha";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(783, 180);
+            label14.Name = "label14";
+            label14.Size = new Size(33, 15);
+            label14.TabIndex = 57;
+            label14.Text = "Hora";
             // 
             // FrmAltaComprobante
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1058, 573);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtFecha);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.cboPeliculas);
-            this.Controls.Add(this.txtColumna);
-            this.Controls.Add(this.txtFila);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtPreUnitario);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.txtCant);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cboClientes);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.cboEmpleado);
-            this.Controls.Add(this.cboFormasP);
-            this.Name = "FrmAltaComprobante";
-            this.Text = "Alta Comprobante";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(871, 565);
+            Controls.Add(label14);
+            Controls.Add(label13);
+            Controls.Add(cantEntradas);
+            Controls.Add(cboFechaHora);
+            Controls.Add(btnAgregar);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(cboPeliculas);
+            Controls.Add(txtColumna);
+            Controls.Add(txtFila);
+            Controls.Add(label9);
+            Controls.Add(label8);
+            Controls.Add(txtPreUnitario);
+            Controls.Add(label6);
+            Controls.Add(dgvTickets);
+            Controls.Add(label7);
+            Controls.Add(btnCancelar);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(cboClientes);
+            Controls.Add(label2);
+            Controls.Add(txtProximoComprobante);
+            Controls.Add(btnAceptar);
+            Controls.Add(cboEmpleado);
+            Controls.Add(cboFormasP);
+            Margin = new Padding(3, 2, 3, 2);
+            MaximumSize = new Size(887, 604);
+            MinimumSize = new Size(887, 604);
+            Name = "FrmAltaComprobante";
+            Text = "Alta Comprobante";
+            Load += FrmAltaComprobante_Load_1;
+            ((System.ComponentModel.ISupportInitialize)dgvTickets).EndInit();
+            ((System.ComponentModel.ISupportInitialize)cantEntradas).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label txtProximoComprobante;
         private Button btnAceptar;
         private ComboBox cboEmpleado;
         private ComboBox cboFormasP;
@@ -408,10 +417,9 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox txtCant;
         private Button btnCancelar;
         private Label label7;
-        private DataGridView dataGridView1;
+        private DataGridView dgvTickets;
         private Label label6;
         private TextBox txtPreUnitario;
         private Label label8;
@@ -420,16 +428,17 @@
         private TextBox txtColumna;
         private Label label10;
         private ComboBox cboPeliculas;
-        private TextBox txtFecha;
         private Label label11;
-        private TextBox textBox1;
-        private Label label12;
         private Button btnAgregar;
+        private ComboBox cboFechaHora;
+        private NumericUpDown cantEntradas;
+        private Label label13;
+        private Label label14;
         private DataGridViewTextBoxColumn ColFila;
         private DataGridViewTextBoxColumn ColColumna;
         private DataGridViewTextBoxColumn ColPreUnitario;
         private DataGridViewTextBoxColumn ColPelicula;
-        private DataGridViewTextBoxColumn ColFecha;
-        private DataGridViewTextBoxColumn ColHora;
+        private DataGridViewTextBoxColumn ColFechaHora;
+        private DataGridViewButtonColumn ColQuitar;
     }
 }

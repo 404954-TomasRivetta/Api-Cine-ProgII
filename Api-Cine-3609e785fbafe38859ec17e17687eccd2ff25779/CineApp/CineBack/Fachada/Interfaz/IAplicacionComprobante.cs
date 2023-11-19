@@ -8,5 +8,10 @@ namespace CineBack.Fachada.Interfaz
         List<Empleado> GetEmpleados();
         List<TipoFormaPago> GetFormasPagos();
         bool SaveComprobante(Comprobante oComprobante);
+        List<Pelicula> GetPeliculas();
+
+        List<Funciones> TraerFunciones(int nro);
+        int ObtenerProximoPresupuesto();
+
     }
 }

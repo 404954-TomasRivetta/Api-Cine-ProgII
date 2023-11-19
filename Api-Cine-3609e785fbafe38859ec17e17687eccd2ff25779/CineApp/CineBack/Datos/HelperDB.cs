@@ -27,7 +27,7 @@ namespace CineBack.Datos
             return this.conexion;
         }
 
-        public int ProximaOrden(string sentencia, string nombParam)
+        public int ProximoComprobante(string sentencia, string nombParam)
         {
             int aux = 0;
             conexion.Open();

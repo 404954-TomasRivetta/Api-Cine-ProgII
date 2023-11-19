@@ -151,23 +151,6 @@ namespace CineBack.Datos.Implementacion
             }
             return lDirectores;
         }
-        public List<Pelicula> TraerPeliculas()
-        {
-            List<Pelicula> lPeliculas = new List<Pelicula>();
-            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PELICULAS");
-            foreach (DataRow fila in tabla.Rows)
-            {
-                string desc = fila["descripcion"].ToString();
-                int id_tipo_pelicula = int.Parse(fila["id_tipo_pelicula "].ToString());
-                int id_idioma = int.Parse(fila["id_idioma "].ToString());
-                int id_tipo_publico = int.Parse(fila["id_tipo_publico "].ToString());
-                int subtitulada = int.Parse(fila["id_tipo_pelicula "].ToString());
-                int id_director = int.Parse(fila["id_tipo_pelicula "].ToString());
-                Pelicula peli = new Pelicula(desc, id_tipo_pelicula, id_idioma, id_tipo_publico, subtitulada, id_director);
-                lPeliculas.Add(peli);
-            }
-            return lPeliculas;
-        }
 
         public List<TipoPelicula> TraerTiposPelicula()
         {

@@ -63,6 +63,54 @@ namespace CineApi.Controllers
             }
         }
 
+        [HttpGet("/AllPeliculas")]
+        public IActionResult GetPeliculas()
+        {
+            List<Pelicula> lst = null;
+
+            try
+            {
+                lst = app.GetPeliculas();
+                return Ok(lst);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno!!!, intente luego");
+            }
+        }
+
+        [HttpGet("/proxComprobante")]
+        public IActionResult GetProxComprobante()
+        {
+            int nro = 0;
+            try
+            {
+                nro = app.ObtenerProximoPresupuesto();
+                return Ok(nro);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+
+        [HttpGet("/Funciones")]
+        public IActionResult GetFunciones(int nro)
+        {
+            List<Funciones> lst = null;
+
+            try
+            {
+                lst = app.TraerFunciones(nro);
+                return Ok(lst);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno!!!, intente luego");
+            }
+        }
+
         [HttpPost]
         public IActionResult PostComprobante(Comprobante oC)
         {

@@ -7,7 +7,6 @@ namespace CineBack.Datos.Interfaz
         bool Modificar(Pelicula pelicula, int id);
         bool Borrar(int id_pel);
         bool Crear(Pelicula pelicula);
-        List<Pelicula> TraerPeliculas();
         List<Dialecto> TraerDialectos();
         List<TipoPelicula> TraerTiposPelicula();
         List<TipoPublico> TraerTiposPublico();

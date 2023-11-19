@@ -29,5 +29,11 @@
             Subtitulada = sub;
             IdDirector = dir;
         }
+
+        public Pelicula(int idPelicula, string descripcion)
+        {
+            IdPelicula = idPelicula;
+            Descripcion = descripcion;
+        }
     }
 }

@@ -96,6 +96,7 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno!!!, intente luego");
             }
         }
+
         [HttpPost("/pelicula")]
         public IActionResult SavePelicula(Pelicula pel)
         {

@@ -17,6 +17,10 @@ namespace CineBack.Fachada.Implementacion
         {
             return dao.Crear(oComprobante);
         }
+        public int ObtenerProximoPresupuesto()
+        {
+            return dao.ObtenerProximoComprobante();
+        }
 
         public List<Cliente> GetClientes()
         {
@@ -31,6 +35,16 @@ namespace CineBack.Fachada.Implementacion
         public List<TipoFormaPago> GetFormasPagos()
         {
             return dao.GetFormasPagos();
+        }
+
+        public List<Pelicula> GetPeliculas()
+        {
+            return dao.TraerPeliculas();
+        }
+
+        public List<Funciones> TraerFunciones(int nro)
+        {
+            return dao.TraerFunciones(nro);
         }
     }
 }

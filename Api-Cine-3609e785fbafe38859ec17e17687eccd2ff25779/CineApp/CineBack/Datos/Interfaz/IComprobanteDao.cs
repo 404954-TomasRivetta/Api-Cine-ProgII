@@ -8,5 +8,10 @@ namespace CineBack.Datos.Interfaz
         List<Cliente> GetClientes();
         List<Empleado> GetEmpleados();
         List<TipoFormaPago> GetFormasPagos();
+        List<Pelicula> TraerPeliculas();
+
+        List<Funciones> TraerFunciones(int nro);
+
+        int ObtenerProximoComprobante();
     }
 }
