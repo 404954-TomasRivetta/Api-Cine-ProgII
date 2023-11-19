@@ -39,14 +39,12 @@
             btnSalir = new Button();
             txtApellido = new TextBox();
             label4 = new Label();
-            dtpFechaHasta = new DateTimePicker();
-            dtpFechaDesde = new DateTimePicker();
-            label3 = new Label();
-            label2 = new Label();
             cboBarrio = new ComboBox();
             label1 = new Label();
             btnConsultar = new Button();
+            groupBox1 = new GroupBox();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvClientes
@@ -56,7 +54,7 @@
             dgvClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvClientes.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dgvClientes.Location = new Point(25, 189);
+            dgvClientes.Location = new Point(24, 128);
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowTemplate.Height = 25;
@@ -89,13 +87,13 @@
             // 
             // Column5
             // 
-            Column5.HeaderText = "Pelicula";
+            Column5.HeaderText = "Nro telefono";
             Column5.Name = "Column5";
             Column5.ReadOnly = true;
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(25, 386);
+            btnEditar.Location = new Point(35, 301);
             btnEditar.Margin = new Padding(4, 3, 4, 3);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(136, 35);
@@ -106,7 +104,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(192, 386);
+            btnEliminar.Location = new Point(212, 301);
             btnEliminar.Margin = new Padding(4, 3, 4, 3);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(136, 35);
@@ -117,7 +115,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(683, 386);
+            btnSalir.Location = new Point(675, 301);
             btnSalir.Margin = new Padding(4, 3, 4, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(136, 35);
@@ -128,7 +126,7 @@
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(89, 80);
+            txtApellido.Location = new Point(291, 29);
             txtApellido.Name = "txtApellido";
             txtApellido.Size = new Size(121, 23);
             txtApellido.TabIndex = 4;
@@ -136,49 +134,17 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(29, 83);
+            label4.Location = new Point(231, 32);
             label4.Name = "label4";
             label4.Size = new Size(54, 15);
             label4.TabIndex = 24;
             label4.Text = "Apellido:";
             // 
-            // dtpFechaHasta
-            // 
-            dtpFechaHasta.Location = new Point(619, 35);
-            dtpFechaHasta.Name = "dtpFechaHasta";
-            dtpFechaHasta.Size = new Size(200, 23);
-            dtpFechaHasta.TabIndex = 3;
-            // 
-            // dtpFechaDesde
-            // 
-            dtpFechaDesde.Location = new Point(320, 35);
-            dtpFechaDesde.Name = "dtpFechaDesde";
-            dtpFechaDesde.Size = new Size(200, 23);
-            dtpFechaDesde.TabIndex = 2;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(539, 38);
-            label3.Name = "label3";
-            label3.Size = new Size(74, 15);
-            label3.TabIndex = 21;
-            label3.Text = "Fecha Hasta:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(238, 38);
-            label2.Name = "label2";
-            label2.Size = new Size(76, 15);
-            label2.TabIndex = 17;
-            label2.Text = "Fecha Desde:";
-            // 
             // cboBarrio
             // 
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
             cboBarrio.FormattingEnabled = true;
-            cboBarrio.Location = new Point(89, 35);
+            cboBarrio.Location = new Point(67, 29);
             cboBarrio.Name = "cboBarrio";
             cboBarrio.Size = new Size(121, 23);
             cboBarrio.TabIndex = 1;
@@ -186,7 +152,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(33, 38);
+            label1.Location = new Point(11, 32);
             label1.Name = "label1";
             label1.Size = new Size(46, 15);
             label1.TabIndex = 17;
@@ -194,7 +160,7 @@
             // 
             // btnConsultar
             // 
-            btnConsultar.Location = new Point(683, 114);
+            btnConsultar.Location = new Point(651, 22);
             btnConsultar.Margin = new Padding(4, 3, 4, 3);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(136, 35);
@@ -203,30 +169,36 @@
             btnConsultar.UseVisualStyleBackColor = true;
             btnConsultar.Click += btnConsultar_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(btnConsultar);
+            groupBox1.Controls.Add(txtApellido);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(cboBarrio);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Location = new Point(24, 24);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(794, 83);
+            groupBox1.TabIndex = 25;
+            groupBox1.TabStop = false;
+            // 
             // FrmConsultarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(860, 474);
-            Controls.Add(txtApellido);
+            ClientSize = new Size(860, 372);
+            Controls.Add(groupBox1);
             Controls.Add(dgvClientes);
-            Controls.Add(label4);
             Controls.Add(btnEditar);
-            Controls.Add(dtpFechaHasta);
-            Controls.Add(dtpFechaDesde);
             Controls.Add(btnEliminar);
-            Controls.Add(label3);
             Controls.Add(btnSalir);
-            Controls.Add(label2);
-            Controls.Add(cboBarrio);
-            Controls.Add(btnConsultar);
-            Controls.Add(label1);
             Name = "FrmConsultarCliente";
             Text = "Consulta de Clientes";
             Load += FrmConsultarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -235,10 +207,6 @@
         private Button btnEditar;
         private Button btnEliminar;
         private Button btnSalir;
-        private DateTimePicker dtpFechaHasta;
-        private DateTimePicker dtpFechaDesde;
-        private Label label3;
-        private Label label2;
         private ComboBox cboBarrio;
         private Label label1;
         private Button btnConsultar;
@@ -249,5 +217,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+        private GroupBox groupBox1;
     }
 }

@@ -16,7 +16,7 @@ namespace CineBack.Datos.Interfaz
         List<Barrio> TraerBarrios();        
         Cliente TraerClienteId(int id);
 
-        List<Cliente> ObtenerClientesFiltrados(DateTime FechaDesde, DateTime FechaHasta, int idBarrio, string apellido);
+        List<Cliente> ObtenerClientesFiltrados(int idBarrio, string apellido);
 
     }
 }

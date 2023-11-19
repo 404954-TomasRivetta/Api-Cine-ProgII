@@ -45,9 +45,9 @@ namespace CineBack.Fachada.Implementacion
             return dao.TraerClienteId(id);
         }
 
-        public List<Cliente> GetClientesFiltrados2(DateTime FechaDesde, DateTime FechaHasta, int idBarrio, string apellido)
+        public List<Cliente> GetClientesFiltrados2(int idBarrio, string apellido)
         {
-            return dao.ObtenerClientesFiltrados(FechaDesde, FechaHasta, idBarrio, apellido);
+            return dao.ObtenerClientesFiltrados(idBarrio, apellido);
 
         }
     }
