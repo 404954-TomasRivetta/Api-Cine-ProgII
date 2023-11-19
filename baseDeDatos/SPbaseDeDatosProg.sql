@@ -166,11 +166,9 @@ END
 --SP FILTRAR CLIENTE
 alter PROCEDURE SP_CONSULTAR_CLIENTES_CON_FILTROS
 @id_barrio int=null,
-@fechaDesde datetime=null,
-@fechaHasta datetime=null,
 @cliente varchar(50)=null
 as
-select c.id_cliente,c.nombre+' '+c.apellido, c.correo, b.descripcion, p.descripcion
+select c.nombre+' '+c.apellido, c.correo, b.descripcion
 from clientes c join barrios b on b.cod_barrio=c.cod_barrio 
 join comprobantes co on co.id_cliente=c.id_cliente 
 join empleados e on e.id_empleado=co.id_empleado 
@@ -179,11 +177,8 @@ join butacas bu on bu.id_butaca=t.id_butacas
 join funciones f on f.id_funcion=bu.id_funcion
 join peliculas p on p.id_pelicula=f.id_pelicula
 where (@id_barrio is null or b.cod_barrio=@id_barrio)
-	and (@fechaDesde is null OR f.fecha >= @fechaDesde)
-    and (@fechaHasta is null OR f.fecha <= @fechaHasta)
-	and (@cliente is null OR c.apellido LIKE '%' + @cliente + '%')
-	AND (c.fechaBaja is null)
-
+    and (@cliente is null OR c.apellido LIKE '%' + @cliente + '%')
+	and (c.fechaBaja is null)
 --REPORTE
 create procedure SP_REPORTE_GENEROS_MAS_TAQUILLEROS
 as

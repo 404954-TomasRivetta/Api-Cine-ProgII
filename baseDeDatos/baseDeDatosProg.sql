@@ -19,7 +19,8 @@ nro_tel int,
 cod_barrio int,
 calle varchar(150),
 calle_nro int,
-dni int
+dni int,
+fechaBaja datetime
 constraint pk_cliente primary key(id_cliente)
 constraint fk_barrio foreign key (cod_barrio) references barrios (cod_barrio)
 )
@@ -81,7 +82,8 @@ create table peliculas(
     id_idioma int,
     id_tipo_publico int,
     subtitulada int,
-	id_director int
+	id_director int,
+	fechaBaja datetime
     constraint pk_id_pelicula PRIMARY KEY (id_pelicula),
     constraint fk_id_tipo_pelicula FOREIGN KEY (id_tipo_pelicula)
         references tipos_pelicula(id_tipo_pelicula),
