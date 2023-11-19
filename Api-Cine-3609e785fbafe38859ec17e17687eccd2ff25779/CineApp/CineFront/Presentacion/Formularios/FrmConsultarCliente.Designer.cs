@@ -37,8 +37,6 @@
             btnEditar = new Button();
             btnEliminar = new Button();
             btnSalir = new Button();
-            txtApellido = new TextBox();
-            label4 = new Label();
             cboBarrio = new ComboBox();
             label1 = new Label();
             btnConsultar = new Button();
@@ -124,22 +122,6 @@
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
-            // txtApellido
-            // 
-            txtApellido.Location = new Point(291, 29);
-            txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(121, 23);
-            txtApellido.TabIndex = 4;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(231, 32);
-            label4.Name = "label4";
-            label4.Size = new Size(54, 15);
-            label4.TabIndex = 24;
-            label4.Text = "Apellido:";
-            // 
             // cboBarrio
             // 
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -172,10 +154,8 @@
             // groupBox1
             // 
             groupBox1.Controls.Add(btnConsultar);
-            groupBox1.Controls.Add(txtApellido);
             groupBox1.Controls.Add(label1);
             groupBox1.Controls.Add(cboBarrio);
-            groupBox1.Controls.Add(label4);
             groupBox1.Location = new Point(24, 24);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(794, 83);
@@ -210,8 +190,6 @@
         private ComboBox cboBarrio;
         private Label label1;
         private Button btnConsultar;
-        private TextBox txtApellido;
-        private Label label4;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

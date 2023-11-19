@@ -1,12 +1,7 @@
 ﻿using CineBack.Datos.Interfaz;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CineBack.Entidades;
 using System.Data;
 using System.Data.SqlClient;
-using CineBack.Entidades;
 
 namespace CineBack.Datos.Implementacion
 {
@@ -15,7 +10,7 @@ namespace CineBack.Datos.Implementacion
         public List<Barrio> TraerBarrios()
         {
             List<Barrio> lBarrios = new List<Barrio>();
-            DataTable tabla=HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_BARRIOS");
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_BARRIOS");
             foreach (DataRow fila in tabla.Rows)
             {
                 int cod = int.Parse(fila["cod_barrio"].ToString());
@@ -32,7 +27,7 @@ namespace CineBack.Datos.Implementacion
             lParametros.Add(new Parametro("@id", id));
             DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_CLIENTE_POR_ID", lParametros);
 
-            foreach(DataRow fila in tabla.Rows)
+            foreach (DataRow fila in tabla.Rows)
             {
                 c.CodCliente = (int)fila["id_cliente"];
                 c.Nombre = fila["nombre"].ToString();
@@ -46,13 +41,13 @@ namespace CineBack.Datos.Implementacion
             }
             return c;
         }
-        public bool Modificar(int id,Cliente cliente)
+        public bool Modificar(int id, Cliente cliente)
         {
-            bool ok ;
+            bool ok;
 
             int resultado = 0;
-                
-            List<Parametro>lParametros= new List<Parametro>();
+
+            List<Parametro> lParametros = new List<Parametro>();
             lParametros.Add(new Parametro("@id_cliente", id));
             lParametros.Add(new Parametro("@nombre", cliente.Nombre));
             lParametros.Add(new Parametro("@apellido", cliente.Apellido));
@@ -119,25 +114,22 @@ namespace CineBack.Datos.Implementacion
             return resultado;
         }
 
-        public List<Cliente> ObtenerClientesFiltrados(DateTime FechaDesde, DateTime FechaHasta, int idBarrio, string apellido)
+        public List<Cliente> ObtenerClientesFiltrados(int idBarrio)
         {
             List<Cliente> clientes = new List<Cliente>();
             string sp = "SP_CONSULTAR_CLIENTES_CON_FILTROS";
             List<Parametro> lst = new List<Parametro>();
             lst.Add(new Parametro("@id_barrio", idBarrio != 0 ? idBarrio : DBNull.Value));
-            lst.Add(new Parametro("@fechaDesde", FechaDesde));
-            lst.Add(new Parametro("@fechaHasta", FechaHasta));
-            lst.Add(new Parametro("@cliente", apellido != string.Empty ? apellido : DBNull.Value));
             DataTable dt = HelperDB.ObtenerInstancia().Consultar(sp, lst);
 
             foreach (DataRow row in dt.Rows)
             {
                 Cliente c = new Cliente();
                 c.CodCliente = int.Parse(row[0].ToString());
-                c.NombreCompleto = row[1].ToString();
+                c.Nombre = row[1].ToString();
                 c.Correo = row[2].ToString();
-                c.NombreBarrio = row[3].ToString();
-                c.NombrePelicula = row[4].ToString();
+                c.CodBarrio = Convert.ToInt32(row[3].ToString());
+                c.NroTel = Convert.ToInt32(row[4].ToString());
                 clientes.Add(c);
             }
 

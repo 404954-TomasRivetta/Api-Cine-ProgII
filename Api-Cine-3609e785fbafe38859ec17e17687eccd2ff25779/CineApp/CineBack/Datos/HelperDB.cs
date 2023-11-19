@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineBack.Datos
 {
@@ -16,7 +10,7 @@ namespace CineBack.Datos
 
         public HelperDB()
         {
-            conexion = new SqlConnection(Properties.Resources.CadenaConexion);
+            conexion = new SqlConnection(@"Data Source=PCCesar;Initial Catalog=lc_tpi_cine;Integrated Security=True;Encrypt=False");
         }
 
         public static HelperDB ObtenerInstancia()
@@ -90,7 +84,7 @@ namespace CineBack.Datos
             conexion.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = conexion;
-            comando.CommandType= CommandType.StoredProcedure;
+            comando.CommandType = CommandType.StoredProcedure;
             comando.CommandText = sp;
 
             foreach (Parametro p in lParametros)

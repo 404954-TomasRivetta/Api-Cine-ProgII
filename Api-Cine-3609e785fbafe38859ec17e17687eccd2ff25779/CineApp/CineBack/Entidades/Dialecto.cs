@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CineBack.Entidades
+﻿namespace CineBack.Entidades
 {
     public class Dialecto
     {
@@ -15,7 +9,7 @@ namespace CineBack.Entidades
         {
             return Descripcion;
         }
-        public Dialecto(int id,string desc)
+        public Dialecto(int id, string desc)
         {
             IdIdioma = id;
             Descripcion = desc;

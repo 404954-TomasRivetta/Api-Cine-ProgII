@@ -168,17 +168,16 @@ alter PROCEDURE SP_CONSULTAR_CLIENTES_CON_FILTROS
 @id_barrio int=null,
 @cliente varchar(50)=null
 as
-select c.nombre+' '+c.apellido, c.correo, b.descripcion
-from clientes c join barrios b on b.cod_barrio=c.cod_barrio 
-join comprobantes co on co.id_cliente=c.id_cliente 
-join empleados e on e.id_empleado=co.id_empleado 
-join tickets t on t.id_comprobante=co.id_comprobante 
-join butacas bu on bu.id_butaca=t.id_butacas
-join funciones f on f.id_funcion=bu.id_funcion
-join peliculas p on p.id_pelicula=f.id_pelicula
-where (@id_barrio is null or b.cod_barrio=@id_barrio)
+select C.id_cliente,c.nombre+' '+c.apellido, c.correo, c.cod_barrio,c.nro_tel
+from clientes c
+where (@id_barrio is null or c.cod_barrio=@id_barrio)
     and (@cliente is null OR c.apellido LIKE '%' + @cliente + '%')
 	and (c.fechaBaja is null)
+
+exec SP_CONSULTAR_CLIENTES_CON_FILTROS
+
+select * from clientes
+
 --REPORTE
 create procedure SP_REPORTE_GENEROS_MAS_TAQUILLEROS
 as

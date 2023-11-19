@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CineBack.Entidades
+﻿namespace CineBack.Entidades
 {
     public class TipoPelicula
     {
@@ -15,10 +9,10 @@ namespace CineBack.Entidades
         {
             return Descripcion;
         }
-        public TipoPelicula(int id,string desc)
+        public TipoPelicula(int id, string desc)
         {
-            IdTipoPelicula= id;
-            Descripcion= desc;
+            IdTipoPelicula = id;
+            Descripcion = desc;
         }
 
     }

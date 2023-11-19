@@ -1,14 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CineFront.Presentacion.Formularios
 {
@@ -38,7 +30,7 @@ namespace CineFront.Presentacion.Formularios
             ReportDataSource rds = new ReportDataSource("DataSet1", ds.Tables[0]);
             reportViewer1.LocalReport.DataSources.Add(rds);
 
-            this.reportViewer1.RefreshReport(); 
+            this.reportViewer1.RefreshReport();
             reportViewer1.RefreshReport();
         }
     }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlTypes;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CineBack.Entidades
+﻿namespace CineBack.Entidades
 {
     public class Tickets
     {
@@ -19,7 +12,7 @@ namespace CineBack.Entidades
             IdButaca = 0;
             PreUnitario = 0;
         }
-        public Tickets(int com,int but,double pre)
+        public Tickets(int com, int but, double pre)
         {
             IdComprobante = com;
             IdButaca = but;

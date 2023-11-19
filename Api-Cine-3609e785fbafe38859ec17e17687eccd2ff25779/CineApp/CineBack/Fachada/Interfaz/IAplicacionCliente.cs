@@ -1,9 +1,4 @@
 ﻿using CineBack.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineBack.Fachada.Interfaz
 {
@@ -18,6 +13,6 @@ namespace CineBack.Fachada.Interfaz
         bool DeleteCliente(int idCliente);
 
 
-        List<Cliente> GetClientesFiltrados2(int idBarrio, string apellido);
+        List<Cliente> GetClientesFiltrados(int idBarrio);
     }
 }

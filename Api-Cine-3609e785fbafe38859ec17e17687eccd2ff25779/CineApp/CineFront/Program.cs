@@ -1,5 +1,4 @@
 using CineFront.Presentacion.Formularios;
-using prueba;
 
 namespace CineFront
 {

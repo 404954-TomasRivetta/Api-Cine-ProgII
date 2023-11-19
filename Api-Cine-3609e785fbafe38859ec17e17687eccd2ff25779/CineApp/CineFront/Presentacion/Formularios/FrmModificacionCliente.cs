@@ -1,15 +1,6 @@
 ﻿using CineBack.Entidades;
 using CineFront.Servicio;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CineFront.Presentacion.Formularios
 {
@@ -70,12 +61,12 @@ namespace CineFront.Presentacion.Formularios
                 MessageBox.Show("Ingrese un numero de telefono valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if(cboBarrios.SelectedIndex == -1)
+            if (cboBarrios.SelectedIndex == -1)
             {
                 MessageBox.Show("Seleccione un barrio!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if(string.IsNullOrEmpty(txtNombre.Text))
+            if (string.IsNullOrEmpty(txtNombre.Text))
             {
                 MessageBox.Show("Ingrese el nombre!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -85,9 +76,9 @@ namespace CineFront.Presentacion.Formularios
                 MessageBox.Show("Ingrese el apellido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            if(string.IsNullOrEmpty(txtCorreo.Text))
+            if (string.IsNullOrEmpty(txtCorreo.Text))
             {
-                MessageBox.Show("Ingrese un correo!!","Control",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un correo!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
@@ -111,7 +102,7 @@ namespace CineFront.Presentacion.Formularios
 
 
                 string bodyContent = JsonConvert.SerializeObject(c);
-                string url = "https://localhost:7149/clientes_modificar/"+c.CodCliente.ToString();
+                string url = "https://localhost:7149/clientes_modificar/" + c.CodCliente.ToString();
 
                 var result = await ClienteSingleton.GetInstance().PutAsync(url, bodyContent);
                 if (result.Equals("true"))

@@ -2,15 +2,10 @@
 using CineBack.Datos.Interfaz;
 using CineBack.Entidades;
 using CineBack.Fachada.Interfaz;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineBack.Fachada.Implementacion
 {
-    public class AplicacionCliente: IAplicacionCliente
+    public class AplicacionCliente : IAplicacionCliente
     {
         private IClienteDao dao;
 
@@ -45,9 +40,9 @@ namespace CineBack.Fachada.Implementacion
             return dao.TraerClienteId(id);
         }
 
-        public List<Cliente> GetClientesFiltrados2(int idBarrio, string apellido)
+        public List<Cliente> GetClientesFiltrados(int idBarrio)
         {
-            return dao.ObtenerClientesFiltrados(idBarrio, apellido);
+            return dao.ObtenerClientesFiltrados(idBarrio);
 
         }
     }

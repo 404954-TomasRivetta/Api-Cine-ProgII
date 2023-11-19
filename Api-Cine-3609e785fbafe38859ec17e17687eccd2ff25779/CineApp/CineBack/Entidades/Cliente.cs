@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CineBack.Entidades
+﻿namespace CineBack.Entidades
 {
     public class Cliente
     {
         public int CodCliente { get; set; }
         public string Nombre { get; set; }
-        public string Apellido  { get; set; }
+        public string Apellido { get; set; }
         public string Correo { get; set; }
         public int NroTel { get; set; }
         public int CodBarrio { get; set; }
@@ -18,9 +12,9 @@ namespace CineBack.Entidades
         public int CalleNro { get; set; }
         public int Dni { get; set; }
 
-        public string NombreBarrio { get; set; }
-        public string NombrePelicula { get; set; }
-        public string NombreCompleto { get; set; }
+        //public string NombreBarrio { get; set; }
+        //public string NombrePelicula { get; set; }
+        //public string NombreCompleto { get; set; }
 
         public Cliente()
         {
@@ -34,27 +28,27 @@ namespace CineBack.Entidades
             CalleNro = 0;
             Dni = 0;
         }
-        public Cliente(int codCliente,string nom,string ape,string cor,int tel,int cod,
-            string cal,int cal_nro,int dni)
+        public Cliente(int codCliente, string nom, string ape, string cor, int tel, int cod,
+            string cal, int cal_nro, int dni)
         {
-            CodCliente=codCliente;
+            CodCliente = codCliente;
             Nombre = nom;
             Apellido = ape;
             Correo = cor;
-            NroTel =tel;
+            NroTel = tel;
             CodBarrio = cod;
             Calle = cal;
             CalleNro = cal_nro;
             Dni = dni;
         }
 
-        public Cliente(int id, string nombreCompleto, string correo, string nombreBarrio, string nombrePelicula)
-        {
-            CodCliente = id;
-            NombreCompleto = nombreCompleto;
-            Correo = correo;
-            NombreBarrio = nombreBarrio;
-            NombrePelicula = nombrePelicula;
-        }
+        //public Cliente(int id, string nombreCompleto, string correo, string nombreBarrio, string nombrePelicula)
+        //{
+        //    CodCliente = id;
+        //    NombreCompleto = nombreCompleto;
+        //    Correo = correo;
+        //    NombreBarrio = nombreBarrio;
+        //    NombrePelicula = nombrePelicula;
+        //}
     }
 }

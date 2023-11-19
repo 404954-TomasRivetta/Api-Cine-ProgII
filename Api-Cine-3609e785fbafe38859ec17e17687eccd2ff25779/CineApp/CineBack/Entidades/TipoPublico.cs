@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CineBack.Entidades
+﻿namespace CineBack.Entidades
 {
     public class TipoPublico
     {
@@ -14,7 +8,7 @@ namespace CineBack.Entidades
         {
             return Descripcion;
         }
-        public TipoPublico(int id,string desc)
+        public TipoPublico(int id, string desc)
         {
             IdTipoPublico = id;
             Descripcion = desc;

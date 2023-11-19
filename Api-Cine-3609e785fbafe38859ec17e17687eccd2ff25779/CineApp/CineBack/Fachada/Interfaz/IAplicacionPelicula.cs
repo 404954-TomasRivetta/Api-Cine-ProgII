@@ -1,9 +1,4 @@
 ﻿using CineBack.Entidades;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineBack.Fachada.Interfaz
 {
@@ -24,7 +19,7 @@ namespace CineBack.Fachada.Interfaz
 
         bool DeletePelicula(int idPelicula);
 
-        bool ModifyPelicula(Pelicula oPelicula,int id);
+        bool ModifyPelicula(Pelicula oPelicula, int id);
 
         Pelicula GetPeliculaById(int idPelicula);
     }

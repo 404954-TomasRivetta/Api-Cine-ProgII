@@ -1,16 +1,6 @@
-﻿using CineBack.Datos;
-using CineBack.Entidades;
+﻿using CineBack.Entidades;
 using CineFront.Servicio;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CineFront.Presentacion.Formularios
 {
@@ -39,22 +29,13 @@ namespace CineFront.Presentacion.Formularios
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            if (txtApellido.Text is string)
-            {
-                int idBarrio = Convert.ToInt32(cboBarrio.SelectedValue);
-                String apelli;
-                apelli = Uri.EscapeDataString(txtApellido.Text);
-                cargarClientesFiltrados(idBarrio, apelli);
-            }
-            else
-            {
-                MessageBox.Show("ERROR", "El apellido no puede contener numeros!", MessageBoxButtons.OK);
-            }
+            int idBarrio = Convert.ToInt32(cboBarrio.SelectedValue);
+            cargarClientesFiltrados(idBarrio);
         }
 
-        private async void cargarClientesFiltrados(int idBarrio, string apellido)
+        private async void cargarClientesFiltrados(int idBarrio)
         {
-            string url = $"https://localhost:7149/clientesFiltrados?idBarrio={idBarrio}&apellido={apellido}";
+            string url = $"https://localhost:7149/clientesFiltrados?idBarrio={idBarrio}";
             var result = await ClienteSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<List<Cliente>>(result);
 
@@ -66,9 +47,9 @@ namespace CineFront.Presentacion.Formularios
                     dgvClientes.Rows.Add(new object[]
                     {
                     c.CodCliente,
-                    c.NombreCompleto,
+                    c.Nombre,
                     c.Correo,
-                    c.NombreBarrio,
+                    c.CodBarrio,
                     c.NroTel
                     });
                 }
@@ -119,9 +100,7 @@ namespace CineFront.Presentacion.Formularios
                     {
                         MessageBox.Show("El cliente se quitó exitosamente!", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         int idBarrio = Convert.ToInt32(cboBarrio.SelectedValue);
-                        String apelli;
-                        apelli = Uri.EscapeDataString(txtApellido.Text);
-                        cargarClientesFiltrados(idBarrio, apelli);
+                        cargarClientesFiltrados(idBarrio);
                     }
                     else
                     {

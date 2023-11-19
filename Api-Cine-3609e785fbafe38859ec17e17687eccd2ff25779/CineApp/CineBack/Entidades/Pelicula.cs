@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CineBack.Entidades
+﻿namespace CineBack.Entidades
 {
     public class Pelicula
     {
@@ -26,14 +20,14 @@ namespace CineBack.Entidades
             Subtitulada = 0;
             IdDirector = 0;
         }
-        public Pelicula(string des,int tipo_pel,int idioma,int tipo_pub,int sub,int dir)
+        public Pelicula(string des, int tipo_pel, int idioma, int tipo_pub, int sub, int dir)
         {
-            Descripcion =des;
-            IdTipoPelicula =tipo_pel;
-            IdIdioma =idioma;
-            IdTipoPelicula =tipo_pub;
-            Subtitulada =sub;
-            IdDirector =dir;
+            Descripcion = des;
+            IdTipoPelicula = tipo_pel;
+            IdIdioma = idioma;
+            IdTipoPelicula = tipo_pub;
+            Subtitulada = sub;
+            IdDirector = dir;
         }
     }
 }

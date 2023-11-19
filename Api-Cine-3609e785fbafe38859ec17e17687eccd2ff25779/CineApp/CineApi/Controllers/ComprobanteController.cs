@@ -1,7 +1,6 @@
 ﻿using CineBack.Entidades;
 using CineBack.Fachada.Implementacion;
 using CineBack.Fachada.Interfaz;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CineApi.Controllers
@@ -75,7 +74,7 @@ namespace CineApi.Controllers
                     return BadRequest("Comprobante Inválido,FALTAN CAMPOS...");
                 }
                 return Ok(app.SaveComprobante(oC));
-                
+
             }
             catch (Exception)
             {

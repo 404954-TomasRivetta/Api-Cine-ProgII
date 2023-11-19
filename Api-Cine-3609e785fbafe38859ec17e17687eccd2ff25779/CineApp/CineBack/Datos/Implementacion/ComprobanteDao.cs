@@ -1,16 +1,11 @@
 ﻿using CineBack.Datos.Interfaz;
 using CineBack.Entidades;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineBack.Datos.Implementacion
 {
-    public class ComprobanteDao: IComprobanteDao
+    public class ComprobanteDao : IComprobanteDao
     {
         public bool Crear(Comprobante oC)
         {
@@ -66,7 +61,7 @@ namespace CineBack.Datos.Implementacion
                 string calle = fila["calle"].ToString();
                 int calleNro = int.Parse(fila["calle_nro"].ToString());
                 int dni = int.Parse(fila["dni"].ToString());
-                Cliente c = new Cliente(cod,nom,ape,correo,tel,barrio,calle,calleNro,dni);
+                Cliente c = new Cliente(cod, nom, ape, correo, tel, barrio, calle, calleNro, dni);
                 lClientes.Add(c);
             }
             return lClientes;

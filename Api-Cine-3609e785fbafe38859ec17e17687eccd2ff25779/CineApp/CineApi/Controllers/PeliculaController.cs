@@ -1,7 +1,6 @@
 ﻿using CineBack.Entidades;
 using CineBack.Fachada.Implementacion;
 using CineBack.Fachada.Interfaz;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CineApi.Controllers
@@ -16,7 +15,7 @@ namespace CineApi.Controllers
             app = new AplicacionPelicula();
         }
 
-          [HttpGet("/actores")]
+        [HttpGet("/actores")]
         public IActionResult GetActoresPel()
         {
             List<Actor> lst = null;
@@ -64,7 +63,7 @@ namespace CineApi.Controllers
             }
         }
 
-        
+
         [HttpGet("/tipos_pelicula")]
         public IActionResult GetTiposPeliculas()
         {
@@ -107,7 +106,7 @@ namespace CineApi.Controllers
                 {
                     return BadRequest("Pelicula Inválida, FALTAN CAMPOS...");
                 }
-               return Ok(app.SavePelicula(pel));
+                return Ok(app.SavePelicula(pel));
             }
             catch (Exception ex)
             {

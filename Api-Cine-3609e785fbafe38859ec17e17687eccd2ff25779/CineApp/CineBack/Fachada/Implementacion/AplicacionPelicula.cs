@@ -2,11 +2,6 @@
 using CineBack.Datos.Interfaz;
 using CineBack.Entidades;
 using CineBack.Fachada.Interfaz;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineBack.Fachada.Implementacion
 {
@@ -15,7 +10,7 @@ namespace CineBack.Fachada.Implementacion
         private IPeliculaDao dao;
         public AplicacionPelicula()
         {
-            dao=new PeliculaDao();
+            dao = new PeliculaDao();
         }
         public List<Actor> GetActoresPel()
         {
@@ -59,7 +54,7 @@ namespace CineBack.Fachada.Implementacion
 
         public bool ModifyPelicula(Pelicula oPelicula, int id)
         {
-            return dao.Modificar(oPelicula,id);
+            return dao.Modificar(oPelicula, id);
         }
 
         public Pelicula GetPeliculaById(int idPelicula)

@@ -1,15 +1,6 @@
 ﻿using CineBack.Entidades;
 using CineFront.Servicio;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CineFront.Presentacion.Formularios
 {
@@ -74,7 +65,7 @@ namespace CineFront.Presentacion.Formularios
         {
             GrabarPelicula();
         }
-        
+
         private async void GrabarPelicula()
         {
             nueva.Descripcion = txtDescripcion.Text;

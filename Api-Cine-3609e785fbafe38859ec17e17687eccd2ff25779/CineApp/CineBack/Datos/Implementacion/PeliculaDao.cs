@@ -1,12 +1,7 @@
 ﻿using CineBack.Datos.Interfaz;
 using CineBack.Entidades;
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CineBack.Datos.Implementacion
 {
@@ -37,7 +32,7 @@ namespace CineBack.Datos.Implementacion
                 comando.CommandText = "SP_INSERTAR_PELICULA";
                 comando.Parameters.AddWithValue("@descripcion", pelicula.Descripcion);
                 comando.Parameters.AddWithValue("@id_tipo_pelicula", pelicula.IdTipoPelicula);
-                comando.Parameters.AddWithValue("@id_idioma", pelicula.IdIdioma) ;
+                comando.Parameters.AddWithValue("@id_idioma", pelicula.IdIdioma);
                 comando.Parameters.AddWithValue("@id_tipo_publico", pelicula.IdTipoPublico);
                 comando.Parameters.AddWithValue("@subtitulada", pelicula.Subtitulada);
                 comando.Parameters.AddWithValue("@id_director", pelicula.IdDirector);
@@ -130,13 +125,13 @@ namespace CineBack.Datos.Implementacion
 
         public List<Dialecto> TraerDialectos()
         {
-            List<Dialecto>lDialectos=new List<Dialecto> ();
+            List<Dialecto> lDialectos = new List<Dialecto>();
             DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_DIALECTOS");
             foreach (DataRow fila in tabla.Rows)
             {
                 int id = int.Parse(fila["id_idioma"].ToString());
                 string desc = fila["descripcion"].ToString();
-                Dialecto d=new Dialecto(id, desc);
+                Dialecto d = new Dialecto(id, desc);
                 lDialectos.Add(d);
             }
             return lDialectos;
@@ -144,39 +139,39 @@ namespace CineBack.Datos.Implementacion
 
         public List<Director> TraerDirectores()
         {
-            List<Director>lDirectores=new List<Director>();
+            List<Director> lDirectores = new List<Director>();
             DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_DIRECTORES");
-            foreach(DataRow fila in tabla.Rows)
+            foreach (DataRow fila in tabla.Rows)
             {
-                int id= int.Parse(fila["id_director"].ToString());
+                int id = int.Parse(fila["id_director"].ToString());
                 string nom = fila["nombre"].ToString();
                 string ape = fila["apellido"].ToString();
-                Director d = new Director(id,nom,ape);
+                Director d = new Director(id, nom, ape);
                 lDirectores.Add(d);
             }
             return lDirectores;
         }
         public List<Pelicula> TraerPeliculas()
-        {            
-                List<Pelicula> lPeliculas = new List<Pelicula>();
-                DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PELICULAS");
-                foreach (DataRow fila in tabla.Rows)
-                {                
-                    string desc = fila["descripcion"].ToString();
-                    int id_tipo_pelicula = int.Parse(fila["id_tipo_pelicula "].ToString());
-                    int id_idioma = int.Parse(fila["id_idioma "].ToString());
-                    int id_tipo_publico = int.Parse(fila["id_tipo_publico "].ToString());
-                    int subtitulada = int.Parse(fila["id_tipo_pelicula "].ToString());
-                    int id_director = int.Parse(fila["id_tipo_pelicula "].ToString());
-                    Pelicula peli = new Pelicula(desc,id_tipo_pelicula,id_idioma,id_tipo_publico,subtitulada,id_director);
-                    lPeliculas.Add(peli);
-                }
-                return lPeliculas;            
+        {
+            List<Pelicula> lPeliculas = new List<Pelicula>();
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_PELICULAS");
+            foreach (DataRow fila in tabla.Rows)
+            {
+                string desc = fila["descripcion"].ToString();
+                int id_tipo_pelicula = int.Parse(fila["id_tipo_pelicula "].ToString());
+                int id_idioma = int.Parse(fila["id_idioma "].ToString());
+                int id_tipo_publico = int.Parse(fila["id_tipo_publico "].ToString());
+                int subtitulada = int.Parse(fila["id_tipo_pelicula "].ToString());
+                int id_director = int.Parse(fila["id_tipo_pelicula "].ToString());
+                Pelicula peli = new Pelicula(desc, id_tipo_pelicula, id_idioma, id_tipo_publico, subtitulada, id_director);
+                lPeliculas.Add(peli);
+            }
+            return lPeliculas;
         }
 
         public List<TipoPelicula> TraerTiposPelicula()
         {
-            List<TipoPelicula>lPeliculas= new List<TipoPelicula>();
+            List<TipoPelicula> lPeliculas = new List<TipoPelicula>();
             DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_TIPOS_PELICULAS");
             foreach (DataRow fila in tabla.Rows)
             {
@@ -190,13 +185,13 @@ namespace CineBack.Datos.Implementacion
 
         public List<TipoPublico> TraerTiposPublico()
         {
-            List <TipoPublico> lTipoPublicos =new List<TipoPublico>();
+            List<TipoPublico> lTipoPublicos = new List<TipoPublico>();
             DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_TIPOS_PUBLICO");
             foreach (DataRow fila in tabla.Rows)
             {
                 int id = int.Parse(fila["id_tipo_publico"].ToString());
                 string desc = fila["descripcion"].ToString();
-                TipoPublico t=new TipoPublico(id, desc);
+                TipoPublico t = new TipoPublico(id, desc);
                 lTipoPublicos.Add(t);
             }
             return lTipoPublicos;

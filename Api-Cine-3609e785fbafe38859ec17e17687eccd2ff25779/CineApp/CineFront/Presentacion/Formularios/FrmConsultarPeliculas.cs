@@ -1,15 +1,6 @@
 ﻿using CineBack.Entidades;
 using CineFront.Servicio;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace CineFront.Presentacion.Formularios
 {
@@ -28,7 +19,7 @@ namespace CineFront.Presentacion.Formularios
             cboGenero.SelectedIndex = -1;
             cboIdioma.SelectedIndex = -1;
             cboPublico.SelectedIndex = -1;
-            
+
         }
 
         private async Task CargarIdiomasAsync()

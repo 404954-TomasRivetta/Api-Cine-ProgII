@@ -1,16 +1,6 @@
 ﻿using CineBack.Entidades;
 using CineFront.Servicio;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using Newtonsoft.Json;
-using static System.Net.WebRequestMethods;
 
 namespace CineFront.Presentacion.Formularios
 {
@@ -39,7 +29,7 @@ namespace CineFront.Presentacion.Formularios
         }
         private bool ValidarDatos()
         {
-            if(!int.TryParse(txtDni.Text,out _))
+            if (!int.TryParse(txtDni.Text, out _))
             {
                 MessageBox.Show("Ingrese un DNI valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
@@ -63,9 +53,9 @@ namespace CineFront.Presentacion.Formularios
             nuevo.CalleNro = Convert.ToInt32(txtAltura.Text);
             nuevo.Dni = (int)Convert.ToInt64(txtDni.Text);
 
-            nuevo.NombreBarrio = " ";
-            nuevo.NombrePelicula = " ";
-            nuevo.NombreCompleto = " ";
+            //nuevo.NombreBarrio = " ";
+            //nuevo.NombrePelicula = " ";
+            //nuevo.NombreCompleto = " ";
 
             string bodyContent = JsonConvert.SerializeObject(nuevo);
 
