@@ -12,10 +12,6 @@
         public int CalleNro { get; set; }
         public int Dni { get; set; }
 
-        //public string NombreBarrio { get; set; }
-        //public string NombrePelicula { get; set; }
-        //public string NombreCompleto { get; set; }
-
         public Cliente()
         {
             CodCliente = 0;
@@ -41,14 +37,5 @@
             CalleNro = cal_nro;
             Dni = dni;
         }
-
-        //public Cliente(int id, string nombreCompleto, string correo, string nombreBarrio, string nombrePelicula)
-        //{
-        //    CodCliente = id;
-        //    NombreCompleto = nombreCompleto;
-        //    Correo = correo;
-        //    NombreBarrio = nombreBarrio;
-        //    NombrePelicula = nombrePelicula;
-        //}
     }
 }

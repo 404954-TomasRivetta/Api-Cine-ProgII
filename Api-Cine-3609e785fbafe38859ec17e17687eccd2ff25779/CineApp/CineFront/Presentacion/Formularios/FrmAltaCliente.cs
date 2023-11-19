@@ -1,6 +1,16 @@
 ﻿using CineBack.Entidades;
 using CineFront.Servicio;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using Newtonsoft.Json;
+using static System.Net.WebRequestMethods;
 
 namespace CineFront.Presentacion.Formularios
 {
@@ -29,14 +39,34 @@ namespace CineFront.Presentacion.Formularios
         }
         private bool ValidarDatos()
         {
-            if (!int.TryParse(txtDni.Text, out _))
+            if (string.IsNullOrEmpty(txtDni.Text) || !int.TryParse(txtDni.Text, out _))
             {
                 MessageBox.Show("Ingrese un DNI valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            if (!int.TryParse(txtAltura.Text, out _))
+            if (string.IsNullOrEmpty(txtAltura.Text) || !int.TryParse(txtAltura.Text, out _))
             {
                 MessageBox.Show("Ingrese una altura valida!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtApellido.Text))
+            {
+                MessageBox.Show("Ingrese un apellido valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtNombre.Text))
+            {
+                MessageBox.Show("Ingrese un nombre valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtNroTel.Text) || !int.TryParse(txtNroTel.Text, out _))
+            {
+                MessageBox.Show("Ingrese un numero de telefono valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtCalle.Text))
+            {
+                MessageBox.Show("Ingrese una calle valida!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             return true;
@@ -47,16 +77,18 @@ namespace CineFront.Presentacion.Formularios
             nuevo.Nombre = txtNombre.Text;
             nuevo.Apellido = txtApellido.Text;
             nuevo.NroTel = (int)Convert.ToInt64(txtNroTel.Text);
+            //if (txtCorreo.Text == "")
+            //{
+            //    nuevo.Correo = "";
+            //}
+            //else
+            //{
             nuevo.Correo = txtCorreo.Text;
+            //}
             nuevo.CodBarrio = (int)Convert.ToInt64(cboBarrios.SelectedValue);
             nuevo.Calle = txtCalle.Text;
             nuevo.CalleNro = Convert.ToInt32(txtAltura.Text);
-            nuevo.Dni = (int)Convert.ToInt64(txtDni.Text);
-
-            //nuevo.NombreBarrio = " ";
-            //nuevo.NombrePelicula = " ";
-            //nuevo.NombreCompleto = " ";
-
+            nuevo.Dni = (int)Convert.ToInt64(txtDni.Text);            
             string bodyContent = JsonConvert.SerializeObject(nuevo);
 
             string url = "https://localhost:7149/cliente";

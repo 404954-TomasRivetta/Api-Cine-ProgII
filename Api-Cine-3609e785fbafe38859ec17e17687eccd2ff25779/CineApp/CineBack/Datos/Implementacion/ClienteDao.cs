@@ -87,7 +87,7 @@ namespace CineBack.Datos.Implementacion
                 comando.CommandText = "SP_INSERTAR_CLIENTE";
                 comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
                 comando.Parameters.AddWithValue("@apellido", cliente.Apellido);
-                comando.Parameters.AddWithValue("@correo", cliente.Correo);
+                comando.Parameters.AddWithValue("@correo", cliente.Correo != "" ? cliente.Correo : DBNull.Value);
                 comando.Parameters.AddWithValue("@nro_tel", cliente.NroTel);
                 comando.Parameters.AddWithValue("@cod_barrio", cliente.CodBarrio);
                 comando.Parameters.AddWithValue("@calle", cliente.Calle);
