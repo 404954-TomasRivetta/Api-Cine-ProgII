@@ -41,7 +41,7 @@ namespace CineBack.Datos.Implementacion
             }
             return c;
         }
-        public bool Modificar(int id, Cliente cliente)
+        /*public bool Modificar(int id, Cliente cliente)
         {
             bool ok;
 
@@ -61,6 +61,49 @@ namespace CineBack.Datos.Implementacion
 
             ok = resultado > 0;
             return ok;
+        }*/
+        public bool Modificar( int id,Cliente cliente)
+        {
+            bool resultado = true;
+            SqlConnection conexion = HelperDB.ObtenerInstancia().ObtenerConexion();
+            SqlTransaction t = null;
+            try
+            {
+                conexion.Open();
+                t = conexion.BeginTransaction();
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.Transaction = t;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "SP_MODIFICAR_CLIENTE";
+                comando.Parameters.AddWithValue("@id_cliente", id);
+                comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
+                comando.Parameters.AddWithValue("@apellido", cliente.Apellido);
+                comando.Parameters.AddWithValue("@correo", cliente.Correo);
+                comando.Parameters.AddWithValue("@nro_tel", cliente.NroTel);
+                comando.Parameters.AddWithValue("@cod_barrio", cliente.CodBarrio);
+                comando.Parameters.AddWithValue("@calle", cliente.Calle);
+                comando.Parameters.AddWithValue("@calle_nro", cliente.CalleNro);
+                comando.Parameters.AddWithValue("@dni", cliente.Dni);
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch
+            {
+                if (t != null)
+                {
+                    t.Rollback();
+                    resultado = false;
+                }
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+            return resultado;
         }
         public bool Borrar(int idCliente)
         {

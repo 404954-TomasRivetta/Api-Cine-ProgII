@@ -61,16 +61,7 @@ namespace CineApi.Controllers
                 {
                     return BadRequest("Cliente Invalido, FALTAN CAMPOS...");
                 }
-
-                bool result = app.ModifyCliente(id, cliente);
-                if (result)
-                {
-                    return Ok("Cliente modificado correctamente");
-                }
-                else
-                {
-                    return BadRequest("No se pudo modificar el cliente");
-                }
+                return Ok(app.ModifyCliente(id,cliente));
             }
             catch (Exception ex)
             {

@@ -10,7 +10,7 @@ namespace CineBack.Datos
 
         public HelperDB()
         {
-            conexion = new SqlConnection(@"Data Source=PCCesar;Initial Catalog=lc_tpi_cine;Integrated Security=True;Encrypt=False");
+            conexion = new SqlConnection(Properties.Resources.CadenaConexionAlexis);
         }
 
         public static HelperDB ObtenerInstancia()
