@@ -1,58 +1,67 @@
-use lc_tpi_cine
+--use lc_tpi_cine
 
 create procedure SP_CONSULTAR_BARRIOS
 as
 begin
     select * from barrios order by 2
 end
+go
 --------------------------------------------------
 create procedure SP_CONSULTAR_EMPLEADOS
 as
 begin
     select * from empleados order by 2
 end
+go
 --------------------------------------------------
 create procedure SP_CONSULTAR_FORMAS_PAGO
 as
 begin
     select * from forma_pago order by 2
 end
+go
 --------------------------------------------------
 create procedure SP_CONSULTAR_CLIENTES
 as
 begin
     select * from clientes order by 2
 end
+go
 ----------------------------------------------------------
 create procedure SP_CONSULTAR_TIPOS_PELICULAS
 as
 begin
     select * from tipos_pelicula order by 2
 end
+go
 -----------------------------------------------------------
 create procedure SP_CONSULTAR_DIALECTOS
 as
 begin
     select * from dialectos order by 2
 end
+go
 -----------------------------------------------------------
 create procedure SP_CONSULTAR_DIRECTORES
 as
 begin
     select * from directores order by 2
 end
+go
 -----------------------------------------------------------
 create procedure SP_CONSULTAR_TIPOS_PUBLICO
 as
 begin
     select * from tipos_publico order by 2
 end
+go
 -----------------------------------------------------------
 create procedure SP_CONSULTAR_ACTORES
 as
 begin
     select * from actores order by 2
 end
+go
 -----------------------------------------------------------
 create procedure SP_CONSULTAR_PELICULA_POR_NRO
 @idPelicula int
@@ -61,12 +70,14 @@ begin
 	select * from peliculas
 	where id_pelicula=@idPelicula
 end
+go
 -----------------------------------------------------------
 create procedure SP_CONSULTAR_PELICULAS_Comprobante
 as
 begin
 	select id_pelicula,descripcion from peliculas
 end
+go
 -----------------------------------------------------------
 
 
@@ -81,7 +92,7 @@ create procedure [dbo].[SP_INSERTAR_PELICULA]
 as
 insert into peliculas(descripcion,id_tipo_pelicula,id_idioma,id_tipo_publico,subtitulada,id_director)
 values(@descripcion,@id_tipo_pelicula,@id_idioma,@id_tipo_pelicula,@subtitulada,@id_director)
-
+go
 --SP INSERTAR CLIENTE--
 create procedure SP_INSERTAR_CLIENTE
 @nombre varchar(150)=null,@apellido varchar(150)=null,@correo varchar(150)=null,@nro_tel int=null
@@ -90,7 +101,7 @@ create procedure SP_INSERTAR_CLIENTE
 as
 insert into clientes(nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni)
 values(@nombre,@apellido,@correo,@nro_tel,@cod_barrio,@calle,@calle_nro,@dni)
-
+go
 --SP MODIFICAR CLIENTE--
 create procedure SP_MODIFICAR_CLIENTE
 @nombre varchar(150),@apellido varchar(150),@correo varchar(150),@nro_tel int,@cod_barrio int,
@@ -100,7 +111,7 @@ update clientes
 set nombre=@nombre,apellido=@apellido,correo=@correo,nro_tel=@nro_tel,cod_barrio=@cod_barrio,
 calle=@calle,calle_nro=@calle_nro
 where id_cliente=@id_cliente
-
+go
 --SP MODIFICAR PELICULA
 create procedure SP_MODIFICAR_PELICULA
 @idPelicula int,
@@ -117,7 +128,7 @@ set descripcion = @nombrePelicula,id_tipo_pelicula=@tipoPelicula,
 	subtitulada = @subtitulada,
 	id_director = @idDirector
 where id_pelicula=@idPelicula
-
+go
 --SP CONSULTAR PELICULA FILTRADA
 create procedure [dbo].[SP_FILTRAR_PELICULA]
 @genero int=null,
@@ -138,9 +149,9 @@ begin
 	AND (@dialecto is null OR P.id_idioma = @dialecto)
 	AND (p.fechaBaja is null)
 end
-
+go
 --SP BORRAR PELICULA
-alter PROCEDURE [dbo].[SP_ELIMINAR_PELICULA] 
+CREATE PROCEDURE [dbo].[SP_ELIMINAR_PELICULA] 
 	@idPelicula int
 AS
 BEGIN
@@ -150,9 +161,9 @@ BEGIN
 END
 
 select * from peliculas
-
+go
 --SP BORRAR CLIENTE
-alter procedure SP_BORRAR_CLIENTE
+CREATE procedure SP_BORRAR_CLIENTE
 	@idCliente int
 AS
 BEGIN
@@ -160,18 +171,18 @@ BEGIN
 	set fechaBaja = GETDATE()
 	where id_cliente = @idCliente
 END
-
+go
 --SP FILTRAR CLIENTE
-alter PROCEDURE SP_CONSULTAR_CLIENTES_CON_FILTROS
+CREATE PROCEDURE SP_CONSULTAR_CLIENTES_CON_FILTROS
 @id_barrio int=null
 as
 select C.id_cliente,c.nombre+' '+c.apellido, c.correo, c.cod_barrio,c.nro_tel
 from clientes c
 where (@id_barrio is null or c.cod_barrio=@id_barrio)
 	and (c.fechaBaja is null)
-
+	
 exec SP_CONSULTAR_CLIENTES_CON_FILTROS
-
+go
 --REPORTE
 create procedure SP_REPORTE_GENEROS_MAS_TAQUILLEROS
 as
@@ -184,7 +195,7 @@ join peliculas p on p.id_pelicula = f.id_pelicula
 join tipos_pelicula tip on tip.id_tipo_pelicula = p.id_tipo_pelicula
 GROUP BY tip.descripcion
 order by Facturacion  DESC
-
+go
 --REPORTE 2
 create procedure SP_REPORTE_PELICULAS_MAS_TAQUILLERAS
 as
@@ -196,7 +207,7 @@ join funciones f on f.id_funcion = b.id_funcion
 join peliculas p on p.id_pelicula = f.id_pelicula
 GROUP BY p.descripcion
 order by Facturacion  DESC
-
+go
 
 --
 create procedure SP_FECHA_HORA_FUNCION_PELICULA
@@ -206,14 +217,14 @@ as
 	from funciones
 	where id_pelicula = @id_pelicula
 --
-
+go
 create PROCEDURE SP_PROXIMO_ID
 @next int OUTPUT
 AS
 BEGIN
 	SET @next = (SELECT MAX(id_comprobante)+1  FROM comprobantes);
 END
-
+go
 --SP INSERTAR BUTACA--
 create procedure SP_INSERTAR_BUTACA
 	@fila int,
@@ -228,7 +239,7 @@ begin
     --mediante la función SCOPE_IDENTITY() de SQLServer)	
     SET @id_butaca = SCOPE_IDENTITY();
 end
-
+go
 --SP INSERTAR COMPROBANTE--
 create procedure [dbo].[SP_INSERTAR_COMPROBANTE]
 @id_cliente int,
@@ -240,7 +251,7 @@ as
 insert into comprobantes(id_cliente, id_forma_pago, id_empleado, cant_entradas)
 values(@id_cliente, @id_forma_pago, @id_empleado, @cant_estradas)
    SET @id_comprobante = SCOPE_IDENTITY();
-
+   go
 --SP INSERTAR TICKETS--
 create procedure SP_INSERTAR_TICKET
 @id_comprobante int,

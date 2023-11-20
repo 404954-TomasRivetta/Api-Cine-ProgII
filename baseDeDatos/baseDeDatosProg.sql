@@ -1,7 +1,7 @@
---create database lc_tpi_cine
---go
---use lc_tpi_cine
---go
+create database lc_tpi_cine
+go
+use lc_tpi_cine
+go
 
 create table barrios(
 cod_barrio int identity(1,1),

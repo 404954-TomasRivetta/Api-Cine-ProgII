@@ -1,6 +1,6 @@
 --use lc_tpi_cine
 
---set dateformat dmy
+set dateformat dmy
 
 -- Estados de las butacas
 INSERT INTO estados_butaca VALUES('OCUPADA')
@@ -199,39 +199,51 @@ INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (5, 9, 
 INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (7, 13, 4, 1);
 INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (9, 10, 5, 1);
 INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (11, 7, 6, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (5, 6, 61, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (7, 6, 62, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (1, 6, 63, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 4, 64, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (3,4, 65, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 7, 66, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 6, 67, 1);
+INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (5, 6, 1, 1);
+INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (7, 6, 2, 1);
+INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (1, 6, 3, 1);
+INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 4, 4, 1);
+INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (3,4, 5, 1);
+INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 7, 6, 1);
+INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 6, 7, 1);
 
 
 --Clientes
-insert into clientes VALUES('Rodrigo','Moran','rodriMoran@hotmail.com.ar',351354958,3,'Manuel belgrano',32,42574321)
+insert into clientes(nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni)
+VALUES('Rodrigo','Moran','rodriMoran@hotmail.com.ar',351354958,3,'Manuel belgrano',32,42574321)
 
-insert into clientes VALUES('Nicolas','Perlo','nicoPerlo@gmail.com',351846394,9,' Nicaragua',80,44457913)
+insert into clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni)
+VALUES('Nicolas','Perlo','nicoPerlo@gmail.com',351846394,9,' Nicaragua',80,44457913)
 
-insert into clientes VALUES('Alexis','Cantonati','alexisCantonati@yahoo.com',351568741,11,'San Martin',105,44951248)
+insert into clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni)
+VALUES('Alexis','Cantonati','alexisCantonati@yahoo.com',351568741,11,'San Martin',105,44951248)
 
-insert into clientes VALUES('Santiago','Artaza','santiArtaza@hotmail.com.ar',351256413,6,'Mar del plata',25,44465846)
+insert into clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni) 
+VALUES('Santiago','Artaza','santiArtaza@hotmail.com.ar',351256413,6,'Mar del plata',25,44465846)
 
-insert into clientes VALUES('Valentino','Bertello','valenBertello@gmail.com',351259301,8,'Peron',60,45241874)
+insert into clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni) 
+VALUES('Valentino','Bertello','valenBertello@gmail.com',351259301,8,'Peron',60,45241874)
 
-insert into clientes VALUES('Tomas','Rivetta','tomasRivetta@yahoo.com',351338677,2,'Honduras',90,44924654)
+insert into clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni)
+VALUES('Tomas','Rivetta','tomasRivetta@yahoo.com',351338677,2,'Honduras',90,44924654)
 
-INSERT INTO clientes VALUES('María','López','mariaLopez@gmail.com',351456789,5,'San Juan',40,41234567);
+INSERT INTO clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni)
+VALUES('María','López','mariaLopez@gmail.com',351456789,5,'San Juan',40,41234567);
 
-INSERT INTO clientes VALUES('Lucas','Gómez','lucasGomez@hotmail.com',351987654,7,'Rivadavia',75,42223333);
+INSERT INTO clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni)
+VALUES('Lucas','Gómez','lucasGomez@hotmail.com',351987654,7,'Rivadavia',75,42223333);
 
-INSERT INTO clientes VALUES('Carolina','Martínez','caroMartinez@yahoo.com',351111111,10,'Buenos Aires',15,43334444);
+INSERT INTO clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni) 
+VALUES('Carolina','Martínez','caroMartinez@yahoo.com',351111111,10,'Buenos Aires',15,43334444);
 
-INSERT INTO clientes VALUES('Gustavo','Fernández','gusFernandez@gmail.com',351222222,4,'La Rioja',55,44445555);
+INSERT INTO clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni)
+VALUES('Gustavo','Fernández','gusFernandez@gmail.com',351222222,4,'La Rioja',55,44445555);
 
-INSERT INTO clientes VALUES('Liliana','Suarez','liliSuarez@hotmail.com.ar',351333333,1,'Tucumán',85,45556666);
+INSERT INTO clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni) 
+VALUES('Liliana','Suarez','liliSuarez@hotmail.com.ar',351333333,1,'Tucumán',85,45556666);
 
-INSERT INTO clientes VALUES('Federico','García','fedeGarcia@yahoo.com',351444444,12,'Córdoba',100,46667777);
+INSERT INTO clientes (nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni) 
+VALUES('Federico','García','fedeGarcia@yahoo.com',351444444,12,'Córdoba',100,46667777);
 
 
 --Empleados
