@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.SuspendLayout();
+            reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            SuspendLayout();
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(10, 10);
-            this.reportViewer1.Name = "ReportViewer";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(781, 430);
-            this.reportViewer1.TabIndex = 0;
+            reportViewer1.Location = new Point(9, 8);
+            reportViewer1.Margin = new Padding(3, 2, 3, 2);
+            reportViewer1.Name = "ReportViewer";
+            reportViewer1.ServerReport.BearerToken = null;
+            reportViewer1.Size = new Size(684, 323);
+            reportViewer1.TabIndex = 0;
             // 
             // FrmReporteGeneros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.reportViewer1);
-            this.Name = "FrmReporteGeneros";
-            this.Text = "FrmReporteGeneros";
-            this.Load += new System.EventHandler(this.FrmReporteGeneros_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(871, 565);
+            Controls.Add(reportViewer1);
+            Margin = new Padding(3, 2, 3, 2);
+            Name = "FrmReporteGeneros";
+            Text = "FrmReporteGeneros";
+            Load += FrmReporteGeneros_Load;
+            ResumeLayout(false);
         }
 
         #endregion

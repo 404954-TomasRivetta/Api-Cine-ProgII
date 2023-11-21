@@ -245,9 +245,9 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(392, 392);
+            btnSalir.Location = new Point(360, 443);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(107, 33);
+            btnSalir.Size = new Size(137, 33);
             btnSalir.TabIndex = 1;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;

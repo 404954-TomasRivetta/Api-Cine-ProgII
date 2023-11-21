@@ -131,8 +131,8 @@ namespace CineFront.Presentacion.Formularios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             ValidarDatos();
-            int butacaFila = Convert.ToInt32(txtFila.Text);
-            int butacaColumna = Convert.ToInt32(txtColumna.Text);
+            int butacaFila = Convert.ToInt32(nudFila.Value);
+            int butacaColumna = Convert.ToInt32(nudColumna.Value);
             int preUnitario = Convert.ToInt32(txtPreUnitario.Text);
             Pelicula p = (Pelicula)cboPeliculas.SelectedItem;
             Funciones f = (Funciones)cboFechaHora.SelectedItem;
@@ -140,24 +140,15 @@ namespace CineFront.Presentacion.Formularios
 
             dgvTickets.Rows.Add(new object[] { butacaFila, butacaColumna, preUnitario, p.Descripcion, f.FechaHora, "Quitar ඞ" });
 
-            
+
             Tickets t = new Tickets();
             t.PreUnitario = preUnitario;
-            
+
 
         }
         private bool ValidarDatos()
         {
-            if (!string.IsNullOrEmpty(txtFila.Text) || int.TryParse(txtFila.Text, out _))
-            {
-                MessageBox.Show("Ingrese una fila valida!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
-            if (!string.IsNullOrEmpty(txtColumna.Text) || int.TryParse(txtColumna.Text, out _))
-            {
-                MessageBox.Show("Ingrese una columna valida!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return false;
-            }
+            
             if (!string.IsNullOrEmpty(txtPreUnitario.Text) || int.TryParse(txtPreUnitario.Text, out _))
             {
                 MessageBox.Show("Ingrese un precio valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

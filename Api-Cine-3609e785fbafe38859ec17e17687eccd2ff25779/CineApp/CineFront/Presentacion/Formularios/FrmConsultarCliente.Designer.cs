@@ -56,7 +56,7 @@
             dgvClientes.Name = "dgvClientes";
             dgvClientes.ReadOnly = true;
             dgvClientes.RowTemplate.Height = 25;
-            dgvClientes.Size = new Size(794, 150);
+            dgvClientes.Size = new Size(794, 326);
             dgvClientes.TabIndex = 21;
             // 
             // Column1
@@ -91,10 +91,10 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(35, 301);
+            btnEditar.Location = new Point(24, 478);
             btnEditar.Margin = new Padding(4, 3, 4, 3);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(136, 35);
+            btnEditar.Size = new Size(147, 35);
             btnEditar.TabIndex = 6;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
@@ -102,7 +102,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(212, 301);
+            btnEliminar.Location = new Point(255, 478);
             btnEliminar.Margin = new Padding(4, 3, 4, 3);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(136, 35);
@@ -113,7 +113,7 @@
             // 
             // btnSalir
             // 
-            btnSalir.Location = new Point(675, 301);
+            btnSalir.Location = new Point(682, 478);
             btnSalir.Margin = new Padding(4, 3, 4, 3);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(136, 35);
@@ -126,23 +126,24 @@
             // 
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
             cboBarrio.FormattingEnabled = true;
-            cboBarrio.Location = new Point(67, 29);
+            cboBarrio.Location = new Point(98, 32);
             cboBarrio.Name = "cboBarrio";
-            cboBarrio.Size = new Size(121, 23);
+            cboBarrio.Size = new Size(153, 23);
             cboBarrio.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(11, 32);
             label1.Name = "label1";
-            label1.Size = new Size(46, 15);
+            label1.Size = new Size(62, 21);
             label1.TabIndex = 17;
             label1.Text = "Barrios:";
             // 
             // btnConsultar
             // 
-            btnConsultar.Location = new Point(651, 22);
+            btnConsultar.Location = new Point(585, 25);
             btnConsultar.Margin = new Padding(4, 3, 4, 3);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(136, 35);
@@ -166,7 +167,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(860, 372);
+            ClientSize = new Size(871, 565);
             Controls.Add(groupBox1);
             Controls.Add(dgvClientes);
             Controls.Add(btnEditar);

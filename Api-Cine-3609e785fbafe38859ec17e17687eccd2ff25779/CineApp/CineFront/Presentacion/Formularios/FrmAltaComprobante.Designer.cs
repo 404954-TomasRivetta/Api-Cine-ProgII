@@ -50,8 +50,6 @@
             txtPreUnitario = new TextBox();
             label8 = new Label();
             label9 = new Label();
-            txtFila = new TextBox();
-            txtColumna = new TextBox();
             label10 = new Label();
             cboPeliculas = new ComboBox();
             label11 = new Label();
@@ -60,8 +58,12 @@
             cantEntradas = new NumericUpDown();
             label13 = new Label();
             label14 = new Label();
+            nudFila = new NumericUpDown();
+            nudColumna = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)dgvTickets).BeginInit();
             ((System.ComponentModel.ISupportInitialize)cantEntradas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudFila).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudColumna).BeginInit();
             SuspendLayout();
             // 
             // txtProximoComprobante
@@ -271,22 +273,6 @@
             label9.TabIndex = 43;
             label9.Text = "Columna:";
             // 
-            // txtFila
-            // 
-            txtFila.Location = new Point(281, 201);
-            txtFila.Margin = new Padding(3, 2, 3, 2);
-            txtFila.Name = "txtFila";
-            txtFila.Size = new Size(34, 23);
-            txtFila.TabIndex = 44;
-            // 
-            // txtColumna
-            // 
-            txtColumna.Location = new Point(407, 201);
-            txtColumna.Margin = new Padding(3, 2, 3, 2);
-            txtColumna.Name = "txtColumna";
-            txtColumna.Size = new Size(34, 23);
-            txtColumna.TabIndex = 45;
-            // 
             // label10
             // 
             label10.AutoSize = true;
@@ -363,11 +349,27 @@
             label14.TabIndex = 57;
             label14.Text = "Hora";
             // 
+            // nudFila
+            // 
+            nudFila.Location = new Point(279, 200);
+            nudFila.Name = "nudFila";
+            nudFila.Size = new Size(50, 23);
+            nudFila.TabIndex = 58;
+            // 
+            // nudColumna
+            // 
+            nudColumna.Location = new Point(405, 200);
+            nudColumna.Name = "nudColumna";
+            nudColumna.Size = new Size(50, 23);
+            nudColumna.TabIndex = 59;
+            // 
             // FrmAltaComprobante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(871, 565);
+            Controls.Add(nudColumna);
+            Controls.Add(nudFila);
             Controls.Add(label14);
             Controls.Add(label13);
             Controls.Add(cantEntradas);
@@ -376,8 +378,6 @@
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(cboPeliculas);
-            Controls.Add(txtColumna);
-            Controls.Add(txtFila);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(txtPreUnitario);
@@ -402,6 +402,8 @@
             Load += FrmAltaComprobante_Load_1;
             ((System.ComponentModel.ISupportInitialize)dgvTickets).EndInit();
             ((System.ComponentModel.ISupportInitialize)cantEntradas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudFila).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudColumna).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -424,8 +426,6 @@
         private TextBox txtPreUnitario;
         private Label label8;
         private Label label9;
-        private TextBox txtFila;
-        private TextBox txtColumna;
         private Label label10;
         private ComboBox cboPeliculas;
         private Label label11;
@@ -440,5 +440,7 @@
         private DataGridViewTextBoxColumn ColPelicula;
         private DataGridViewTextBoxColumn ColFechaHora;
         private DataGridViewButtonColumn ColQuitar;
+        private NumericUpDown nudFila;
+        private NumericUpDown nudColumna;
     }
 }

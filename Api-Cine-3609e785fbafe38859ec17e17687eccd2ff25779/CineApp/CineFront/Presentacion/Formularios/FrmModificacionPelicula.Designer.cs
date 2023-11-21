@@ -257,7 +257,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(865, 562);
+            ClientSize = new Size(871, 565);
             Controls.Add(txtNumPelicula);
             Controls.Add(label7);
             Controls.Add(label6);

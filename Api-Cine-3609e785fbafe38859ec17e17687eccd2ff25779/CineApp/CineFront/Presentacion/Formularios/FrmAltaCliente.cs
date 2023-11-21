@@ -88,7 +88,7 @@ namespace CineFront.Presentacion.Formularios
             nuevo.CodBarrio = (int)Convert.ToInt64(cboBarrios.SelectedValue);
             nuevo.Calle = txtCalle.Text;
             nuevo.CalleNro = Convert.ToInt32(txtAltura.Text);
-            nuevo.Dni = (int)Convert.ToInt64(txtDni.Text);            
+            nuevo.Dni = (int)Convert.ToInt64(txtDni.Text);
             string bodyContent = JsonConvert.SerializeObject(nuevo);
 
             string url = "https://localhost:7149/cliente";
