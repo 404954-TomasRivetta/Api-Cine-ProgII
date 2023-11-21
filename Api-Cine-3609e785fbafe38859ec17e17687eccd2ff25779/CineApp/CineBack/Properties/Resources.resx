@@ -124,8 +124,4 @@
     <value>Data Source=PCCESAR;Initial Catalog=lc_tpi_cine;Integrated Security=True</value>
     <comment>cadena de conexion de la casa de tomas</comment>
   </data>
-  <data name="CadenaConexionAlexis" xml:space="preserve">
-    <value>Data Source=DESKTOP-HUKFAHD;Initial Catalog=lc_tpi_cine;Integrated Security=True</value>
-    <comment>qsy</comment>
-  </data>
 </root>

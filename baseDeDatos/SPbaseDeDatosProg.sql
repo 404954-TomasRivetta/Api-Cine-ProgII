@@ -63,15 +63,6 @@ begin
 end
 go
 -----------------------------------------------------------
-create procedure SP_CONSULTAR_CLIENTE_POR_ID
-@id int
-as
-begin
-select * from clientes
-where id_cliente = @id
-end
-go
------------------------------------------------------------
 create procedure SP_CONSULTAR_PELICULA_POR_NRO
 @idPelicula int
 as
@@ -116,12 +107,10 @@ create procedure SP_MODIFICAR_CLIENTE
 @nombre varchar(150),@apellido varchar(150),@correo varchar(150),@nro_tel int,@cod_barrio int,
 @calle varchar(150),@calle_nro int,@dni int,@id_cliente int
 as
-begin
 update clientes
 set nombre=@nombre,apellido=@apellido,correo=@correo,nro_tel=@nro_tel,cod_barrio=@cod_barrio,
-calle=@calle,calle_nro=@calle_nro,dni=@dni
+calle=@calle,calle_nro=@calle_nro
 where id_cliente=@id_cliente
-end
 go
 --SP MODIFICAR PELICULA
 create procedure SP_MODIFICAR_PELICULA

@@ -77,14 +77,5 @@ namespace CineBack.Properties {
                 return ResourceManager.GetString("CadenaConexion404954", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Data Source=DESKTOP-HUKFAHD;Initial Catalog=lc_tpi_cine;Integrated Security=True.
-        /// </summary>
-        internal static string CadenaConexionAlexis {
-            get {
-                return ResourceManager.GetString("CadenaConexionAlexis", resourceCulture);
-            }
-        }
     }
 }
