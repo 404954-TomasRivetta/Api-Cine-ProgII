@@ -200,7 +200,7 @@ namespace CineFront.Presentacion.Formularios
                 cboPublico.SelectedIndex = -1;
 
             }
-            else
+            if(dgvPeliculasFiltradas.Rows.Count == 0)
             {
                 MessageBox.Show("Sin datos de peliculas para los filtros ingresados", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -209,9 +209,17 @@ namespace CineFront.Presentacion.Formularios
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
 
-            int nro = int.Parse(dgvPeliculasFiltradas.CurrentRow.Cells["ColId"].Value.ToString());
+            if (dgvPeliculasFiltradas.Rows.Count != 0)
+            {
+                int nro = int.Parse(dgvPeliculasFiltradas.CurrentRow.Cells["ColId"].Value.ToString());
 
-            await EliminarPeliculaAsync(nro);
+                await EliminarPeliculaAsync(nro);
+            }
+            else
+            {
+                MessageBox.Show("NO SE SELECCIONO NINGUNA PELICULA", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
 
         }
 
@@ -245,10 +253,19 @@ namespace CineFront.Presentacion.Formularios
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int nro = int.Parse(dgvPeliculasFiltradas.CurrentRow.Cells["ColId"].Value.ToString());
 
-            new FrmModificacionPelicula(nro).ShowDialog();
-            dgvPeliculasFiltradas.Rows.Clear();
+            if (dgvPeliculasFiltradas.Rows.Count != 0)
+            {
+                int nro = int.Parse(dgvPeliculasFiltradas.CurrentRow.Cells["ColId"].Value.ToString());
+
+                new FrmModificacionPelicula(nro).ShowDialog();
+                dgvPeliculasFiltradas.Rows.Clear();
+            }
+            else
+            {
+                MessageBox.Show("NO SE SELECCIONO NINGUNA PELICULA", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }
