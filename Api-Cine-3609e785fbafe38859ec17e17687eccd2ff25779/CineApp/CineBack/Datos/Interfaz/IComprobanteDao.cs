@@ -13,5 +13,7 @@ namespace CineBack.Datos.Interfaz
         List<Funciones> TraerFunciones(int nro);
 
         int ObtenerProximoComprobante();
+
+        public int ObtenerProximaButaca();
     }
 }

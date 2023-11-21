@@ -78,7 +78,7 @@ namespace CineApi.Controllers
                 return StatusCode(500, "Error interno!!!, intente luego");
             }
         }
-
+        
         [HttpGet("/proxComprobante")]
         public IActionResult GetProxComprobante()
         {
@@ -86,6 +86,21 @@ namespace CineApi.Controllers
             try
             {
                 nro = app.ObtenerProximoPresupuesto();
+                return Ok(nro);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+        [HttpGet("/proxButaca")]
+        public IActionResult GetProxButaca()
+        {
+            int nro = 0;
+            try
+            {
+                nro = app.ObtenerProximaButaca();
                 return Ok(nro);
             }
             catch (Exception ex)

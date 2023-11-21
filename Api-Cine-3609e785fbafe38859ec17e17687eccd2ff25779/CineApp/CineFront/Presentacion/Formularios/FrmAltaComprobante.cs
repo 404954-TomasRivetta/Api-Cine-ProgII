@@ -22,14 +22,26 @@ namespace CineFront.Presentacion.Formularios
             await ProximoComprobante();
         }
 
-        private async Task ProximoComprobante()
+        private async Task<int> ProximoComprobante()
         {
 
             string url = "https://localhost:7149/proxComprobante";
             var bodyJson = await ClienteSingleton.GetInstance().GetAsync(url);
             var lst = JsonConvert.DeserializeObject<int>(bodyJson);
-            txtProximoComprobante.Text = txtProximoComprobante.Text + lst;
+            txtProximoComprobante.Text = txtProximoComprobante.Text + Convert.ToInt32(lst);
+            return lst;
         }
+
+        private async Task<int> ProximaButaca()
+        {
+
+            string url = "https://localhost:7149/proxButaca";
+            var bodyJson = await ClienteSingleton.GetInstance().GetAsync(url);
+            var nro = JsonConvert.DeserializeObject<int>(bodyJson);
+            return nro;
+        }
+
+    
 
         private async Task CargarPeliculasAsync()
         {
@@ -131,6 +143,7 @@ namespace CineFront.Presentacion.Formularios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             ValidarDatos();
+
             int butacaFila = Convert.ToInt32(nudFila.Value);
             int butacaColumna = Convert.ToInt32(nudColumna.Value);
             int preUnitario = Convert.ToInt32(txtPreUnitario.Text);
@@ -139,12 +152,21 @@ namespace CineFront.Presentacion.Formularios
 
 
             dgvTickets.Rows.Add(new object[] { butacaFila, butacaColumna, preUnitario, p.Descripcion, f.FechaHora, "Quitar ඞ" });
+                        
+            Butaca b = new Butaca();
+            b.Fila = Convert.ToInt32(nudFila.Value);
+            b.Columna = Convert.ToInt32(nudColumna.Value);
+            b.EstadoButaca = 1;
+            b.IdFuncion = f.IdFuncion;
 
 
             Tickets t = new Tickets();
             t.PreUnitario = preUnitario;
-
-
+            t.IdComprobante = Convert.ToInt32(ProximoComprobante());
+            //t.butaca = b;
+            //t.IdButaca = Convert.ToInt32(ProximaButaca());
+            nuevo.AgregarTicket(t); 
+            
         }
         private bool ValidarDatos()
         {

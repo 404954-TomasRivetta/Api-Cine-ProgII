@@ -46,5 +46,10 @@ namespace CineBack.Fachada.Implementacion
         {
             return dao.TraerFunciones(nro);
         }
+
+        public int ObtenerProximaButaca()
+        {
+            return dao.ObtenerProximaButaca();
+        }
     }
 }

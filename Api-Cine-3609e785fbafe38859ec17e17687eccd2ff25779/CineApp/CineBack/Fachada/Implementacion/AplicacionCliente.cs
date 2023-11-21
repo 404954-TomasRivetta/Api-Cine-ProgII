@@ -35,7 +35,7 @@ namespace CineBack.Fachada.Implementacion
         }
 
 
-        public async Task<Cliente> GetClientesIdAsync(int id)
+        public Cliente GetClientesIdAsync(int id)
         {
             return dao.TraerClienteId(id);
         }

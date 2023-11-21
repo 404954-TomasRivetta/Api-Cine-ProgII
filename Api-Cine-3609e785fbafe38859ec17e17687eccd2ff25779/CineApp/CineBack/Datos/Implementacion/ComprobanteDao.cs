@@ -25,7 +25,36 @@ namespace CineBack.Datos.Implementacion
                 comando.Parameters.AddWithValue("@id_forma_pago", oC.IdForma_pago);
                 comando.Parameters.AddWithValue("@id_empleado", oC.IdEmpleado);
                 comando.Parameters.AddWithValue("@cant_entradas", oC.CantEntradas);
+
+                SqlParameter pOut = new SqlParameter();
+                pOut.ParameterName = "@id_comprobante";
+                pOut.DbType = DbType.Int32;
+                pOut.Direction = ParameterDirection.Output;
+                comando.Parameters.Add(pOut);
                 comando.ExecuteNonQuery();
+
+
+                int comprobanteNum = (int)pOut.Value;
+
+                SqlCommand cmdDetalle;
+
+                int detalleNro = 1;
+
+                foreach (Tickets ti in oC.tickets)
+                {
+                    cmdDetalle = new SqlCommand("SP_INSERTAR_TICKET",conexion,t);
+
+                    cmdDetalle.CommandType = CommandType.StoredProcedure;
+
+                    cmdDetalle.Parameters.AddWithValue("@id_comprobante", ti.IdComprobante);
+                    cmdDetalle.Parameters.AddWithValue("@id_butaca", ti.Butaca.IdButaca);
+                    cmdDetalle.Parameters.AddWithValue("@pre_unitario", ti.PreUnitario);
+                    cmdDetalle.ExecuteNonQuery();
+
+                    detalleNro++;
+                }
+
+
                 t.Commit();
             }
             catch
@@ -102,6 +131,12 @@ namespace CineBack.Datos.Implementacion
                 lForma.Add(t);
             }
             return lForma;
+        }
+
+        public int ObtenerProximaButaca()
+        {
+            string sp = "SP_PROXIMA_BUTACA";
+            return HelperDB.ObtenerInstancia().ProximoComprobante(sp, "@next");
         }
 
         public int ObtenerProximoComprobante()

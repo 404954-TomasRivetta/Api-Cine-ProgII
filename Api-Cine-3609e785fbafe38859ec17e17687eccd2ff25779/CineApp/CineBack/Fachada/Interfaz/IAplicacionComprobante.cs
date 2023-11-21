@@ -12,6 +12,6 @@ namespace CineBack.Fachada.Interfaz
 
         List<Funciones> TraerFunciones(int nro);
         int ObtenerProximoPresupuesto();
-
+        public int ObtenerProximaButaca();
     }
 }

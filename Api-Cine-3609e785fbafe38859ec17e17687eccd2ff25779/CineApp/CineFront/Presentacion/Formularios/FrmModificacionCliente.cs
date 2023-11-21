@@ -7,21 +7,46 @@ namespace CineFront.Presentacion.Formularios
     public partial class FrmModificacionCliente : Form
     {
 
-        private Cliente oCliente;
+        private int idCliente;
 
         public FrmModificacionCliente(int idCliente)
         {
             InitializeComponent();
-            oCliente = new Cliente();
 
-            oCliente.CodCliente = idCliente;
+            this.idCliente = idCliente;
         }
 
         private async void FrmModificacionCliente_Load(object sender, EventArgs e)
         {
             CargarBarriosAsync();
             cboBarrios.DropDownStyle = ComboBoxStyle.DropDownList;
+            CargarDatosAntiguosAsync();
+
         }
+
+        private async void CargarDatosAntiguosAsync()
+        {
+            string url = string.Format("https://localhost:7149/clientes/{0}", idCliente);
+            var result = await ClienteSingleton.GetInstance().GetAsync(url);
+
+            var cliente = JsonConvert.DeserializeObject<Cliente>(result);
+            if (cliente != null)
+            {
+                txtNombre.Text = cliente.Nombre;
+                txtApellido.Text = cliente.Apellido;
+                txtNroTel.Text = Convert.ToString(cliente.NroTel);
+                txtCorreo.Text = cliente.Correo;
+                cboBarrios.SelectedIndex = cliente.CodBarrio;
+                txtCalle.Text = cliente.Calle;
+                txtAltura.Text = Convert.ToString(cliente.CalleNro);
+                txtDni.Text = Convert.ToString(cliente.Dni);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo recuperar información del cliente", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
         private async Task CargarBarriosAsync()
         {
             string url = "https://localhost:7149/barrios";
@@ -41,7 +66,7 @@ namespace CineFront.Presentacion.Formularios
         private async void btnModificar_Click(object sender, EventArgs e)
         {
             ValidarDatos();
-            await ModificarClienteAsync();
+            ModificarClienteAsync();
         }
 
         private bool ValidarDatos()
@@ -85,12 +110,12 @@ namespace CineFront.Presentacion.Formularios
             return true;
         }
 
-        private async Task ModificarClienteAsync()
+        private async void ModificarClienteAsync()
         {
             try
             {
                 Cliente c = new Cliente();
-                c.CodCliente = oCliente.CodCliente;
+                c.CodCliente = idCliente;
                 c.Nombre = txtNombre.Text;
                 c.Apellido = txtApellido.Text;
                 c.NroTel = Convert.ToInt32(txtNroTel.Text);
@@ -102,7 +127,7 @@ namespace CineFront.Presentacion.Formularios
 
 
                 string bodyContent = JsonConvert.SerializeObject(c);
-                string url = "https://localhost:7149/clientes_modificar/" + c.CodCliente.ToString();
+                string url = "https://localhost:7149/api/Cliente/clientes_modificar/" + idCliente;
 
                 var result = await ClienteSingleton.GetInstance().PutAsync(url, bodyContent);
                 if (result.Equals("true"))
@@ -112,7 +137,7 @@ namespace CineFront.Presentacion.Formularios
                 }
                 else
                 {
-                    MessageBox.Show("ERROR. No se pudo registrar el cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("ERROR. No se pudo modificar el cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)

@@ -43,24 +43,48 @@ namespace CineBack.Datos.Implementacion
         }
         public bool Modificar(int id, Cliente cliente)
         {
-            bool ok;
+            bool resultado = true;
+            SqlConnection conexion= HelperDB.ObtenerInstancia().ObtenerConexion();
+            SqlTransaction t = null;
 
-            int resultado = 0;
+            try
+            {
+                conexion.Open();
+                t = conexion.BeginTransaction();
+                SqlCommand comando = new SqlCommand();
+                comando.Connection = conexion;
+                comando.Transaction = t;
+                comando.CommandType = CommandType.StoredProcedure;
+                comando.CommandText = "sp_modificar_cliente";
+                comando.Parameters.AddWithValue("@id_cliente",id);
+                comando.Parameters.AddWithValue("@nombre", cliente.Nombre);
+                comando.Parameters.AddWithValue("@apellido", cliente.Apellido);
+                comando.Parameters.AddWithValue("@correo", cliente.Correo);
+                comando.Parameters.AddWithValue("@nro_tel", cliente.NroTel);
+                comando.Parameters.AddWithValue("@cod_barrio", cliente.CodBarrio);
+                comando.Parameters.AddWithValue("@calle", cliente.Calle);
+                comando.Parameters.AddWithValue("@calle_nro", cliente.CalleNro);
+                comando.Parameters.AddWithValue("@dni", cliente.Dni);
+                comando.ExecuteNonQuery();
+                t.Commit();
+            }
+            catch
+            {
 
-            List<Parametro> lParametros = new List<Parametro>();
-            lParametros.Add(new Parametro("@id_cliente", id));
-            lParametros.Add(new Parametro("@nombre", cliente.Nombre));
-            lParametros.Add(new Parametro("@apellido", cliente.Apellido));
-            lParametros.Add(new Parametro("@correo", cliente.Correo));
-            lParametros.Add(new Parametro("@nro_tel", cliente.NroTel));
-            lParametros.Add(new Parametro("@cod_barrio", cliente.CodBarrio));
-            lParametros.Add(new Parametro("@calle", cliente.Calle));
-            lParametros.Add(new Parametro("@calle_nro", cliente.CalleNro));
-            lParametros.Add(new Parametro("@dni", cliente.Dni));
-            resultado = HelperDB.ObtenerInstancia().EjecutarSQL("SP_MODIFICAR_CLIENTE", lParametros);
-
-            ok = resultado > 0;
-            return ok;
+                if (t != null)
+                {
+                    t.Rollback();
+                    resultado = false;
+                }
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+            return resultado;            
         }
         public bool Borrar(int idCliente)
         {

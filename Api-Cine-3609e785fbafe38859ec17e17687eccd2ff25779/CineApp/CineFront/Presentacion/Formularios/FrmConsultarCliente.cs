@@ -77,6 +77,7 @@ namespace CineFront.Presentacion.Formularios
             }
             int nro = int.Parse(dgvClientes.CurrentRow.Cells["Column1"].Value.ToString());
             new FrmModificacionCliente(nro).ShowDialog();
+            dgvClientes.Rows.Clear();
         }
 
         private async void btnEliminar_Click(object sender, EventArgs e)

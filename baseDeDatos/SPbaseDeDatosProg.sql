@@ -63,6 +63,17 @@ begin
 end
 go
 -----------------------------------------------------------
+
+create procedure SP_CONSULTAR_CLIENTE_POR_ID
+@id int
+as
+begin
+select * from clientes
+where id_cliente = @id
+end
+go
+
+-----------------------------------------------------------
 create procedure SP_CONSULTAR_PELICULA_POR_NRO
 @idPelicula int
 as
@@ -109,7 +120,7 @@ create procedure SP_MODIFICAR_CLIENTE
 as
 update clientes
 set nombre=@nombre,apellido=@apellido,correo=@correo,nro_tel=@nro_tel,cod_barrio=@cod_barrio,
-calle=@calle,calle_nro=@calle_nro
+calle=@calle,calle_nro=@calle_nro,dni=@dni
 where id_cliente=@id_cliente
 go
 --SP MODIFICAR PELICULA
@@ -260,3 +271,12 @@ create procedure SP_INSERTAR_TICKET
 as
 	insert into tickets(id_comprobante,id_butacas,pre_unitario)
 	values(@id_comprobante,@id_butaca,@pre_unitario)
+
+--SP PROXIMA BUTACA
+create PROCEDURE SP_PROXIMA_BUTACA
+@next int OUTPUT
+AS
+BEGIN
+	SET @next = (SELECT MAX(id_butaca)+1  FROM butacas);
+END
+go

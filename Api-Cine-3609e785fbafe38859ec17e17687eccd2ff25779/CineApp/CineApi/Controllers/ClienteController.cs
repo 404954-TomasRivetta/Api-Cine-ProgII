@@ -53,7 +53,7 @@ namespace CineApi.Controllers
             }
         }
         [HttpPut("clientes_modificar/{id}")]
-        public async Task<IActionResult> Put(int id, Cliente cliente)
+        public async Task<IActionResult> ModifyCliente(int id, Cliente cliente)
         {
             try
             {
@@ -61,16 +61,17 @@ namespace CineApi.Controllers
                 {
                     return BadRequest("Cliente Invalido, FALTAN CAMPOS...");
                 }
+                return Ok(app.ModifyCliente(id, cliente));
 
-                bool result = app.ModifyCliente(id, cliente);
-                if (result)
-                {
-                    return Ok("Cliente modificado correctamente");
-                }
-                else
-                {
-                    return BadRequest("No se pudo modificar el cliente");
-                }
+                //bool result = app.ModifyCliente(id, cliente);
+                //if (result)
+                //{
+                //    return Ok("Cliente modificado correctamente");
+                //}
+                //else
+                //{
+                //    return BadRequest("No se pudo modificar el cliente");
+                //}
             }
             catch (Exception ex)
             {
@@ -116,11 +117,11 @@ namespace CineApi.Controllers
         }
 
         [HttpGet("/clientes/{id}")]
-        public async Task<IActionResult> Get(int id)
+        public IActionResult Get(int id)
         {
             try
             {
-                Cliente cliente = await app.GetClientesIdAsync(id);
+                Cliente cliente = app.GetClientesIdAsync(id);
                 if (cliente != null)
                     return Ok(cliente);
                 else
