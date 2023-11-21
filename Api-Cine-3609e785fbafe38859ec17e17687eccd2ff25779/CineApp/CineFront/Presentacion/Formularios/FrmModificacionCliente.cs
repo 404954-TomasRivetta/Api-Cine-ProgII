@@ -7,21 +7,44 @@ namespace CineFront.Presentacion.Formularios
     public partial class FrmModificacionCliente : Form
     {
 
-        private Cliente oCliente;
+        private int id_cliente;
 
         public FrmModificacionCliente(int idCliente)
         {
             InitializeComponent();
-            oCliente = new Cliente();
-
-            oCliente.CodCliente = idCliente;
+            id_cliente = idCliente;
         }
 
         private async void FrmModificacionCliente_Load(object sender, EventArgs e)
         {
-            CargarBarriosAsync();
+            await CargarBarriosAsync();
             cboBarrios.DropDownStyle = ComboBoxStyle.DropDownList;
+            CargarDatosAntiguosAsync();
         }
+
+        private async void CargarDatosAntiguosAsync()
+        {
+            string url = string.Format("https://localhost:7149/clientes/{0}",id_cliente);
+            var result = await ClienteSingleton.GetInstance().GetAsync(url);
+
+            var cliente = JsonConvert.DeserializeObject<Cliente>(result);
+            if (cliente != null)
+            {
+                txtNombre.Text = cliente.Nombre;
+                cboBarrios.SelectedValue = cliente.CodBarrio;
+                txtApellido.Text = cliente.Apellido;
+                txtCalle.Text = cliente.Calle;
+                txtNroTel.Text = Convert.ToInt32(cliente.NroTel).ToString();
+                txtAltura.Text = Convert.ToInt32(cliente.CalleNro).ToString();
+                txtCorreo.Text = cliente.Correo;
+                txtDni.Text = Convert.ToInt32(cliente.Dni).ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo recuperar información del cliente", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
+
         private async Task CargarBarriosAsync()
         {
             string url = "https://localhost:7149/barrios";
@@ -35,13 +58,18 @@ namespace CineFront.Presentacion.Formularios
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            if (MessageBox.Show("Seguro desea cancelar la operacion?", "Control", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                this.Dispose();
+            }
         }
 
         private async void btnModificar_Click(object sender, EventArgs e)
         {
-            ValidarDatos();
-            await ModificarClienteAsync();
+            if (ValidarDatos())
+            {
+                await ModificarClienteAsync();
+            }
         }
 
         private bool ValidarDatos()
@@ -90,7 +118,7 @@ namespace CineFront.Presentacion.Formularios
             try
             {
                 Cliente c = new Cliente();
-                c.CodCliente = oCliente.CodCliente;
+                c.CodCliente = id_cliente;
                 c.Nombre = txtNombre.Text;
                 c.Apellido = txtApellido.Text;
                 c.NroTel = Convert.ToInt32(txtNroTel.Text);

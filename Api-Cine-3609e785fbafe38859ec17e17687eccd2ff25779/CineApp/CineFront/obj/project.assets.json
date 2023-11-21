@@ -2921,19 +2921,40 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Usuario\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\Administrador\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> 7c3bf013beeeae93c673e14f956966e2a3fcf860
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\Repositorio cine Tp Progra 2\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineFront\\CineFront.csproj",
       "projectName": "CineFront",
       "projectPath": "D:\\Repositorio cine Tp Progra 2\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineFront\\CineFront.csproj",
       "packagesPath": "C:\\Users\\Usuario\\.nuget\\packages\\",
       "outputPath": "D:\\Repositorio cine Tp Progra 2\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineFront\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Administrador\\OneDrive\\Escritorio\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineFront\\CineFront.csproj",
+      "projectName": "CineFront",
+      "projectPath": "C:\\Users\\Administrador\\OneDrive\\Escritorio\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineFront\\CineFront.csproj",
+      "packagesPath": "C:\\Users\\Administrador\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Administrador\\OneDrive\\Escritorio\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineFront\\obj\\",
+>>>>>>> 7c3bf013beeeae93c673e14f956966e2a3fcf860
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\Administrador\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> 7c3bf013beeeae93c673e14f956966e2a3fcf860
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2947,8 +2968,13 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
+<<<<<<< HEAD
             "D:\\Repositorio cine Tp Progra 2\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj": {
               "projectPath": "D:\\Repositorio cine Tp Progra 2\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj"
+=======
+            "C:\\Users\\Administrador\\OneDrive\\Escritorio\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj": {
+              "projectPath": "C:\\Users\\Administrador\\OneDrive\\Escritorio\\Api-Cine-ProgII\\Api-Cine-3609e785fbafe38859ec17e17687eccd2ff25779\\CineApp\\CineBack\\CineBack.csproj"
+>>>>>>> 7c3bf013beeeae93c673e14f956966e2a3fcf860
             }
           }
         }
