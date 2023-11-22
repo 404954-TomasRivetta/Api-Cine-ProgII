@@ -6,6 +6,7 @@
         public int IdForma_pago { get; set; }
         public int IdEmpleado { get; set; }
         public int CantEntradas { get; set; }
+        public int IdFuncion { get; set; }
         public List<Tickets> tickets { get; set; }
 
         public Comprobante()

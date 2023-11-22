@@ -1,4 +1,4 @@
---use lc_tpi_cine
+use lc_tpi_cine
 
 create procedure SP_CONSULTAR_BARRIOS
 as
@@ -252,19 +252,19 @@ begin
 end
 go
 --SP INSERTAR COMPROBANTE--
-create procedure [dbo].[SP_INSERTAR_COMPROBANTE]
+ALTER procedure [dbo].[SP_INSERTAR_COMPROBANTE]
 @id_cliente int,
 @id_forma_pago int,
 @id_empleado int,
 @cant_estradas int,
+@id_funcion int,
 @id_comprobante int output
 as
-insert into comprobantes(id_cliente, id_forma_pago, id_empleado, cant_entradas)
-values(@id_cliente, @id_forma_pago, @id_empleado, @cant_estradas)
-   SET @id_comprobante = SCOPE_IDENTITY();
-   go
+insert into comprobantes(id_cliente, id_forma_pago, id_empleado, cant_entradas,id_funcion)
+values(@id_cliente, @id_forma_pago, @id_empleado, @cant_estradas,@id_funcion)
+set @id_comprobante= SCOPE_IDENTITY();
 --SP INSERTAR TICKETS--
-create procedure SP_INSERTAR_TICKET
+ALTER procedure [dbo].[SP_INSERTAR_TICKET]
 @id_comprobante int,
 @id_butaca int,
 @pre_unitario int
@@ -280,3 +280,20 @@ BEGIN
 	SET @next = (SELECT MAX(id_butaca)+1  FROM butacas);
 END
 go
+
+
+
+--EJECUTAR ESTO PARA QUE FUNCIONE EL ALTA COMPROBANTE--
+ALTER procedure [dbo].[SP_INSERTAR_COMPROBANTE]
+@id_cliente int,
+@id_forma_pago int,
+@id_empleado int,
+@cant_estradas int,
+@id_funcion int,
+@id_comprobante int output
+as
+insert into comprobantes(id_cliente, id_forma_pago, id_empleado, cant_entradas,id_funcion)
+values(@id_cliente, @id_forma_pago, @id_empleado, @cant_estradas,@id_funcion)
+set @id_comprobante= SCOPE_IDENTITY();
+
+

@@ -20,19 +20,19 @@ namespace CineBack.Datos.Implementacion
                 comando.Connection = conexion;
                 comando.Transaction = t;
                 comando.CommandType = CommandType.StoredProcedure;
-                comando.CommandText = "SP_INSERTAR_COMPROBANTE";
+                comando.CommandText = "dbo.SP_INSERTAR_COMPROBANTE";
                 comando.Parameters.AddWithValue("@id_cliente", oC.IdCliente);
                 comando.Parameters.AddWithValue("@id_forma_pago", oC.IdForma_pago);
                 comando.Parameters.AddWithValue("@id_empleado", oC.IdEmpleado);
-                comando.Parameters.AddWithValue("@cant_entradas", oC.CantEntradas);
-
+                comando.Parameters.AddWithValue("@cant_estradas", oC.CantEntradas);
+                comando.Parameters.AddWithValue("@id_funcion", oC.IdFuncion);
+                
                 SqlParameter pOut = new SqlParameter();
                 pOut.ParameterName = "@id_comprobante";
                 pOut.DbType = DbType.Int32;
                 pOut.Direction = ParameterDirection.Output;
                 comando.Parameters.Add(pOut);
                 comando.ExecuteNonQuery();
-
 
                 int comprobanteNum = (int)pOut.Value;
 
@@ -46,8 +46,8 @@ namespace CineBack.Datos.Implementacion
 
                     cmdDetalle.CommandType = CommandType.StoredProcedure;
 
-                    cmdDetalle.Parameters.AddWithValue("@id_comprobante", ti.IdComprobante);
-                    cmdDetalle.Parameters.AddWithValue("@id_butaca", ti.Butaca.IdButaca);
+                    cmdDetalle.Parameters.AddWithValue("@id_comprobante", comprobanteNum);
+                    cmdDetalle.Parameters.AddWithValue("@id_butaca", ti.IdButaca);
                     cmdDetalle.Parameters.AddWithValue("@pre_unitario", ti.PreUnitario);
                     cmdDetalle.ExecuteNonQuery();
 

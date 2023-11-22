@@ -10,7 +10,7 @@ namespace CineBack.Datos
 
         public HelperDB()
         {
-            conexion = new SqlConnection(Properties.Resources.CadenaConexion404954);
+            conexion = new SqlConnection(Properties.Resources.CadenaConexion);
         }
 
         public static HelperDB ObtenerInstancia()

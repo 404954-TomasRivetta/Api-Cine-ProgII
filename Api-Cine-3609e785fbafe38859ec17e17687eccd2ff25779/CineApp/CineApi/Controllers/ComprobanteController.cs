@@ -126,12 +126,11 @@ namespace CineApi.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("/nuevoComprobante")]
         public IActionResult PostComprobante(Comprobante oC)
         {
             try
             {
-
                 if (oC == null)
                 {
                     return BadRequest("Comprobante Inválido,FALTAN CAMPOS...");

@@ -179,3 +179,16 @@ constraint pk_reservas primary key(id_reserva),
 constraint fk_cliente foreign key(id_cliente) references clientes(id_cliente),
 constraint fk_id_butaca foreign key(id_butaca) references Butacas(id_butaca)
 )
+
+
+
+--EJECUTAR ESTO PARA QUE FUNCIONE EL ALTA COMPROBANTE--
+alter table butacas
+drop column id_funcion
+
+alter table comprobantes
+add id_funcion int
+
+alter table comprobantes
+add constraint fk_funcion foreign key(id_funcion)
+references funciones(id_funcion)
