@@ -223,6 +223,7 @@
             dgvTickets.RowTemplate.Height = 29;
             dgvTickets.Size = new Size(842, 114);
             dgvTickets.TabIndex = 128;
+            dgvTickets.CellContentClick += dgvTickets_CellContentClick;
             // 
             // ColPreUnitario
             // 

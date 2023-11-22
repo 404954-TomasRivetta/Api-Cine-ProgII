@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarPeliculas));
             btnEditar = new Button();
             btnEliminar = new Button();
             btnSalir = new Button();
@@ -53,17 +54,22 @@
             // 
             // btnEditar
             // 
+            btnEditar.BackColor = Color.Transparent;
+            btnEditar.Cursor = Cursors.Hand;
+            btnEditar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnEditar.Location = new Point(60, 482);
             btnEditar.Margin = new Padding(4, 3, 4, 3);
             btnEditar.Name = "btnEditar";
             btnEditar.Size = new Size(136, 35);
             btnEditar.TabIndex = 5;
             btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
+            btnEliminar.Cursor = Cursors.Hand;
+            btnEliminar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.Location = new Point(227, 482);
             btnEliminar.Margin = new Padding(4, 3, 4, 3);
             btnEliminar.Name = "btnEliminar";
@@ -75,6 +81,8 @@
             // 
             // btnSalir
             // 
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnSalir.Location = new Point(674, 482);
             btnSalir.Margin = new Padding(4, 3, 4, 3);
             btnSalir.Name = "btnSalir";
@@ -94,7 +102,8 @@
             grpFiltros.Controls.Add(cboGenero);
             grpFiltros.Controls.Add(label1);
             grpFiltros.Controls.Add(btnConsultar);
-            grpFiltros.ForeColor = SystemColors.ActiveCaptionText;
+            grpFiltros.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            grpFiltros.ForeColor = Color.White;
             grpFiltros.Location = new Point(60, 40);
             grpFiltros.Margin = new Padding(4, 3, 4, 3);
             grpFiltros.Name = "grpFiltros";
@@ -109,7 +118,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(403, 30);
             label3.Name = "label3";
-            label3.Size = new Size(50, 15);
+            label3.Size = new Size(65, 21);
             label3.TabIndex = 21;
             label3.Text = "Idioma: ";
             // 
@@ -117,26 +126,26 @@
             // 
             cboIdioma.DropDownStyle = ComboBoxStyle.DropDownList;
             cboIdioma.FormattingEnabled = true;
-            cboIdioma.Location = new Point(460, 27);
+            cboIdioma.Location = new Point(473, 27);
             cboIdioma.Name = "cboIdioma";
-            cboIdioma.Size = new Size(121, 23);
+            cboIdioma.Size = new Size(121, 29);
             cboIdioma.TabIndex = 3;
             // 
             // cboPublico
             // 
             cboPublico.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPublico.FormattingEnabled = true;
-            cboPublico.Location = new Point(260, 27);
+            cboPublico.Location = new Point(276, 27);
             cboPublico.Name = "cboPublico";
-            cboPublico.Size = new Size(121, 23);
+            cboPublico.Size = new Size(121, 29);
             cboPublico.TabIndex = 2;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(201, 30);
+            label2.Location = new Point(211, 30);
             label2.Name = "label2";
-            label2.Size = new Size(53, 15);
+            label2.Size = new Size(68, 21);
             label2.TabIndex = 17;
             label2.Text = "Publico: ";
             // 
@@ -144,22 +153,23 @@
             // 
             cboGenero.DropDownStyle = ComboBoxStyle.DropDownList;
             cboGenero.FormattingEnabled = true;
-            cboGenero.Location = new Point(64, 27);
+            cboGenero.Location = new Point(81, 27);
             cboGenero.Name = "cboGenero";
-            cboGenero.Size = new Size(121, 23);
+            cboGenero.Size = new Size(121, 29);
             cboGenero.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(7, 30);
+            label1.Location = new Point(16, 30);
             label1.Name = "label1";
-            label1.Size = new Size(51, 15);
+            label1.Size = new Size(68, 21);
             label1.TabIndex = 17;
             label1.Text = "Genero: ";
             // 
             // btnConsultar
             // 
+            btnConsultar.Cursor = Cursors.Hand;
             btnConsultar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnConsultar.ForeColor = SystemColors.ActiveCaptionText;
             btnConsultar.Location = new Point(607, 72);
@@ -232,6 +242,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(871, 565);
             Controls.Add(dgvPeliculasFiltradas);
             Controls.Add(btnEditar);

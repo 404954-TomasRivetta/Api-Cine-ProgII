@@ -141,16 +141,24 @@ namespace CineFront.Presentacion.Formularios
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (dgvTickets.CurrentCell.ColumnIndex == 4)
+        //    {
+        //        //nuevo.QuitarDetalle(dgvDetalles.CurrentRow.Index);
+        //        //click button:
+        //        dgvTickets.Rows.Remove(dgvTickets.CurrentRow);
+        //        //presupuesto.quitarDetalle();
+
+
+        //    }
+        //}
+
+        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvTickets.CurrentCell.ColumnIndex == 5)
+            if (dgvTickets.CurrentCell.ColumnIndex == 3)
             {
-                //nuevo.QuitarDetalle(dgvDetalles.CurrentRow.Index);
-                //click button:
-                dgvTickets.Rows.Remove(dgvTickets.CurrentRow);
-                //presupuesto.quitarDetalle();
-
-
+                dgvTickets.Rows.RemoveAt(dgvTickets.CurrentRow.Index);
             }
         }
 
@@ -542,7 +550,7 @@ namespace CineFront.Presentacion.Formularios
             Pelicula peli = (Pelicula)cboPeliculas.SelectedItem;
 
             nuevo.AgregarTicket(tic);
-            dgvTickets.Rows.Add(new object[] { tic.PreUnitario, peli.Descripcion, cboFechaHora.Text });
+            dgvTickets.Rows.Add(new object[] { tic.PreUnitario, peli.Descripcion, cboFechaHora.Text, "Quitar" });
 
 
 
