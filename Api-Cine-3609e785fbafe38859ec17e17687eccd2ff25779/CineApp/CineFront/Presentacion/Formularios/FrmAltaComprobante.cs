@@ -8,6 +8,7 @@ namespace CineFront.Presentacion.Formularios
     public partial class FrmAltaComprobante : Form
     {
         private Comprobante nuevo;
+
         public FrmAltaComprobante()
         {
             InitializeComponent();
@@ -19,33 +20,22 @@ namespace CineFront.Presentacion.Formularios
 
         private async void FrmAltaComprobante_Load_1(object sender, EventArgs e)
         {
+            cantEntradas.Value = 1;
             await CargarClientesAsync();
             await CargarFormasPagoAsync();
             await CargarEmpleadosAsync();
             await CargarPeliculasAsync();
-            //await ProximoComprobante();
+            //ProximoComprobante();
         }
 
-        //private async Task<int> ProximoComprobante()
-        //{
+        private async void ProximoComprobante()
+        {
 
-        //    string url = "https://localhost:7149/proxComprobante";
-        //    var bodyJson = await ClienteSingleton.GetInstance().GetAsync(url);
-        //    var lst = JsonConvert.DeserializeObject<int>(bodyJson);
-        //    txtProximoComprobante.Text = txtProximoComprobante.Text + Convert.ToInt32(lst);
-        //    return lst;
-        //}
-
-        //private async Task<int> ProximaButaca()
-        //{
-
-        //    string url = "https://localhost:7149/proxButaca";
-        //    var bodyJson = await ClienteSingleton.GetInstance().GetAsync(url);
-        //    var nro = JsonConvert.DeserializeObject<int>(bodyJson);
-        //    return nro;
-        //}
-
-
+            string url = "https://localhost:7149/proxComprobante";
+            var bodyJson = await ClienteSingleton.GetInstance().GetAsync(url);
+            var lst = JsonConvert.DeserializeObject<int>(bodyJson);
+            txtProximoComprobante.Text = txtProximoComprobante.Text + lst.ToString();
+        }
 
         private async Task CargarPeliculasAsync()
         {
@@ -99,39 +89,13 @@ namespace CineFront.Presentacion.Formularios
             cboFechaHora.DataSource = lst;
             cboFechaHora.ValueMember = "IdFuncion";
             cboFechaHora.DisplayMember = "FechaHora";
+
         }
 
         private async void btnAceptar_Click(object sender, EventArgs e)
         {
             await GrabarComprobanteAsync();
         }
-
-        //private async Task GuardarComprobanteAsync()
-        //{
-        //    TipoFormaPago t = (TipoFormaPago)cboFormasP.SelectedItem;
-        //    Cliente c = (Cliente)cboClientes.SelectedItem;
-        //    Empleado e = (Empleado)cboEmpleado.SelectedItem;
-        //    nuevo.IdCliente = c.CodCliente;
-        //    nuevo.IdForma_pago = t.id;
-        //    nuevo.IdEmpleado = e.CodEmpleado;
-        //    nuevo.CantEntradas = Convert.ToInt32(cantEntradas.Value);
-        //    string bodyContent = JsonConvert.SerializeObject(nuevo);
-
-        //    string url = "https://localhost:7149/api/Comprobante";
-        //    var result = await ClienteSingleton.GetInstance().PostAsync(url, bodyContent);
-
-        //    if (result.Equals("true"))//servicio.CrearPresupuesto(nuevo)    
-        //    {
-        //        MessageBox.Show("Presupuesto registrado", "Informe", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        this.Dispose();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("ERROR. No se pudo registrar el presupuesto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-
-
-        //}
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -141,48 +105,22 @@ namespace CineFront.Presentacion.Formularios
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        private void dgvTickets_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvTickets.CurrentCell.ColumnIndex == 5)
+            if (dgvTickets.CurrentCell.ColumnIndex == 3)
             {
-                //nuevo.QuitarDetalle(dgvDetalles.CurrentRow.Index);
-                //click button:
-                dgvTickets.Rows.Remove(dgvTickets.CurrentRow);
-                //presupuesto.quitarDetalle();
-
-
+                dgvTickets.Rows.RemoveAt(dgvTickets.CurrentRow.Index);
+            }
+            if (dgvTickets.Rows.Count == 0)
+            {
+                cboPeliculas.Enabled = true;
+                cboFechaHora.Enabled = true;
             }
         }
 
-        //private void btnAgregar_Click(object sender, EventArgs e)
-        //{
-        //    ValidarDatos();
-
-        //    //int butacaFila = Convert.ToInt32(nudFila.Value);
-        //    //int butacaColumna = Convert.ToInt32(nudColumna.Value);
-        //    int preUnitario = Convert.ToInt32(txtPreUnitario.Text);
-        //    Pelicula p = (Pelicula)cboPeliculas.SelectedItem;
-        //    Funciones f = (Funciones)cboFechaHora.SelectedItem;
-
-
-        //    dgvTickets.Rows.Add(new object[] { /*butacaFila, butacaColumna,*/ preUnitario, p.Descripcion, f.FechaHora, "Quitar ඞ" });
-
-        //    Butaca b = new Butaca();
-        //    //b.Fila = Convert.ToInt32(nudFila.Value);
-        //    //b.Columna = Convert.ToInt32(nudColumna.Value);
-        //    b.EstadoButaca = 1;
-        //    b.IdFuncion = f.IdFuncion;
-
-
-        //    Tickets t = new Tickets();
-        //    t.PreUnitario = preUnitario;
-        //    //t.IdComprobante = Convert.ToInt32(ProximoComprobante());
-        //    t.IdComprobante = 30;
-        //    //t.butaca = b;
-        //    //t.IdButaca = Convert.ToInt32(ProximaButaca());
-        //    nuevo.AgregarTicket(t);
-
-        //}
+        
         private bool ValidarDatos()
         {
 
@@ -191,6 +129,7 @@ namespace CineFront.Presentacion.Formularios
                 MessageBox.Show("Ingrese un precio valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
+
             if (cboPeliculas.SelectedIndex == -1)
             {
                 MessageBox.Show("Seleccione una pelicula valida!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -231,7 +170,6 @@ namespace CineFront.Presentacion.Formularios
             if (boton != null)
             {
                 boton.Click += new EventHandler(Boton_Click);
-                //MessageBox.Show($"Manejador de eventos asignado a {boton.Name}");
             }
         }
 
@@ -250,7 +188,7 @@ namespace CineFront.Presentacion.Formularios
                     boton.BackColor = Color.Lime;
                 }
 
-                Console.WriteLine($"Boton {boton.Name} - Color de fondo: {boton.BackColor}");
+                
             }
         }
         private int IdButaca()
@@ -258,7 +196,7 @@ namespace CineFront.Presentacion.Formularios
             // Encuentra el primer botón con color rojo
             Button botonSeleccionado = this.Controls.OfType<Button>().FirstOrDefault(b => b.BackColor == Color.Red);
 
-            if (botonSeleccionado != null && botonSeleccionado.Tag != null)
+            if (botonSeleccionado != null && botonSeleccionado.Tag != null) 
             {
                 // Si el botón tiene un Tag válido, devuelve su ID
                 return Convert.ToInt32(botonSeleccionado.Tag);
@@ -314,192 +252,13 @@ namespace CineFront.Presentacion.Formularios
             button43.Tag = 73;
             button44.Tag = 74;
         }
-
-        //private int IdButaca()
-        //{
-
-        //    if (button1.BackColor == Color.Red)
-        //    {
-        //        return 31;
-        //    }
-        //    if (button2.BackColor == Color.Red)
-        //    {
-        //        return 32;
-        //    }
-        //    if (button3.BackColor == Color.Red)
-        //    {
-        //        return 33;
-        //    }
-        //    if (button4.BackColor == Color.Red)
-        //    {
-        //        return 34;
-        //    }
-        //    if (button5.BackColor == Color.Red)
-        //    {
-        //        return 35;
-        //    }
-        //    if (button6.BackColor == Color.Red)
-        //    {
-        //        return 36;
-        //    }
-        //    if (button7.BackColor == Color.Red)
-        //    {
-        //        return 37;
-        //    }
-        //    if (button8.BackColor == Color.Red)
-        //    {
-        //        return 38;
-        //    }
-        //    if (button9.BackColor == Color.Red)
-        //    {
-        //        return 39;
-        //    }
-        //    if (button10.BackColor == Color.Red)
-        //    {
-        //        return 40;
-        //    }
-        //    if (button11.BackColor == Color.Red)
-        //    {
-        //        return 41;
-        //    }
-        //    if (button12.BackColor == Color.Red)
-        //    {
-        //        return 42;
-        //    }
-        //    if (button13.BackColor == Color.Red)
-        //    {
-        //        return 43;
-        //    }
-        //    if (button14.BackColor == Color.Red)
-        //    {
-        //        return 44;
-        //    }
-        //    if (button15.BackColor == Color.Red)
-        //    {
-        //        return 45;
-        //    }
-        //    if (button16.BackColor == Color.Red)
-        //    {
-        //        return 46;
-        //    }
-        //    if (button17.BackColor == Color.Red)
-        //    {
-        //        return 47;
-        //    }
-        //    if (button18.BackColor == Color.Red)
-        //    {
-        //        return 48;
-        //    }
-        //    if (button19.BackColor == Color.Red)
-        //    {
-        //        return 49;
-        //    }
-        //    if (button20.BackColor == Color.Red)
-        //    {
-        //        return 50;
-        //    }
-        //    if (button21.BackColor == Color.Red)
-        //    {
-        //        return 51;
-        //    }
-        //    if (button22.BackColor == Color.Red)
-        //    {
-        //        return 52;
-        //    }
-        //    if (button23.BackColor == Color.Red)
-        //    {
-        //        return 53;
-        //    }
-        //    if (button24.BackColor == Color.Red)
-        //    {
-        //        return 54;
-        //    }
-        //    if (button25.BackColor == Color.Red)
-        //    {
-        //        return 55;
-        //    }
-        //    if (button26.BackColor == Color.Red)
-        //    {
-        //        return 56;
-        //    }
-        //    if (button27.BackColor == Color.Red)
-        //    {
-        //        return 57;
-        //    }
-        //    if (button28.BackColor == Color.Red)
-        //    {
-        //        return 58;
-        //    }
-        //    if (button29.BackColor == Color.Red)
-        //    {
-        //        return 59;
-        //    }
-        //    if (button30.BackColor == Color.Red)
-        //    {
-        //        return 60;
-        //    }
-        //    if (button31.BackColor == Color.Red)
-        //    {
-        //        return 61;
-        //    }
-        //    if (button32.BackColor == Color.Red)
-        //    {
-        //        return 62;
-        //    }
-        //    if (button33.BackColor == Color.Red)
-        //    {
-        //        return 63;
-        //    }
-        //    if (button34.BackColor == Color.Red)
-        //    {
-        //        return 64;
-        //    }
-        //    if (button35.BackColor == Color.Red)
-        //    {
-        //        return 65;
-        //    }
-        //    if (button36.BackColor == Color.Red)
-        //    {
-        //        return 66;
-        //    }
-        //    if (button37.BackColor == Color.Red)
-        //    {
-        //        return 67;
-        //    }
-        //    if (button38.BackColor == Color.Red)
-        //    {
-        //        return 68;
-        //    }
-        //    if (button39.BackColor == Color.Red)
-        //    {
-        //        return 69;
-        //    }
-        //    if (button40.BackColor == Color.Red)
-        //    {
-        //        return 70;
-        //    }
-        //    if (button41.BackColor == Color.Red)
-        //    {
-        //        return 71;
-        //    }
-        //    if (button42.BackColor == Color.Red)
-        //    {
-        //        return 72;
-        //    }
-        //    if (button43.BackColor == Color.Red)
-        //    {
-        //        return 73;
-        //    }
-        //    if (button44.BackColor == Color.Red)
-        //    {
-        //        return 74;
-        //    }
-        //    return 70;
-        //}
-
-
         private async void btnAceptar_Click_1(object sender, EventArgs e)
         {
+            if (dgvTickets.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe agregar al menos un ticket","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
             await GrabarComprobanteAsync();
         }
         private async Task GrabarComprobanteAsync()
@@ -528,13 +287,14 @@ namespace CineFront.Presentacion.Formularios
         }
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            ValidarDatos();
-            //List<Button> botonesSeleccionados = this.Controls.OfType<Button>().Where(b => b.BackColor == Color.Red).ToList();
-            //if (botonesSeleccionados.Count == 0)
-            //{
-            //    MessageBox.Show("Seleccione al menos una butaca para continuar.", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            cboFechaHora.Enabled = false;
+            cboPeliculas.Enabled = false;
+            if (string.IsNullOrEmpty(txtPreUnitario.Text) || !double.TryParse(txtPreUnitario.Text,out _))
+            {
+                MessageBox.Show("Ingrese un precio valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }          
+
             int idbut = IdButaca();
             Tickets tic = new Tickets();
             tic.PreUnitario = Convert.ToDouble(txtPreUnitario.Text);
@@ -542,46 +302,9 @@ namespace CineFront.Presentacion.Formularios
             Pelicula peli = (Pelicula)cboPeliculas.SelectedItem;
 
             nuevo.AgregarTicket(tic);
-            dgvTickets.Rows.Add(new object[] { tic.PreUnitario, peli.Descripcion, cboFechaHora.Text });
+            dgvTickets.Rows.Add(new object[] { tic.PreUnitario, peli.Descripcion, cboFechaHora.Text, "Quitar" });
 
-
-
-
-
-
-
-            //    List<Button>botonesSeleccionados = new List<Button>();
-            //    foreach (Control control in this.Controls)
-            //    {
-            //        if(control is Button boton && boton.BackColor == Color.Red)
-            //        {
-            //            botonesSeleccionados.Add(boton);
-            //        }
-            //    }
-            //    if (botonesSeleccionados.Count == 0)
-            //    {
-            //        MessageBox.Show("Seleccione al menos una butaca para continuar.", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //        return;
-            //    }
-            //        Pelicula pel = (Pelicula)cboPeliculas.SelectedItem;
-            //    foreach (Button botonSeleccionado in botonesSeleccionados)
-            //    {
-            //        if (botonSeleccionado.Tag != null && int.TryParse(botonSeleccionado.Tag.ToString(), out int idBoton))
-            //        {
-            //            Tickets ti = new Tickets();
-            //            ti.IdButaca = idBoton;
-            //            ti.PreUnitario = Convert.ToDouble(txtPreUnitario.Text);
-            //            //ti.IdComprobante = Convert.ToInt32(ProximoComprobante());
-            //            ti.IdComprobante = 30;
-            //            nuevo.AgregarTicket(ti);
-            //            dgvTickets.Rows.Add(new object[] { ti.PreUnitario, pel.Descripcion, "insertar horario aca", "Quitar" });
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("El botón seleccionado no tiene un identificador válido.", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //        }
-            //    }
-            //
+            
         }
         private async void cboPeliculas_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -597,6 +320,195 @@ namespace CineFront.Presentacion.Formularios
         private void button28_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private async void cboFechaHora_SelectedIndexChanged(object sender, EventArgs e)
+        {            
+            BloquearButacasOcupadas(true);
+            var botonesRojos = this.Controls.OfType<Button>().Where(b => b.BackColor == Color.Red);
+
+            foreach (var b in botonesRojos)
+            {
+                b.BackColor = Color.Lime;
+            }
+
+            Funciones f = (Funciones)cboFechaHora.SelectedItem;
+            await CargarButacasPeliculaAsync(f.IdFuncion);
+
+            BloquearButacasOcupadas(false);
+        }
+
+        private void BloquearButacasOcupadas(bool bandera)
+        {
+            var botonesRojos = this.Controls.OfType<Button>().Where(b => b.BackColor == Color.Red);
+
+            foreach (var b in botonesRojos)
+            {
+                b.Enabled = bandera;
+            }
+        }
+
+        private async Task CargarButacasPeliculaAsync(int idFuncion)
+        {
+            string url = "https://localhost:7149/Butacas?nro=" + idFuncion;
+            var bodyJson = await ClienteSingleton.GetInstance().GetAsync(url);
+            var lst = JsonConvert.DeserializeObject<List<Butaca>>(bodyJson);
+            
+            List<Butaca> lButacas = new List<Butaca>();
+            //cargar lista
+            for (int i = 0; i < lst.Count; i++)
+            {
+                Butaca b = new Butaca();
+                
+                b.IdButaca = lst[i].IdButaca;
+                b.Fila = lst[i].Fila;
+                b.Columna = lst[i].Columna;
+                b.IdFuncion = lst[i].IdFuncion;
+                b.EstadoButaca = lst[i].EstadoButaca;
+                lButacas.Add(b);
+            }
+
+            foreach (Butaca b in lButacas)
+            {                               
+                switch (b.IdButaca)
+                {
+                    case 31:
+                        button1.BackColor = Color.Red;
+                        break;
+                    case 32:
+                        button2.BackColor = Color.Red;
+                        break;
+                    case 33:
+                        button3.BackColor = Color.Red;
+                        break;
+                    case 34:
+                        button4.BackColor = Color.Red;
+                        break;
+                    case 35:
+                        button5.BackColor = Color.Red;
+                        break;
+                    case 36:
+                        button6.BackColor = Color.Red;
+                        break;
+                    case 37:
+                        button7.BackColor = Color.Red;
+                        break;
+                    case 38:
+                        button8.BackColor = Color.Red;
+                        break;
+                    case 39:
+                        button9.BackColor = Color.Red;
+                        break;
+                    case 40:
+                        button10.BackColor = Color.Red;
+                        break;
+                    case 41:
+                        button11.BackColor = Color.Red;
+                        break;
+                    case 42:
+                        button12.BackColor = Color.Red;
+                        break;
+                    case 43:
+                        button13.BackColor = Color.Red;
+                        break;
+                    case 44:
+                        button14.BackColor = Color.Red;
+                        break;
+                    case 45:
+                        button15.BackColor = Color.Red;
+                        break;
+                    case 46:
+                        button16.BackColor = Color.Red;
+                        break;
+                    case 47:
+                        button17.BackColor = Color.Red;
+                        break;
+                    case 48:
+                        button18.BackColor = Color.Red;
+                        break;
+                    case 49:
+                        button19.BackColor = Color.Red;
+                        break;
+                    case 50:
+                        button20.BackColor = Color.Red;
+                        break;
+                    case 51:
+                        button21.BackColor = Color.Red;
+                        break;
+                    case 52:
+                        button22.BackColor = Color.Red;
+                        break;
+                    case 53:
+                        button23.BackColor = Color.Red;
+                        break;
+                    case 54:
+                        button24.BackColor = Color.Red;
+                        break;
+                    case 55:
+                        button25.BackColor = Color.Red;
+                        break;
+                    case 56:
+                        button26.BackColor = Color.Red;
+                        break;
+                    case 57:
+                        button27.BackColor = Color.Red;
+                        break;
+                    case 58:
+                        button28.BackColor = Color.Red;
+                        break;
+                    case 59:
+                        button29.BackColor = Color.Red;
+                        break;
+                    case 60:
+                        button30.BackColor = Color.Red;
+                        break;
+                    case 61:
+                        button31.BackColor = Color.Red;
+                        break;
+                    case 62:
+                        button32.BackColor = Color.Red;
+                        break;
+                    case 63:
+                        button33.BackColor = Color.Red;
+                        break;
+                    case 64:
+                        button34.BackColor = Color.Red;
+                        break;
+                    case 65:
+                        button35.BackColor = Color.Red;
+                        break;
+                    case 66:
+                        button36.BackColor = Color.Red;
+                        break;
+                    case 67:
+                        button37.BackColor = Color.Red;
+                        break;
+                    case 68:
+                        button38.BackColor = Color.Red;
+                        break;
+                    case 69:
+                        button39.BackColor = Color.Red;
+                        break;
+                    case 70:
+                        button40.BackColor = Color.Red;
+                        break;
+                    case 71:
+                        button41.BackColor = Color.Red;
+                        break;
+                    case 72:
+                        button42.BackColor = Color.Red;
+                        break;
+                    case 73:
+                        button43.BackColor = Color.Red;
+                        break;
+                    case 74:
+                        button44.BackColor = Color.Red;
+                        break;
+                    default:
+                        break;
+                }
+
+            }
         }
     }
 }

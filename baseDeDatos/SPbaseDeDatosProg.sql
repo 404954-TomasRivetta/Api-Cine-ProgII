@@ -281,9 +281,19 @@ BEGIN
 END
 go
 
+--CONSULTAR BUTACAS OCUPADAS
+create procedure SP_CONSULTAR_BUTACAS_OCUPADAS
+@id_funcion int
+AS
+	select id_butaca,fila,columna,f.id_funcion,b.id_estado_butaca
+	from butacas b
+	join tickets t on t.id_butacas = b.id_butaca
+	join comprobantes c on c.id_comprobante = t.id_comprobante
+	join funciones f on f.id_funcion = c.id_funcion
+	where f.id_funcion = @id_funcion
 
 
---EJECUTAR ESTO PARA QUE FUNCIONE EL ALTA COMPROBANTE--
+--INSERTAR COMPROBANTE
 ALTER procedure [dbo].[SP_INSERTAR_COMPROBANTE]
 @id_cliente int,
 @id_forma_pago int,

@@ -2,20 +2,21 @@
 
 Desarrollo de una aplicacion para un Cine, tal aplicacion nos permite gestionar clientes,peliculas y la compra de tickes
 
+## Grupo Numero: 9 || Curso: 1w2
+## Integrantes:
+- Santiago Artaza. Legajo: 114384
+- Valentino Bertello. Legajo: 113991
+- Alexis Cantonati. Legajo: 405634
+- Rodrigo Moran. Legajo: 406158
+- Nicolas Perlo. Legajo: 113969
+- Tomas Rivetta. Legajo: 404954
+
 ## Lenguajes y Herramientas
 
 - c#
+- Live Share: Te permite compartir el código base con los miembros del equipo a través de una conexión segura
 - Sql Server
 - GIT y GITHUB
-
-## Autores
-
-- [@Santiago Artaza](https://github.com/114384-Santiago-Artaza)
-- [@Valentino Bertello](https://github.com/valentino113991)
-- [@Alexis Cantonati](https://github.com/405634-1w2-Alexis-Cantonati)
-- [@Rodrigo Moran](https://github.com/RodriMoran406158)
-- [@Nicolas Perlo](https://github.com/NicolasPerloUtn)
-- [@Tomas Rivetta](https://github.com/404954-TomasRivetta)
 
 ## Enunciado:
 

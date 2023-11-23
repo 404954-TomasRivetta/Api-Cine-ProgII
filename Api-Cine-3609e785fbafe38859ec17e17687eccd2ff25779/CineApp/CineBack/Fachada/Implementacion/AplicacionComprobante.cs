@@ -21,7 +21,10 @@ namespace CineBack.Fachada.Implementacion
         {
             return dao.ObtenerProximoComprobante();
         }
-
+        public List<Butaca>TraerButacasOcupadas(int idFuncion)
+        {
+            return dao.GetButacasOcupadas(idFuncion);
+        }
         public List<Cliente> GetClientes()
         {
             return dao.GetClientes();

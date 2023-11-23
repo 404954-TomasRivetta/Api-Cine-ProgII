@@ -183,6 +183,10 @@ constraint fk_id_butaca foreign key(id_butaca) references Butacas(id_butaca)
 
 
 --EJECUTAR ESTO PARA QUE FUNCIONE EL ALTA COMPROBANTE--
+
+alter table butacas
+drop constraint fk_funcion
+
 alter table butacas
 drop column id_funcion
 
@@ -190,5 +194,5 @@ alter table comprobantes
 add id_funcion int
 
 alter table comprobantes
-add constraint fk_funcion foreign key(id_funcion)
+add constraint fk_compro_funcion foreign key(id_funcion)
 references funciones(id_funcion)

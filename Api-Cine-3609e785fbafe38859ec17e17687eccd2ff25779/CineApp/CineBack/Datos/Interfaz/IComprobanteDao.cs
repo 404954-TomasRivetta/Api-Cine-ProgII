@@ -15,5 +15,6 @@ namespace CineBack.Datos.Interfaz
         int ObtenerProximoComprobante();
 
         public int ObtenerProximaButaca();
+        List<Butaca> GetButacasOcupadas(int idFuncion);
     }
 }
