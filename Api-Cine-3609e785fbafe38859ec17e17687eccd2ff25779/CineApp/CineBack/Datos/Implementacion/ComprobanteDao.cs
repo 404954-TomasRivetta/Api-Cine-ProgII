@@ -54,7 +54,6 @@ namespace CineBack.Datos.Implementacion
                     detalleNro++;
                 }
 
-
                 t.Commit();
             }
             catch
@@ -73,6 +72,25 @@ namespace CineBack.Datos.Implementacion
                 }
             }
             return resultado;
+        }
+        public List<Butaca> GetButacasOcupadas(int idFuncion)
+        {
+            List<Butaca> lButacas = new List<Butaca>();
+
+            List<Parametro> lParametros = new List<Parametro>();
+            lParametros.Add(new Parametro("id_funcion", idFuncion));
+            DataTable tabla = HelperDB.ObtenerInstancia().Consultar("SP_CONSULTAR_BUTACAS_OCUPADAS",lParametros);
+            foreach(DataRow fila in tabla.Rows)
+            {
+                Butaca b = new Butaca();
+                b.IdButaca = Convert.ToInt32(fila["id_butaca"]);
+                b.Fila= Convert.ToInt32(fila["fila"]);
+                b.Columna=Convert.ToInt32(fila["columna"]);
+                b.IdFuncion = Convert.ToInt32(fila["id_funcion"]);
+                b.EstadoButaca = Convert.ToInt32(fila["id_estado_butaca"]);
+                lButacas.Add(b);
+            }
+            return lButacas;
         }
 
         public List<Cliente> GetClientes()

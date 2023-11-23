@@ -9,7 +9,7 @@ namespace CineBack.Fachada.Interfaz
         List<TipoFormaPago> GetFormasPagos();
         bool SaveComprobante(Comprobante oComprobante);
         List<Pelicula> GetPeliculas();
-
+        List<Butaca> TraerButacasOcupadas(int idFuncion);
         List<Funciones> TraerFunciones(int nro);
         int ObtenerProximoPresupuesto();
         public int ObtenerProximaButaca();

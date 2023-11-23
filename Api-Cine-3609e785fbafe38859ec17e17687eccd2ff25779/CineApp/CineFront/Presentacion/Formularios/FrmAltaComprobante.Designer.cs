@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAltaComprobante));
-            pictureBox1 = new PictureBox();
             label14 = new Label();
             label13 = new Label();
             cantEntradas = new NumericUpDown();
@@ -100,24 +99,17 @@
             button4 = new Button();
             button3 = new Button();
             button1 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)cantEntradas).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvTickets).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(222, 153);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(417, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 140;
-            pictureBox1.TabStop = false;
             // 
             // label14
             // 
             label14.AutoSize = true;
+            label14.BackColor = Color.Transparent;
+            label14.ForeColor = Color.Black;
             label14.Location = new Point(781, 103);
             label14.Name = "label14";
             label14.Size = new Size(33, 15);
@@ -127,6 +119,8 @@
             // label13
             // 
             label13.AutoSize = true;
+            label13.BackColor = Color.Transparent;
+            label13.ForeColor = Color.Black;
             label13.Location = new Point(714, 103);
             label13.Name = "label13";
             label13.Size = new Size(38, 15);
@@ -135,6 +129,7 @@
             // 
             // cantEntradas
             // 
+            cantEntradas.BackColor = Color.White;
             cantEntradas.Location = new Point(802, 44);
             cantEntradas.Name = "cantEntradas";
             cantEntradas.Size = new Size(50, 23);
@@ -142,12 +137,14 @@
             // 
             // cboFechaHora
             // 
+            cboFechaHora.BackColor = Color.White;
             cboFechaHora.DropDownStyle = ComboBoxStyle.DropDownList;
             cboFechaHora.FormattingEnabled = true;
             cboFechaHora.Location = new Point(714, 123);
             cboFechaHora.Name = "cboFechaHora";
             cboFechaHora.Size = new Size(121, 23);
             cboFechaHora.TabIndex = 135;
+            cboFechaHora.SelectedIndexChanged += cboFechaHora_SelectedIndexChanged;
             // 
             // btnAgregar
             // 
@@ -155,6 +152,7 @@
             btnAgregar.FlatAppearance.BorderSize = 0;
             btnAgregar.FlatStyle = FlatStyle.Flat;
             btnAgregar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAgregar.ForeColor = Color.Black;
             btnAgregar.Location = new Point(750, 376);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(111, 28);
@@ -166,6 +164,8 @@
             // label11
             // 
             label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.ForeColor = Color.Black;
             label11.Location = new Point(657, 127);
             label11.Name = "label11";
             label11.Size = new Size(53, 15);
@@ -175,6 +175,8 @@
             // label10
             // 
             label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.ForeColor = Color.Black;
             label10.Location = new Point(459, 126);
             label10.Name = "label10";
             label10.Size = new Size(51, 15);
@@ -183,6 +185,7 @@
             // 
             // cboPeliculas
             // 
+            cboPeliculas.BackColor = Color.White;
             cboPeliculas.DropDownStyle = ComboBoxStyle.DropDownList;
             cboPeliculas.FormattingEnabled = true;
             cboPeliculas.Location = new Point(518, 124);
@@ -193,6 +196,7 @@
             // 
             // txtPreUnitario
             // 
+            txtPreUnitario.BackColor = Color.White;
             txtPreUnitario.Location = new Point(152, 124);
             txtPreUnitario.Margin = new Padding(3, 2, 3, 2);
             txtPreUnitario.Name = "txtPreUnitario";
@@ -202,6 +206,8 @@
             // label6
             // 
             label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.ForeColor = Color.Black;
             label6.Location = new Point(50, 127);
             label6.Name = "label6";
             label6.Size = new Size(88, 15);
@@ -255,8 +261,9 @@
             // label7
             // 
             label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.ForeColor = SystemColors.ControlText;
+            label7.ForeColor = Color.Black;
             label7.Location = new Point(10, 76);
             label7.Name = "label7";
             label7.Size = new Size(82, 30);
@@ -269,6 +276,7 @@
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancelar.ForeColor = Color.Black;
             btnCancelar.Location = new Point(160, 528);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(111, 26);
@@ -279,6 +287,8 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(674, 46);
             label5.Name = "label5";
             label5.Size = new Size(122, 15);
@@ -288,6 +298,8 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.ForeColor = Color.Black;
             label4.Location = new Point(460, 46);
             label4.Name = "label4";
             label4.Size = new Size(63, 15);
@@ -297,6 +309,8 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(213, 45);
             label3.Name = "label3";
             label3.Size = new Size(90, 15);
@@ -305,6 +319,7 @@
             // 
             // cboClientes
             // 
+            cboClientes.BackColor = Color.White;
             cboClientes.DropDownStyle = ComboBoxStyle.DropDownList;
             cboClientes.FormattingEnabled = true;
             cboClientes.Location = new Point(66, 42);
@@ -316,6 +331,8 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(10, 46);
             label2.Name = "label2";
             label2.Size = new Size(47, 15);
@@ -325,8 +342,9 @@
             // txtProximoComprobante
             // 
             txtProximoComprobante.AutoSize = true;
+            txtProximoComprobante.BackColor = Color.Transparent;
             txtProximoComprobante.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold, GraphicsUnit.Point);
-            txtProximoComprobante.ForeColor = SystemColors.ControlText;
+            txtProximoComprobante.ForeColor = Color.Black;
             txtProximoComprobante.Location = new Point(11, 10);
             txtProximoComprobante.Name = "txtProximoComprobante";
             txtProximoComprobante.Size = new Size(264, 30);
@@ -339,6 +357,7 @@
             btnAceptar.FlatAppearance.BorderSize = 0;
             btnAceptar.FlatStyle = FlatStyle.Flat;
             btnAceptar.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAceptar.ForeColor = Color.Black;
             btnAceptar.Location = new Point(11, 528);
             btnAceptar.Name = "btnAceptar";
             btnAceptar.Size = new Size(111, 26);
@@ -349,6 +368,7 @@
             // 
             // cboEmpleado
             // 
+            cboEmpleado.BackColor = Color.White;
             cboEmpleado.DropDownStyle = ComboBoxStyle.DropDownList;
             cboEmpleado.FormattingEnabled = true;
             cboEmpleado.Location = new Point(535, 43);
@@ -358,6 +378,7 @@
             // 
             // cboFormasP
             // 
+            cboFormasP.BackColor = Color.White;
             cboFormasP.DropDownStyle = ComboBoxStyle.DropDownList;
             cboFormasP.FormattingEnabled = true;
             cboFormasP.Location = new Point(318, 43);
@@ -762,10 +783,23 @@
             button1.TabIndex = 141;
             button1.UseVisualStyleBackColor = false;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(222, 165);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(417, 48);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 140;
+            pictureBox1.TabStop = false;
+            // 
             // FrmAltaComprobante
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Black;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(871, 565);
             Controls.Add(button44);
             Controls.Add(button43);
@@ -834,22 +868,21 @@
             Controls.Add(btnAceptar);
             Controls.Add(cboEmpleado);
             Controls.Add(cboFormasP);
+            ForeColor = Color.White;
             Margin = new Padding(3, 2, 3, 2);
             MaximumSize = new Size(887, 604);
             MinimumSize = new Size(887, 604);
             Name = "FrmAltaComprobante";
             Text = "Alta Comprobante";
             Load += FrmAltaComprobante_Load_1;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)cantEntradas).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvTickets).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Label label14;
         private Label label13;
         private NumericUpDown cantEntradas;
@@ -920,5 +953,6 @@
         private Button button4;
         private Button button3;
         private Button button1;
+        private PictureBox pictureBox1;
     }
 }

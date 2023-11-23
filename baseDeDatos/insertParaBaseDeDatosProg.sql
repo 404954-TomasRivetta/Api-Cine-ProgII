@@ -419,3 +419,126 @@ insert into funciones (id_sala, id_pelicula, fecha, hora)values(1, 6, '8-11-2023
 insert into butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 10, 21, 2);
 insert into comprobantes (id_cliente, id_forma_pago, id_empleado, cant_entradas) VALUES (2, 2, 1, 8)
 insert into tickets (id_comprobante, id_butacas, pre_unitario) VALUES (18, 18, 2800)
+
+
+
+update butacas
+set fila=1,columna=4
+where id_butaca=31
+update butacas
+set fila=1,columna=5
+where id_butaca=32
+update butacas
+set fila=1,columna=6
+where id_butaca=33
+update butacas
+set fila=1,columna=7
+where id_butaca=34
+update butacas
+set fila=1,columna=8
+where id_butaca=35
+update butacas
+set fila=1,columna=9
+where id_butaca=36
+update butacas
+set fila=1,columna=10
+where id_butaca=37
+update butacas
+set fila=1,columna=11
+where id_butaca=38 
+update butacas
+set fila=2,columna=3
+where id_butaca=39
+update butacas
+set fila=2,columna=4
+where id_butaca=40
+update butacas
+set fila=2,columna=5
+where id_butaca=41
+update butacas
+set fila=2,columna=6
+where id_butaca=42
+update butacas
+set fila=2,columna=7
+where id_butaca=43
+update butacas
+set fila=2,columna=8
+where id_butaca=44
+update butacas
+set fila=2,columna=9
+where id_butaca=45
+update butacas
+set fila=2,columna=10
+where id_butaca=46
+update butacas
+set fila=2,columna=11
+where id_butaca=47
+update butacas
+set fila=2,columna=12
+where id_butaca=48
+update butacas
+set fila=3,columna=2
+where id_butaca=49
+update butacas
+set fila=3,columna=3
+where id_butaca=50
+update butacas
+set fila=3,columna=4
+where id_butaca=51
+update butacas
+set fila=3,columna=5
+where id_butaca=52
+update butacas
+set fila=3,columna=6
+where id_butaca=53
+update butacas
+set fila=3,columna=7
+where id_butaca=54
+update butacas
+set fila=3,columna=8
+where id_butaca=55
+update butacas
+set fila=3,columna=9
+where id_butaca=56
+update butacas
+set fila=3,columna=10
+where id_butaca=57
+update butacas
+set fila=3,columna=11
+where id_butaca=58
+update butacas
+set fila=3,columna=12
+where id_butaca=59
+update butacas
+set fila=3,columna=13
+where id_butaca=60
+update butacas
+set fila=4,columna=1
+where id_butaca=61
+update butacas
+set fila=4,columna=2
+where id_butaca=62
+
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES (4, NULL, 3)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES (4, NULL, 4)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES ( 4, NULL, 5)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES ( 4, NULL, 6)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES ( 4, NULL, 7)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES ( 4, NULL, 8)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES ( 4, NULL, 9)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES ( 4, NULL, 10)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES ( 4, NULL, 11)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES ( 4, NULL, 12)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES (4, NULL, 13)
+GO
+INSERT [dbo].[butacas] ([fila], [id_estado_butaca], [columna]) VALUES (4, NULL, 14)

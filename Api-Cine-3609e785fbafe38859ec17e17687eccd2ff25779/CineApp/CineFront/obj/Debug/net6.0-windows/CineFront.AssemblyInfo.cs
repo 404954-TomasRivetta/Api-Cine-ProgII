@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CineFront")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a73239bac7f6564644aab208b3fa5d3436e8464")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CineFront")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CineFront")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

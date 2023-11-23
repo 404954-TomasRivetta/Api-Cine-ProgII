@@ -126,6 +126,22 @@ namespace CineApi.Controllers
             }
         }
 
+        [HttpGet("/Butacas")]
+        public IActionResult GetButacas(int nro)
+        {
+            List<Butaca> lst = null;
+
+            try
+            {
+                lst = app.TraerButacasOcupadas(nro);
+                return Ok(lst);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error interno!!!, intente luego");
+            }
+        }
+
         [HttpPost("/nuevoComprobante")]
         public IActionResult PostComprobante(Comprobante oC)
         {
