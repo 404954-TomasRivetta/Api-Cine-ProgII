@@ -109,6 +109,7 @@ as
 insert into peliculas(descripcion,id_tipo_pelicula,id_idioma,id_tipo_publico,subtitulada,id_director)
 values(@descripcion,@id_tipo_pelicula,@id_idioma,@id_tipo_pelicula,@subtitulada,@id_director)
 go
+
 --SP INSERTAR CLIENTE--
 create procedure SP_INSERTAR_CLIENTE
 @nombre varchar(150)=null,@apellido varchar(150)=null,@correo varchar(150)=null,@nro_tel int=null
@@ -118,6 +119,7 @@ as
 insert into clientes(nombre,apellido,correo,nro_tel,cod_barrio,calle,calle_nro,dni)
 values(@nombre,@apellido,@correo,@nro_tel,@cod_barrio,@calle,@calle_nro,@dni)
 go
+
 --SP MODIFICAR CLIENTE--
 create procedure SP_MODIFICAR_CLIENTE
 @nombre varchar(150),@apellido varchar(150),@correo varchar(150),@nro_tel int,@cod_barrio int,
@@ -128,6 +130,7 @@ set nombre=@nombre,apellido=@apellido,correo=@correo,nro_tel=@nro_tel,cod_barrio
 calle=@calle,calle_nro=@calle_nro,dni=@dni
 where id_cliente=@id_cliente
 go
+
 --SP MODIFICAR PELICULA
 create procedure SP_MODIFICAR_PELICULA
 @idPelicula int,
@@ -201,7 +204,7 @@ exec SP_CONSULTAR_CLIENTES_CON_FILTROS
 go
 
 --REPORTE
-alter procedure SP_REPORTE_GENEROS_MAS_TAQUILLEROS
+create procedure SP_REPORTE_GENEROS_MAS_TAQUILLEROS
 as
 select tip.descripcion as genero, sum(cant_entradas * pre_unitario) as facturacion
 from comprobantes c
@@ -214,9 +217,9 @@ GROUP BY tip.descripcion
 order by Facturacion  DESC
 go
 --REPORTE 2
-alter procedure SP_REPORTE_PELICULAS_MAS_TAQUILLERAS
+create procedure SP_REPORTE_PELICULAS_MAS_TAQUILLERAS
 as
-select p.descripcion as pelicula, sum(cant_entradas * pre_unitario) as Facturacion
+select p.descripcion as pelicula, sum(cant_entradas * pre_unitario)/2 as Facturacion
 from comprobantes c
 join tickets t on t.id_comprobante=c.id_comprobante
 join butacas b on t.id_butacas = b.id_butaca
@@ -243,7 +246,7 @@ BEGIN
 END
 go
 --SP INSERTAR BUTACA--
-alter procedure SP_INSERTAR_BUTACA
+create procedure SP_INSERTAR_BUTACA
 	@fila int,
 	@columna int,
 	@id_funcion int,
@@ -257,8 +260,9 @@ begin
     SET @id_butaca = SCOPE_IDENTITY();
 end
 go
+
 --SP INSERTAR COMPROBANTE--
-ALTER procedure [dbo].[SP_INSERTAR_COMPROBANTE]
+create procedure [dbo].[SP_INSERTAR_COMPROBANTE]
 @id_cliente int,
 @id_forma_pago int,
 @id_empleado int,
@@ -269,6 +273,7 @@ as
 insert into comprobantes(id_cliente, id_forma_pago, id_empleado, cant_entradas,id_funcion)
 values(@id_cliente, @id_forma_pago, @id_empleado, @cant_estradas,@id_funcion)
 set @id_comprobante= SCOPE_IDENTITY();
+
 --SP INSERTAR TICKETS--
 create procedure [dbo].[SP_INSERTAR_TICKET]
 @id_comprobante int,
@@ -288,7 +293,7 @@ END
 go
 
 --CONSULTAR BUTACAS OCUPADAS
-alter procedure SP_CONSULTAR_BUTACAS_OCUPADAS
+create procedure SP_CONSULTAR_BUTACAS_OCUPADAS
 @id_funcion int
 AS
 	select distinct id_butaca,fila,columna
@@ -299,7 +304,7 @@ AS
 	where f.id_funcion = @id_funcion
 
 --INSERTAR COMPROBANTE
-ALTER procedure [dbo].[SP_INSERTAR_COMPROBANTE]
+alter procedure [dbo].[SP_INSERTAR_COMPROBANTE]
 @id_cliente int,
 @id_forma_pago int,
 @id_empleado int,

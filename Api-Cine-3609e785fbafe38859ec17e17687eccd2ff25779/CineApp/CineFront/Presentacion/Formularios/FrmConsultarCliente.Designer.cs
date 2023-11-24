@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsultarCliente));
             dgvClientes = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -40,9 +41,9 @@
             cboBarrio = new ComboBox();
             label1 = new Label();
             btnConsultar = new Button();
-            groupBox1 = new GroupBox();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvClientes).BeginInit();
-            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // dgvClientes
@@ -91,6 +92,10 @@
             // 
             // btnEditar
             // 
+            btnEditar.Cursor = Cursors.Hand;
+            btnEditar.FlatAppearance.BorderSize = 0;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnEditar.Location = new Point(24, 478);
             btnEditar.Margin = new Padding(4, 3, 4, 3);
             btnEditar.Name = "btnEditar";
@@ -102,6 +107,10 @@
             // 
             // btnEliminar
             // 
+            btnEliminar.Cursor = Cursors.Hand;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnEliminar.Location = new Point(255, 478);
             btnEliminar.Margin = new Padding(4, 3, 4, 3);
             btnEliminar.Name = "btnEliminar";
@@ -113,6 +122,10 @@
             // 
             // btnSalir
             // 
+            btnSalir.Cursor = Cursors.Hand;
+            btnSalir.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalir.Location = new Point(682, 478);
             btnSalir.Margin = new Padding(4, 3, 4, 3);
             btnSalir.Name = "btnSalir";
@@ -126,7 +139,7 @@
             // 
             cboBarrio.DropDownStyle = ComboBoxStyle.DropDownList;
             cboBarrio.FormattingEnabled = true;
-            cboBarrio.Location = new Point(98, 32);
+            cboBarrio.Location = new Point(163, 66);
             cboBarrio.Name = "cboBarrio";
             cboBarrio.Size = new Size(153, 23);
             cboBarrio.TabIndex = 1;
@@ -134,16 +147,20 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(11, 32);
+            label1.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(81, 64);
             label1.Name = "label1";
-            label1.Size = new Size(62, 21);
+            label1.Size = new Size(76, 25);
             label1.TabIndex = 17;
             label1.Text = "Barrios:";
             // 
             // btnConsultar
             // 
-            btnConsultar.Location = new Point(585, 25);
+            btnConsultar.Cursor = Cursors.Hand;
+            btnConsultar.FlatAppearance.BorderSize = 0;
+            btnConsultar.FlatStyle = FlatStyle.Flat;
+            btnConsultar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConsultar.Location = new Point(682, 58);
             btnConsultar.Margin = new Padding(4, 3, 4, 3);
             btnConsultar.Name = "btnConsultar";
             btnConsultar.Size = new Size(136, 35);
@@ -152,34 +169,37 @@
             btnConsultar.UseVisualStyleBackColor = true;
             btnConsultar.Click += btnConsultar_Click;
             // 
-            // groupBox1
+            // pictureBox1
             // 
-            groupBox1.Controls.Add(btnConsultar);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(cboBarrio);
-            groupBox1.Location = new Point(24, 24);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(794, 83);
-            groupBox1.TabIndex = 25;
-            groupBox1.TabStop = false;
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-5, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(884, 570);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 26;
+            pictureBox1.TabStop = false;
             // 
             // FrmConsultarCliente
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(871, 565);
-            Controls.Add(groupBox1);
+            Controls.Add(btnConsultar);
+            Controls.Add(label1);
+            Controls.Add(cboBarrio);
             Controls.Add(dgvClientes);
             Controls.Add(btnEditar);
             Controls.Add(btnEliminar);
             Controls.Add(btnSalir);
+            Controls.Add(pictureBox1);
             Name = "FrmConsultarCliente";
             Text = "Consulta de Clientes";
             Load += FrmConsultarCliente_Load;
             ((System.ComponentModel.ISupportInitialize)dgvClientes).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -196,6 +216,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private GroupBox groupBox1;
+        private PictureBox pictureBox1;
     }
 }

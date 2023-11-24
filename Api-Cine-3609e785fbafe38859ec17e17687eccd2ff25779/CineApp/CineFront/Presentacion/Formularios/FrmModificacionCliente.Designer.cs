@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmModificacionCliente));
             txtCorreo = new TextBox();
             label9 = new Label();
             label8 = new Label();
@@ -47,6 +48,8 @@
             btnCancelar = new Button();
             btnModificar = new Button();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtCorreo
@@ -80,7 +83,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(38, 371);
+            label7.Location = new Point(52, 371);
             label7.Name = "label7";
             label7.Size = new Size(74, 25);
             label7.TabIndex = 50;
@@ -98,21 +101,21 @@
             // 
             txtNroTel.Location = new Point(151, 293);
             txtNroTel.Name = "txtNroTel";
-            txtNroTel.Size = new Size(123, 23);
+            txtNroTel.Size = new Size(207, 23);
             txtNroTel.TabIndex = 48;
             // 
             // txtAltura
             // 
             txtAltura.Location = new Point(572, 293);
             txtAltura.Name = "txtAltura";
-            txtAltura.Size = new Size(66, 23);
+            txtAltura.Size = new Size(237, 23);
             txtAltura.TabIndex = 47;
             // 
             // txtDni
             // 
             txtDni.Location = new Point(572, 376);
             txtDni.Name = "txtDni";
-            txtDni.Size = new Size(109, 23);
+            txtDni.Size = new Size(237, 23);
             txtDni.TabIndex = 46;
             // 
             // txtCalle
@@ -169,6 +172,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(41, 111);
             label3.Name = "label3";
@@ -188,6 +192,10 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelar.Location = new Point(518, 479);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(135, 48);
@@ -198,6 +206,10 @@
             // 
             // btnModificar
             // 
+            btnModificar.Cursor = Cursors.Hand;
+            btnModificar.FlatAppearance.BorderSize = 0;
+            btnModificar.FlatStyle = FlatStyle.Flat;
+            btnModificar.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnModificar.Location = new Point(226, 479);
             btnModificar.Name = "btnModificar";
             btnModificar.Size = new Size(132, 48);
@@ -215,6 +227,16 @@
             label1.Size = new Size(186, 25);
             label1.TabIndex = 56;
             label1.Text = "Modificar cliente";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(879, 570);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 57;
+            pictureBox1.TabStop = false;
             // 
             // FrmModificacionCliente
             // 
@@ -240,9 +262,11 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
+            Controls.Add(pictureBox1);
             Name = "FrmModificacionCliente";
             Text = "Clientes";
             Load += FrmModificacionCliente_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -268,5 +292,6 @@
         private Button btnCancelar;
         private Button btnModificar;
         private Label label1;
+        private PictureBox pictureBox1;
     }
 }

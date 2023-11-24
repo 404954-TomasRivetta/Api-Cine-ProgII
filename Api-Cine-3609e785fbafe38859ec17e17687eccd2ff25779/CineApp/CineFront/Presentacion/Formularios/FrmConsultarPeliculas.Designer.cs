@@ -56,6 +56,7 @@
             // 
             btnEditar.BackColor = Color.Transparent;
             btnEditar.Cursor = Cursors.Hand;
+            btnEditar.FlatAppearance.BorderSize = 0;
             btnEditar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnEditar.Location = new Point(60, 482);
             btnEditar.Margin = new Padding(4, 3, 4, 3);
@@ -69,6 +70,7 @@
             // btnEliminar
             // 
             btnEliminar.Cursor = Cursors.Hand;
+            btnEliminar.FlatAppearance.BorderSize = 0;
             btnEliminar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnEliminar.Location = new Point(227, 482);
             btnEliminar.Margin = new Padding(4, 3, 4, 3);
@@ -82,6 +84,7 @@
             // btnSalir
             // 
             btnSalir.Cursor = Cursors.Hand;
+            btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             btnSalir.Location = new Point(674, 482);
             btnSalir.Margin = new Padding(4, 3, 4, 3);
@@ -170,6 +173,7 @@
             // btnConsultar
             // 
             btnConsultar.Cursor = Cursors.Hand;
+            btnConsultar.FlatAppearance.BorderSize = 0;
             btnConsultar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnConsultar.ForeColor = SystemColors.ActiveCaptionText;
             btnConsultar.Location = new Point(607, 72);

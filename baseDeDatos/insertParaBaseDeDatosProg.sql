@@ -5,6 +5,7 @@ set dateformat dmy
 -- Estados de las butacas
 INSERT INTO estados_butaca VALUES('OCUPADA')
 INSERT INTO estados_butaca VALUES('LIBRE')
+
 -- Formas de pago
 INSERT INTO forma_pago VALUES('Efectivo')
 INSERT INTO forma_pago VALUES('Transferencia')
@@ -164,6 +165,7 @@ VALUES
 (1, 13, '23/9/2022', 24),
 (1, 14, '26/10/2010', 26),
 (3, 14, '29/11/2016', 28);
+
 INSERT INTO funciones(id_sala,id_pelicula,fecha,hora)
 VALUES
 (1,1,'21/11/2023',8),
@@ -187,25 +189,125 @@ VALUES
 (3, 14, '29/11/2023', 28);
 
 --Butacas
-INSERT INTO butacas (fila,columna,id_funcion,id_estado_butaca) VALUES (2,6,2,1)
-INSERT INTO butacas (fila,columna,id_funcion,id_estado_butaca) VALUES (5,10,1,1)
-INSERT INTO butacas (fila,columna,id_funcion,id_estado_butaca) VALUES (4,8,3,1)
-INSERT INTO butacas (fila,columna,id_funcion,id_estado_butaca) VALUES (6,12,4,1)
-INSERT INTO butacas (fila,columna,id_funcion,id_estado_butaca) VALUES (8,9,5,1)
-INSERT INTO butacas (fila,columna,id_funcion,id_estado_butaca) VALUES (10,6,6,1)
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (3, 7, 2, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (6, 11, 1, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (5, 9, 3, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (7, 13, 4, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (9, 10, 5, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (11, 7, 6, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (5, 6, 1, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (7, 6, 2, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (1, 6, 3, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 4, 4, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (3,4, 5, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 7, 6, 1);
-INSERT INTO butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 6, 7, 1);
+
+USE [lc_tpi_cine]
+GO
+SET IDENTITY_INSERT [dbo].[butacas] ON 
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (16, 6, 1, 12)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (17, 8, 1, 9)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (18, 10, 1, 6)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (22, 6, 1, 12)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (23, 8, 1, 9)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (24, 10, 1, 6)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (25, 2, 1, 6)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (26, 5, 1, 10)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (27, 4, 1, 8)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (28, 6, 1, 12)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (29, 8, 1, 9)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (30, 10, 1, 6)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (31, 1, NULL, 4)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (32, 1, NULL, 5)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (33, 1, NULL, 6)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (34, 1, NULL, 7)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (35, 1, NULL, 8)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (36, 1, NULL, 9)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (37, 1, NULL, 10)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (38, 1, NULL, 11)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (39, 2, NULL, 3)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (40, 2, NULL, 4)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (41, 2, NULL, 5)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (42, 2, NULL, 6)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (43, 2, NULL, 7)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (44, 2, NULL, 8)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (45, 2, NULL, 9)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (46, 2, NULL, 10)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (47, 2, NULL, 11)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (48, 2, NULL, 12)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (49, 3, NULL, 2)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (50, 3, NULL, 3)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (51, 3, NULL, 4)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (52, 3, NULL, 5)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (53, 3, NULL, 6)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (54, 3, NULL, 7)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (55, 3, NULL, 8)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (56, 3, NULL, 9)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (57, 3, NULL, 10)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (58, 3, NULL, 11)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (59, 3, NULL, 12)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (60, 3, NULL, 13)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (61, 4, NULL, 1)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (62, 4, NULL, 2)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (63, 4, NULL, 3)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (64, 4, NULL, 4)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (65, 4, NULL, 5)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (66, 4, NULL, 6)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (67, 4, NULL, 7)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (68, 4, NULL, 8)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (69, 4, NULL, 9)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (70, 4, NULL, 10)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (71, 4, NULL, 11)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (72, 4, NULL, 12)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (73, 4, NULL, 13)
+GO
+INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (74, 4, NULL, 14)
+GO
+SET IDENTITY_INSERT [dbo].[butacas] OFF
+GO
 
 
 --Clientes
@@ -332,6 +434,9 @@ INSERT INTO reservas(id_cliente, id_butaca, nombre_reserva, fecha_reserva) VALUE
 INSERT INTO reservas(id_cliente, id_butaca, nombre_reserva, fecha_reserva) VALUES (9,10, 'Cati', '16/11/2023');
 INSERT INTO reservas(id_cliente, id_butaca, nombre_reserva, fecha_reserva) VALUES (7,11, 'Lopez', '16/11/2023');
 
+--BORRAR TABLA RESERVAS
+drop table reservas
+
 --Comprobantes
 INSERT INTO comprobantes (id_cliente,id_forma_pago,id_empleado,cant_entradas) VALUES (2,3,4,5)
 INSERT INTO comprobantes (id_cliente,id_forma_pago,id_empleado,cant_entradas) VALUES (3,1,1,2)
@@ -419,6 +524,22 @@ insert into funciones (id_sala, id_pelicula, fecha, hora)values(1, 6, '8-11-2023
 insert into butacas (fila, columna, id_funcion, id_estado_butaca) VALUES (2, 10, 21, 2);
 insert into comprobantes (id_cliente, id_forma_pago, id_empleado, cant_entradas) VALUES (2, 2, 1, 8)
 insert into tickets (id_comprobante, id_butacas, pre_unitario) VALUES (18, 18, 2800)
+
+
+--EJECUTAR ESTO PARA QUE FUNCIONE EL ALTA COMPROBANTE--
+
+alter table butacas
+drop constraint fk_funcion
+
+alter table butacas
+drop column id_funcion
+
+alter table comprobantes
+add id_funcion int
+
+alter table comprobantes
+add constraint fk_compro_funcion foreign key(id_funcion)
+references funciones(id_funcion)
 
 
 --UPDATES PARA QUE EL ALTA COMPROBANTE FUNCIONE BIEN
@@ -554,122 +675,3 @@ where id_butaca=61
 update butacas
 set fila=4,columna=14
 where id_butaca=62
-
-USE [lc_tpi_cine]
-GO
-SET IDENTITY_INSERT [dbo].[butacas] ON 
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (16, 6, 1, 12)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (17, 8, 1, 9)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (18, 10, 1, 6)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (22, 6, 1, 12)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (23, 8, 1, 9)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (24, 10, 1, 6)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (25, 2, 1, 6)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (26, 5, 1, 10)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (27, 4, 1, 8)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (28, 6, 1, 12)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (29, 8, 1, 9)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (30, 10, 1, 6)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (31, 1, NULL, 4)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (32, 1, NULL, 5)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (33, 1, NULL, 6)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (34, 1, NULL, 7)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (35, 1, NULL, 8)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (36, 1, NULL, 9)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (37, 1, NULL, 10)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (38, 1, NULL, 11)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (39, 2, NULL, 3)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (40, 2, NULL, 4)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (41, 2, NULL, 5)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (42, 2, NULL, 6)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (43, 2, NULL, 7)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (44, 2, NULL, 8)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (45, 2, NULL, 9)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (46, 2, NULL, 10)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (47, 2, NULL, 11)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (48, 2, NULL, 12)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (49, 3, NULL, 2)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (50, 3, NULL, 3)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (51, 3, NULL, 4)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (52, 3, NULL, 5)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (53, 3, NULL, 6)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (54, 3, NULL, 7)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (55, 3, NULL, 8)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (56, 3, NULL, 9)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (57, 3, NULL, 10)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (58, 3, NULL, 11)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (59, 3, NULL, 12)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (60, 3, NULL, 13)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (61, 4, NULL, 1)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (62, 4, NULL, 2)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (63, 4, NULL, 3)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (64, 4, NULL, 4)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (65, 4, NULL, 5)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (66, 4, NULL, 6)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (67, 4, NULL, 7)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (68, 4, NULL, 8)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (69, 4, NULL, 9)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (70, 4, NULL, 10)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (71, 4, NULL, 11)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (72, 4, NULL, 12)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (73, 4, NULL, 13)
-GO
-INSERT [dbo].[butacas] ([id_butaca], [fila], [id_estado_butaca], [columna]) VALUES (74, 4, NULL, 14)
-GO
-SET IDENTITY_INSERT [dbo].[butacas] OFF
-GO

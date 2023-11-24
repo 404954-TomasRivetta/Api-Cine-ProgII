@@ -45,6 +45,7 @@ id_forma_pago INT IDENTITY(1, 1),
 descripcion varchar(100),
 CONSTRAINT pk_forma_pago PRIMARY KEY (id_forma_pago)
 )
+
 create table tipo_salas(
     id_tipo_sala int identity(1,1),
     tipo_sala varchar(50)
@@ -69,12 +70,14 @@ id_tipo_pelicula int identity(1,1),
 descripcion varchar(50),
 CONSTRAINT pk_tipos_pelicula PRIMARY KEY (id_tipo_pelicula)
 )
+
 create table directores(
 id_director int identity(1,1),
 nombre varchar(70),
 apellido varchar(80)
 constraint pk_director primary key (id_director)
 )
+
 create table peliculas(
     id_pelicula int identity(1,1),
     descripcion varchar(150) not null,
@@ -94,12 +97,14 @@ create table peliculas(
 	constraint fk_director foreign key (id_director)
 	    references directores (id_director)
 )
+
 create table actores(
 id_actor int identity(1,1),
 apellido varchar(60),
 nombre varchar(50)
 constraint pk_actor primary key (id_actor)
 )
+
 create table actores_pel(
 id_actores_pel int identity(1,1),
 id_pelicula int,
@@ -129,11 +134,13 @@ REFERENCES salas (id_sala),
 CONSTRAINT fk_pelicula_funcion FOREIGN KEY (id_pelicula)
 REFERENCES peliculas (id_pelicula)
 )
+
 create table estados_butaca(
 id_estado_butaca int identity(1,1),
 estado_butaca varchar(60)
 constraint pk_estado_butaca primary key (id_estado_butaca)
 )
+
 create table butacas(
 id_butaca int identity(1,1),
 fila int,
@@ -179,20 +186,3 @@ constraint pk_reservas primary key(id_reserva),
 constraint fk_cliente foreign key(id_cliente) references clientes(id_cliente),
 constraint fk_id_butaca foreign key(id_butaca) references Butacas(id_butaca)
 )
-
-
-
---EJECUTAR ESTO PARA QUE FUNCIONE EL ALTA COMPROBANTE--
-
-alter table butacas
-drop constraint fk_funcion
-
-alter table butacas
-drop column id_funcion
-
-alter table comprobantes
-add id_funcion int
-
-alter table comprobantes
-add constraint fk_compro_funcion foreign key(id_funcion)
-references funciones(id_funcion)
