@@ -65,48 +65,44 @@ namespace CineFront.Presentacion.Formularios
 
         private async void btnModificar_Click(object sender, EventArgs e)
         {
-            ValidarDatos();
-            ModificarClienteAsync();
+            if (ValidarDatos())
+            {
+                ModificarClienteAsync();
+            }
         }
 
         private bool ValidarDatos()
         {
-            if (!int.TryParse(txtAltura.Text, out _) || string.IsNullOrEmpty(txtAltura.Text))
-            {
-                MessageBox.Show("Ingrese una altura valida!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (!int.TryParse(txtDni.Text, out _) || string.IsNullOrEmpty(txtDni.Text))
-            {
-                MessageBox.Show("Ingrese un dni valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (!int.TryParse(txtNroTel.Text, out _) || string.IsNullOrEmpty(txtNroTel.Text))
-            {
-                MessageBox.Show("Ingrese un numero de telefono valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (cboBarrios.SelectedIndex == -1)
-            {
-                MessageBox.Show("Seleccione un barrio!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
             if (string.IsNullOrEmpty(txtNombre.Text))
             {
-                MessageBox.Show("Ingrese el nombre!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un nombre valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             if (string.IsNullOrEmpty(txtApellido.Text))
             {
-                MessageBox.Show("Ingrese el apellido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un apellido valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-            if (string.IsNullOrEmpty(txtCorreo.Text))
+            if (string.IsNullOrEmpty(txtNroTel.Text) || !int.TryParse(txtNroTel.Text, out _))
             {
-                MessageBox.Show("Ingrese un correo!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Ingrese un numero de telefono valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
-
+            if (string.IsNullOrEmpty(txtCalle.Text))
+            {
+                MessageBox.Show("Ingrese una calle valida!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtAltura.Text) || !int.TryParse(txtAltura.Text, out _))
+            {
+                MessageBox.Show("Ingrese una altura valida!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (string.IsNullOrEmpty(txtDni.Text) || !int.TryParse(txtDni.Text, out _))
+            {
+                MessageBox.Show("Ingrese un DNI valido!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
             return true;
         }
 

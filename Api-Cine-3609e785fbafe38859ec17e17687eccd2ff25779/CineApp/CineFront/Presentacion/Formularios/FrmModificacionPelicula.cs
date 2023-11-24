@@ -99,15 +99,50 @@ namespace CineFront.Presentacion.Formularios
             cboIdioma.DisplayMember = "Descripcion";
         }
 
-        private void btnAceptar_Click(object sender, EventArgs e)
+        private bool ValidarDatos()
         {
-            if (txtDescripcion.Text == "")
+            if (string.IsNullOrEmpty(txtDescripcion.Text))
             {
-                MessageBox.Show("Debe ingresar un nombre de pelicula", "Control", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("Debe ingresar un nombre!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (!rbtNo.Checked && !rbtSi.Checked)
+            {
+                MessageBox.Show("Debe seleccionar si esta subtitulada o no!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (cboDirectores.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un director!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (cboIdioma.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un idioma!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (cboTipoPelicula.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de pelicula!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
+            if (cboTipoPublico.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un tipo de publico!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
             }
 
-            GuardarPelicula();
+            return true;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+
+            if (ValidarDatos())
+            {
+                GuardarPelicula();
+            }
+
 
         }
 

@@ -102,13 +102,7 @@ namespace CineFront.Presentacion.Formularios
         }
         private async void GrabarPelicula()
         {
-            ValidarDatos();
-            nueva.Descripcion = txtDescripcion.Text;
-            nueva.IdDirector = (int)cboDirectores.SelectedValue;
-            nueva.IdTipoPelicula = (int)cboTipoPelicula.SelectedValue;
-            nueva.IdTipoPublico = (int)cboTipoPublico.SelectedValue;
-            nueva.IdIdioma = (int)cboIdioma.SelectedValue;
-
+            
             if (rbtSi.Checked)
             {
                 nueva.Subtitulada = 1;
@@ -117,7 +111,15 @@ namespace CineFront.Presentacion.Formularios
             {
                 nueva.Subtitulada = 2;
             }
-            await GuardarPeliculAsync(nueva);
+            if (ValidarDatos())
+            {
+                nueva.Descripcion = txtDescripcion.Text;
+                nueva.IdDirector = (int)cboDirectores.SelectedValue;
+                nueva.IdTipoPelicula = (int)cboTipoPelicula.SelectedValue;
+                nueva.IdTipoPublico = (int)cboTipoPublico.SelectedValue;
+                nueva.IdIdioma = (int)cboIdioma.SelectedValue;
+                await GuardarPeliculAsync(nueva);
+            }
         }
         private async Task GuardarPeliculAsync(Pelicula nueva)
         {

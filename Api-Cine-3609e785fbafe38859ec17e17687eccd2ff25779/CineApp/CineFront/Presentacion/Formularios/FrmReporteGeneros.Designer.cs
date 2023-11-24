@@ -33,11 +33,11 @@
             // 
             // reportViewer1
             // 
-            reportViewer1.Location = new Point(9, 8);
+            reportViewer1.Location = new Point(0, 0);
             reportViewer1.Margin = new Padding(3, 2, 3, 2);
             reportViewer1.Name = "ReportViewer";
             reportViewer1.ServerReport.BearerToken = null;
-            reportViewer1.Size = new Size(684, 323);
+            reportViewer1.Size = new Size(887, 604);
             reportViewer1.TabIndex = 0;
             // 
             // FrmReporteGeneros

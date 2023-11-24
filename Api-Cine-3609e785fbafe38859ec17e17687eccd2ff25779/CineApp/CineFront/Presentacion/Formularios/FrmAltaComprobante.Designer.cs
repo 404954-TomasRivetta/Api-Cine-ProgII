@@ -40,6 +40,7 @@
             txtPreUnitario = new TextBox();
             label6 = new Label();
             dgvTickets = new DataGridView();
+            ColIdButaca = new DataGridViewTextBoxColumn();
             ColPreUnitario = new DataGridViewTextBoxColumn();
             ColPelicula = new DataGridViewTextBoxColumn();
             ColFechaHora = new DataGridViewTextBoxColumn();
@@ -220,7 +221,7 @@
             dgvTickets.AllowUserToDeleteRows = false;
             dgvTickets.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTickets.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTickets.Columns.AddRange(new DataGridViewColumn[] { ColPreUnitario, ColPelicula, ColFechaHora, ColQuitar });
+            dgvTickets.Columns.AddRange(new DataGridViewColumn[] { ColIdButaca, ColPreUnitario, ColPelicula, ColFechaHora, ColQuitar });
             dgvTickets.Location = new Point(19, 409);
             dgvTickets.Margin = new Padding(3, 2, 3, 2);
             dgvTickets.Name = "dgvTickets";
@@ -230,6 +231,13 @@
             dgvTickets.Size = new Size(842, 114);
             dgvTickets.TabIndex = 128;
             dgvTickets.CellContentClick += dgvTickets_CellContentClick;
+            // 
+            // ColIdButaca
+            // 
+            ColIdButaca.HeaderText = "Column1";
+            ColIdButaca.Name = "ColIdButaca";
+            ColIdButaca.ReadOnly = true;
+            ColIdButaca.Visible = false;
             // 
             // ColPreUnitario
             // 
@@ -283,6 +291,7 @@
             btnCancelar.TabIndex = 126;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
             // label5
             // 
@@ -347,9 +356,9 @@
             txtProximoComprobante.ForeColor = Color.Black;
             txtProximoComprobante.Location = new Point(11, 10);
             txtProximoComprobante.Name = "txtProximoComprobante";
-            txtProximoComprobante.Size = new Size(264, 30);
+            txtProximoComprobante.Size = new Size(222, 30);
             txtProximoComprobante.TabIndex = 120;
-            txtProximoComprobante.Text = "Nuevo Comprobante N°: ";
+            txtProximoComprobante.Text = "Nuevo Comprobante";
             // 
             // btnAceptar
             // 
@@ -629,6 +638,7 @@
             button18.Size = new Size(28, 23);
             button18.TabIndex = 158;
             button18.UseVisualStyleBackColor = false;
+            button18.Click += button18_Click;
             // 
             // button15
             // 
@@ -868,7 +878,7 @@
             Controls.Add(btnAceptar);
             Controls.Add(cboEmpleado);
             Controls.Add(cboFormasP);
-            ForeColor = Color.White;
+            ForeColor = Color.Black;
             Margin = new Padding(3, 2, 3, 2);
             MaximumSize = new Size(887, 604);
             MinimumSize = new Size(887, 604);
@@ -905,10 +915,6 @@
         private Button btnAceptar;
         private ComboBox cboEmpleado;
         private ComboBox cboFormasP;
-        private DataGridViewTextBoxColumn ColPreUnitario;
-        private DataGridViewTextBoxColumn ColPelicula;
-        private DataGridViewTextBoxColumn ColFechaHora;
-        private DataGridViewButtonColumn ColQuitar;
         private Button button44;
         private Button button43;
         private Button button42;
@@ -954,5 +960,10 @@
         private Button button3;
         private Button button1;
         private PictureBox pictureBox1;
+        private DataGridViewTextBoxColumn ColIdButaca;
+        private DataGridViewTextBoxColumn ColPreUnitario;
+        private DataGridViewTextBoxColumn ColPelicula;
+        private DataGridViewTextBoxColumn ColFechaHora;
+        private DataGridViewButtonColumn ColQuitar;
     }
 }

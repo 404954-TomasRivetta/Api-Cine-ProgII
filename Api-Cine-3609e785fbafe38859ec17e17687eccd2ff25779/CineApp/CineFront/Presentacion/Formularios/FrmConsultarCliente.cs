@@ -82,6 +82,11 @@ namespace CineFront.Presentacion.Formularios
 
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (dgvClientes.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un cliente!!", "Control", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             int nro = int.Parse(dgvClientes.CurrentRow.Cells["Column1"].Value.ToString());
 
             await EliminarClienteAsync(nro);

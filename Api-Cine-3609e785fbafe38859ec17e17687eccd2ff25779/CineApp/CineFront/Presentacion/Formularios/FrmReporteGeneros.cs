@@ -19,8 +19,8 @@ namespace CineFront.Presentacion.Formularios
         private void FrmReporteGeneros_Load(object sender, EventArgs e)
         {
             reportViewer1.LocalReport.ReportEmbeddedResource = "CineFront.Presentacion.Reportes.RptGeneros.rdlc";
-            string connectionString = "Data Source=localhost;Initial Catalog=lc_tpi_cine;Integrated Security=True";
-            string query = "select tip.descripcion as genero, sum(cant_entradas * pre_unitario) as facturacion from comprobantes c join tickets t on t.id_comprobante = c.id_comprobante join butacas b on t.id_butacas = b.id_butaca join funciones f on f.id_funcion = b.id_funcion join peliculas p on p.id_pelicula = f.id_pelicula join tipos_pelicula tip on tip.id_tipo_pelicula = p.id_tipo_pelicula GROUP BY tip.descripcion order by Facturacion  DESC";
+            string connectionString = @"Data Source=PCCesar;Initial Catalog=lc_tpi_cine;Integrated Security=True;Encrypt=False";
+            string query = "select tip.descripcion as genero, sum(cant_entradas * pre_unitario) as facturacion from comprobantes c join tickets t on t.id_comprobante=c.id_comprobante join butacas b on t.id_butacas = b.id_butaca join funciones f on f.id_funcion = c.id_funcion join peliculas p on p.id_pelicula = f.id_pelicula join tipos_pelicula tip on tip.id_tipo_pelicula = p.id_tipo_pelicula GROUP BY tip.descripcion order by Facturacion  DESC";
             DataSet ds = new DataSet();
             using (SqlCommand cmd = new SqlCommand(query, new SqlConnection(connectionString)))
             {

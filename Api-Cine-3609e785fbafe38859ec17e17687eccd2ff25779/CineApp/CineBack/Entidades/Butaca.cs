@@ -10,14 +10,11 @@ namespace CineBack.Entidades
     {
         public int Fila { get; set; }
         public int Columna { get; set; }
-        public int IdFuncion { get; set; } 
         public int IdButaca { get; set; }
-        public int EstadoButaca { get; set; }
         public Butaca(int fila,int columna,int idFuncion,int idButaca)
         {
             Fila = fila;
             Columna = columna;
-            IdFuncion = idFuncion;
             IdButaca = idButaca;
         }
 

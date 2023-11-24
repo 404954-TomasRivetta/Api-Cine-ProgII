@@ -355,20 +355,6 @@
                 <ColumnSeparatorColor>Black</ColumnSeparatorColor>
               </ChartLegend>
             </ChartLegends>
-            <ChartTitles>
-              <ChartTitle Name="Default">
-                <Caption>Título del gráfico</Caption>
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>9pt</FontSize>
-                  <FontWeight>Normal</FontWeight>
-                  <TextAlign>Left</TextAlign>
-                  <VerticalAlign>Top</VerticalAlign>
-                  <Color>#a6a6a6</Color>
-                </Style>
-                <Position>TopLeft</Position>
-              </ChartTitle>
-            </ChartTitles>
             <Palette>Pacific</Palette>
             <ChartBorderSkin>
               <Style>
@@ -387,10 +373,10 @@
               </Style>
             </ChartNoDataMessage>
             <DataSetName>DataSet1</DataSetName>
-            <Top>0.289cm</Top>
+            <Top>3.04067cm</Top>
             <Left>4.60587cm</Left>
             <Height>5.35983cm</Height>
-            <Width>7.79633cm</Width>
+            <Width>14.70195cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -401,10 +387,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>2.50728in</Height>
+        <Height>4.46561in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>9.08333in</Width>
       <Page>
         <PageHeader>
           <Height>1.01487cm</Height>
@@ -431,7 +417,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Height>1.01487cm</Height>
-              <Width>16.51cm</Width>
+              <Width>23.07167cm</Width>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -452,7 +438,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.143cm</Height>
+          <Height>2.17487cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -472,7 +458,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>0.17639cm</Top>
-              <Left>13.00903cm</Left>
+              <Left>19.83528cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <Style>
@@ -501,7 +487,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
               <Top>0.17639cm</Top>
-              <Left>1.00753cm</Left>
+              <Left>1.29857cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
               <ZIndex>1</ZIndex>

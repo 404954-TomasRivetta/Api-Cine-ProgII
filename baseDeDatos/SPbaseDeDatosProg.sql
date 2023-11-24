@@ -24,7 +24,10 @@ go
 create procedure SP_CONSULTAR_CLIENTES
 as
 begin
-    select * from clientes order by 2
+    select * 
+	from clientes 
+	where fechaBaja is null
+	order by 2
 end
 go
 ----------------------------------------------------------
@@ -86,7 +89,9 @@ go
 create procedure SP_CONSULTAR_PELICULAS_Comprobante
 as
 begin
-	select id_pelicula,descripcion from peliculas
+	select id_pelicula,descripcion 
+	from peliculas p
+	where p.fechaBaja is null
 end
 go
 -----------------------------------------------------------
@@ -194,27 +199,28 @@ where (@id_barrio is null or c.cod_barrio=@id_barrio)
 	
 exec SP_CONSULTAR_CLIENTES_CON_FILTROS
 go
+
 --REPORTE
-create procedure SP_REPORTE_GENEROS_MAS_TAQUILLEROS
+alter procedure SP_REPORTE_GENEROS_MAS_TAQUILLEROS
 as
 select tip.descripcion as genero, sum(cant_entradas * pre_unitario) as facturacion
 from comprobantes c
 join tickets t on t.id_comprobante=c.id_comprobante
 join butacas b on t.id_butacas = b.id_butaca
-join funciones f on f.id_funcion = b.id_funcion
+join funciones f on f.id_funcion = c.id_funcion
 join peliculas p on p.id_pelicula = f.id_pelicula
 join tipos_pelicula tip on tip.id_tipo_pelicula = p.id_tipo_pelicula
 GROUP BY tip.descripcion
 order by Facturacion  DESC
 go
 --REPORTE 2
-create procedure SP_REPORTE_PELICULAS_MAS_TAQUILLERAS
+alter procedure SP_REPORTE_PELICULAS_MAS_TAQUILLERAS
 as
 select p.descripcion as pelicula, sum(cant_entradas * pre_unitario) as Facturacion
 from comprobantes c
 join tickets t on t.id_comprobante=c.id_comprobante
 join butacas b on t.id_butacas = b.id_butaca
-join funciones f on f.id_funcion = b.id_funcion
+join funciones f on f.id_funcion = c.id_funcion
 join peliculas p on p.id_pelicula = f.id_pelicula
 GROUP BY p.descripcion
 order by Facturacion  DESC
@@ -237,14 +243,14 @@ BEGIN
 END
 go
 --SP INSERTAR BUTACA--
-create procedure SP_INSERTAR_BUTACA
+alter procedure SP_INSERTAR_BUTACA
 	@fila int,
 	@columna int,
 	@id_funcion int,
 	@id_butaca int OUTPUT
 as
 begin
-	INSERT INTO butacas(fila,columna,id_funcion,id_estado_butaca)
+	INSERT INTO butacas(fila,columna,id_estado_butaca)
     VALUES (@fila,@columna,@id_funcion,1);
     --Asignamos el valor del último ID autogenerado (obtenido --  
     --mediante la función SCOPE_IDENTITY() de SQLServer)	
@@ -264,7 +270,7 @@ insert into comprobantes(id_cliente, id_forma_pago, id_empleado, cant_entradas,i
 values(@id_cliente, @id_forma_pago, @id_empleado, @cant_estradas,@id_funcion)
 set @id_comprobante= SCOPE_IDENTITY();
 --SP INSERTAR TICKETS--
-ALTER procedure [dbo].[SP_INSERTAR_TICKET]
+create procedure [dbo].[SP_INSERTAR_TICKET]
 @id_comprobante int,
 @id_butaca int,
 @pre_unitario int
@@ -282,16 +288,15 @@ END
 go
 
 --CONSULTAR BUTACAS OCUPADAS
-create procedure SP_CONSULTAR_BUTACAS_OCUPADAS
+alter procedure SP_CONSULTAR_BUTACAS_OCUPADAS
 @id_funcion int
 AS
-	select id_butaca,fila,columna,f.id_funcion,b.id_estado_butaca
+	select distinct id_butaca,fila,columna
 	from butacas b
 	join tickets t on t.id_butacas = b.id_butaca
 	join comprobantes c on c.id_comprobante = t.id_comprobante
 	join funciones f on f.id_funcion = c.id_funcion
 	where f.id_funcion = @id_funcion
-
 
 --INSERTAR COMPROBANTE
 ALTER procedure [dbo].[SP_INSERTAR_COMPROBANTE]
@@ -306,4 +311,28 @@ insert into comprobantes(id_cliente, id_forma_pago, id_empleado, cant_entradas,i
 values(@id_cliente, @id_forma_pago, @id_empleado, @cant_estradas,@id_funcion)
 set @id_comprobante= SCOPE_IDENTITY();
 
+--TRIGGER PARA INSERTAR FUNCIONES EN PELICULAS
+create trigger tr_insert_func_pelicu
+on peliculas
+for insert
+as
+begin
+	
+	declare @nroPelicula int,@fecha datetime
+	set @nroPelicula = (select id_pelicula from inserted)
 
+	set @fecha = (select DATEADD(day,1,(select max(fecha) from funciones)))
+
+	insert into funciones
+	values(2,@nroPelicula,@fecha,10)
+
+	insert into funciones
+	values(2,@nroPelicula,@fecha,15)
+	
+	insert into funciones
+	values(2,@nroPelicula,@fecha,20)
+end
+
+select * from funciones order by fecha desc
+insert funciones values(2,28,GETDATE(),15)
+delete funciones where fecha between '2023/11/25' and '2024/01/01'

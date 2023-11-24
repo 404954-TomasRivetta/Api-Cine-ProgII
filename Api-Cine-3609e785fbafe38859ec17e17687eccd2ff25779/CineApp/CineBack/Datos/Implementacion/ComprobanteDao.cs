@@ -86,8 +86,6 @@ namespace CineBack.Datos.Implementacion
                 b.IdButaca = Convert.ToInt32(fila["id_butaca"]);
                 b.Fila= Convert.ToInt32(fila["fila"]);
                 b.Columna=Convert.ToInt32(fila["columna"]);
-                b.IdFuncion = Convert.ToInt32(fila["id_funcion"]);
-                b.EstadoButaca = Convert.ToInt32(fila["id_estado_butaca"]);
                 lButacas.Add(b);
             }
             return lButacas;
